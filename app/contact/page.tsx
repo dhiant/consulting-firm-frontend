@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,36 +10,37 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar } from "@/components/ui/calendar";
 
 import Image from "next/image";
 import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
 
 export default function ContactPage() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-
   return (
     <main>
-      <section className="relative h-[70vh] bg-gray-900 text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/contact.jpg "
-            alt="Interior Design Showcase"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-50"
-            loading="eager"
-          />
-        </div>
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold mb-4">Have any questions?</h1>
-          <p className="text-xl mb-8">
-            Our team is available 24/7 to assist you with any inquiries.
-          </p>
+      <section className="relative h-[70vh] bg-gray-800 to-white text-white flex justify-between items-center">
+        <div className="container mx-auto max-w-screen-xl">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/contact.jpg"
+              alt="Consturction Site Showcase"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+              loading="eager"
+            />
+          </div>
+          <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
+            <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
+            <p className="text-xl mb-8">
+              Innovative designs that reflect your style and enhance your life.
+            </p>
+          </div>
         </div>
       </section>
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-8 uppercase">Contact Us</h1>
+      <div className="container max-w-screen-xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold uppercase mb-12 underline underline-offset-16 decoration-primary decoration-6">
+          Contact Us
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between space-y-3">
             <p>

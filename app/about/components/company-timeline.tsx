@@ -156,7 +156,7 @@ export function CompanyTimeline() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="container mx-auto px-4 py-8 max-w-screen-xl">
       <Timeline data={data} />
     </div>
   );

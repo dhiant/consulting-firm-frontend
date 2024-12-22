@@ -9,6 +9,17 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		boxShadow: {
+			'all-directions': '0px 4px 10px rgba(0, 0, 0, 0.2)'
+		  },
+		      // Custom underline offset
+			  textUnderlineOffset: {
+				16: '16px',
+			  },
+			  // Custom text decoration thickness
+			  textDecorationThickness: {
+				6: '6px',
+			  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

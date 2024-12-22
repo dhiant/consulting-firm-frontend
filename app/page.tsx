@@ -23,27 +23,29 @@ export default function HomePage() {
     <div>
       {/* Dynamic Hero Section */}
       <section className="relative h-[100vh] bg-gray-800 to-white text-white flex justify-between items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/home.jpg"
-            alt="Interior Design Showcase"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-50"
-            loading="eager"
-          />
-        </div>
-        <SlideUpAnimation className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
-          <p className="text-xl mb-8">
-            Innovative designs that reflect your style and enhance your life.
-          </p>
-          <div>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/portfolio">Explore Our Work</Link>
-            </Button>
+        <div className="container mx-auto max-w-screen-xl">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/home.jpg"
+              alt="Consturction Site Showcase"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+              loading="eager"
+            />
           </div>
-        </SlideUpAnimation>
+          <SlideUpAnimation className="relative container mx-auto px-4 h-full flex flex-col justify-center">
+            <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
+            <p className="text-xl mb-8">
+              Innovative designs that reflect your style and enhance your life.
+            </p>
+            <div>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/portfolio">Explore Our Work</Link>
+              </Button>
+            </div>
+          </SlideUpAnimation>
+        </div>
       </section>
 
       {/* Value Proposition */}
@@ -92,14 +94,14 @@ export default function HomePage() {
 
       {/* Services Preview */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-screen-xl">
           <SlideUpAnimation>
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6">
               Our Expertise
             </h2>
           </SlideUpAnimation>
           <ZoomInAnimation>
-            <Carousel className="mx-10">
+            <Carousel className="mx-10 my-12">
               <CarouselContent>
                 {[
                   "Residential Design",
@@ -150,13 +152,13 @@ export default function HomePage() {
 
       {/* Project Highlights */}
       <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-screen-xl">
           <SlideUpAnimation>
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6">
               Recent Projects
             </h2>
           </SlideUpAnimation>
-          <ZoomInAnimation className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ZoomInAnimation className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[1, 2, 3, 4, 5, 6].map((project) => (
               <Card
                 key={project}

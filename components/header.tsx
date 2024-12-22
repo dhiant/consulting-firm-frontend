@@ -26,7 +26,7 @@ export default function Header() {
         scrolled ? "text-white bg-primary shadow-sm" : "text-white"
       )}
     >
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center max-w-screen-xl">
         <Link href="/" className="text-2xl font-bold">
           COMPANY LOGO
         </Link>

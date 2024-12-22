@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Lexend } from "@next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Best Consultancy",
@@ -18,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lexend.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
