@@ -12,9 +12,13 @@ interface IServiceList {
 
 interface ServiceListProps {
   data: IServiceList[];
+  enableSearch?: boolean;
 }
 
-const ServiceList: React.FC<ServiceListProps> = ({ data }) => {
+const ServiceList: React.FC<ServiceListProps> = ({
+  data,
+  enableSearch = true,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredData = data.filter((item) =>
@@ -24,16 +28,18 @@ const ServiceList: React.FC<ServiceListProps> = ({ data }) => {
   return (
     <section>
       <div className="flex justify-center my-12">
-        <div className="relative w-full md:w-[500px]">
-          <Input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="p-2 border border-gray-300 rounded"
-          />
-          <Search className="absolute right-1.5 top-1.5" />
-        </div>
+        {enableSearch && (
+          <div className="relative w-full md:w-[500px]">
+            <Input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="p-2 border border-gray-300 rounded"
+            />
+            <Search className="absolute right-1.5 top-1.5" />
+          </div>
+        )}
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {filteredData.map((item, index) => (

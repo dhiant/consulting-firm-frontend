@@ -268,7 +268,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6">
             Service List 2
           </h2>
-          <ServiceList data={data2} />
+          <ServiceList data={data2} enableSearch={false} />
         </section>
       </div>
     </main>

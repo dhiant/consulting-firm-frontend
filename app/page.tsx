@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/carousel";
 import SlideUpAnimation from "@/components/animations/slide-up-variants";
 import ZoomInAnimation from "@/components/animations/zoom-in-variants";
+import { Testimonials } from "@/components/testimonials";
 
 export default function HomePage() {
   return (
@@ -186,6 +187,16 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16">
+        <SlideUpAnimation>
+          <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6">
+            Testimonials
+          </h2>
+        </SlideUpAnimation>
+        <Testimonials />
       </section>
     </div>
   );
