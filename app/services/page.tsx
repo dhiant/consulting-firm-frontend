@@ -219,7 +219,7 @@ export default function ServicesPage() {
       <section className="relative h-[70vh] text-white bg-gray-800">
         <div className="absolute inset-0">
           <Image
-            src="/images/services.jpg "
+            src="/images/services.jpg"
             alt="Service Image"
             layout="fill"
             className="opacity-50"
