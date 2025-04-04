@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -97,8 +97,10 @@ export default function HomePage() {
       <section className="py-16">
         <div className="container mx-auto max-w-screen-xl">
           <SlideUpAnimation>
-            <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6">
-              Our Expertise
+            {/* <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6"> */}
+
+            <h2 className="text-3xl font-bold uppercase mb-8">
+              Find what you are looking with us
             </h2>
           </SlideUpAnimation>
           <ZoomInAnimation>
@@ -128,17 +130,20 @@ export default function HomePage() {
                             className="w-full h-48 object-cover scale-95 rounded-md group-hover:scale-100 transition-transform transform duration-300 ease-in-out"
                           />
                         </CardHeader>
-                        <CardContent>
+                        <CardContent className="space-y-2">
+                          <Button asChild variant="outline">
+                            <Link href="/services">Learn More</Link>
+                          </Button>
                           <p>
                             Expert {service.toLowerCase()} tailored to your
                             needs and preferences.
                           </p>
                         </CardContent>
-                        <CardFooter>
+                        {/* <CardFooter>
                           <Button asChild variant="outline">
                             <Link href="/services">Learn More</Link>
                           </Button>
-                        </CardFooter>
+                        </CardFooter> */}
                       </div>
                     </Card>
                   </CarouselItem>
@@ -155,9 +160,7 @@ export default function HomePage() {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto max-w-screen-xl px-4 ">
           <SlideUpAnimation>
-            <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6">
-              Recent Projects
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 uppercase">News & Blogs</h2>
           </SlideUpAnimation>
           <ZoomInAnimation className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[1, 2, 3, 4, 5, 6].map((project) => (
@@ -190,9 +193,10 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-16 max-w-screen-xl mx-auto">
         <SlideUpAnimation>
-          <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6">
+          {/* <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6"> */}
+          <h2 className="text-3xl font-bold mb-8 uppercase text-center">
             Testimonials
           </h2>
         </SlideUpAnimation>

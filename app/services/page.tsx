@@ -229,9 +229,9 @@ export default function ServicesPage() {
         </div>
       </section>
       <div className="container max-w-screen-xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6">
+        {/* <h2 className="text-3xl font-bold uppercase mb-8 text-center">
           Our Services
-        </h2>
+        </h2> */}
         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <Card key={index} className="flex flex-col">
@@ -265,9 +265,7 @@ export default function ServicesPage() {
         <ServiceList data={data} />
 
         <section className="service-list-2 my-12">
-          <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6">
-            Service List 2
-          </h2>
+          <h2 className="text-3xl font-bold uppercase mb-8">Service List 2</h2>
           <ServiceList data={data2} enableSearch={false} />
         </section>
       </div>
