@@ -1,18 +1,6 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-
 import Image from "next/image";
 import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
+import ContactCard from "./contact-card";
 
 export default function ContactPage() {
   return (
@@ -38,9 +26,7 @@ export default function ContactPage() {
         </div>
       </section>
       <div className="container max-w-screen-xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold uppercase mb-12 underline underline-offset-16 decoration-primary decoration-6">
-          Contact Us
-        </h2>
+        <h2 className="text-3xl font-bold uppercase mb-12">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between space-y-3">
             <p>
@@ -104,66 +90,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Get in Touch</CardTitle>
-              <CardDescription>
-                Fill out the form below to reach out to us.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="first-name">First name</Label>
-                    <Input id="first-name" placeholder="John" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="last-name">Last name</Label>
-                    <Input id="last-name" placeholder="Doe" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    placeholder="john@example.com"
-                    type="email"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" placeholder="(123) 456-7890" type="tel" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="How can we help you?" />
-                </div>
-              </form>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full">Send Message</Button>
-            </CardFooter>
-          </Card>
-          {/* <Card>
-            <CardHeader>
-              <CardTitle>Book a Consultation</CardTitle>
-              <CardDescription>
-                Choose a date for your design consultation.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border"
-              />
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full">Schedule Consultation</Button>
-            </CardFooter>
-          </Card> */}
+          <ContactCard />
         </div>
       </div>
     </main>

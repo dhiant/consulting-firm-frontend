@@ -19,7 +19,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
+            <h1 className="text-5xl font-bold mb-4">who we are</h1>
             <p className="text-xl mb-8">
               Innovative designs that reflect your style and enhance your life.
             </p>

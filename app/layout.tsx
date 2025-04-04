@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={lexend.className}>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen bg-gray-200">{children}</main>
         <Footer />
       </body>
     </html>

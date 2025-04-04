@@ -1,6 +1,12 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Search } from "lucide-react";
 import { useState } from "react";
 
@@ -43,16 +49,25 @@ const ServiceList: React.FC<ServiceListProps> = ({
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {filteredData.map((item, index) => (
-          <div
-            className="group relative flex flex-col justify-center items-center px-2 py-4 gap-y-5 shadow-all-directions cursor-pointer hover:shadow-primary rounded-md"
-            key={index}
-          >
-            {<item.icon className="w-12 h-12" />}
-            <h3 className="text-center">{item.title}</h3>
-            <div className="absolute -bottom-16 rounded-md left-0 right-0 bg-primary text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-center">{item.description}</p>
-            </div>
-          </div>
+          <TooltipProvider key={index}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="group relative flex flex-col justify-center items-center px-2 py-4 gap-y-5 shadow-all-directions cursor-pointer hover:shadow-primary rounded-md"
+                  key={index}
+                >
+                  {<item.icon className="w-12 h-12" />}
+                  <h3 className="text-center">{item.title}</h3>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent
+                side="bottom"
+                className="w-full max-w-none p-2 text-center"
+              >
+                <p>{item.description}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         ))}
       </div>
     </section>
