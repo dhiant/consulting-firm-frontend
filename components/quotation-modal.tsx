@@ -14,6 +14,7 @@ const QuotationModal = () => {
       <DialogTrigger className="flex gap-2 items-center">
         Free Quote <MoveUpRight size={16} />
       </DialogTrigger>
+
       <DialogContent className="p-1">
         <DialogDescription>
           <ContactCard />
