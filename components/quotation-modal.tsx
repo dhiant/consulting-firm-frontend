@@ -11,8 +11,8 @@ import ContactCard from "@/app/contact/contact-card";
 const QuotationModal = () => {
   return (
     <Dialog>
-      <DialogTrigger className="flex gap-2 items-center">
-        Free Quote <MoveUpRight size={16} />
+      <DialogTrigger className="flex gap-2 items-center hover:text-black">
+        <span>Free Quote</span> <MoveUpRight size={16} />
       </DialogTrigger>
 
       <DialogContent className="p-1">

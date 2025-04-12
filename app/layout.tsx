@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Lexend } from "@next/font/google";
+import StickyInfo from "@/components/sticky-info";
 
 // const inter = Inter({ subsets: ["latin"] });
 const lexend = Lexend({ subsets: ["latin"] });
@@ -22,7 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={lexend.className}>
         <Header />
-        <main className="min-h-screen bg-gray-200">{children}</main>
+        <main className="min-h-screen">{children}</main>
+        <StickyInfo className="fixed bottom-0 right-0" />
         <Footer />
       </body>
     </html>

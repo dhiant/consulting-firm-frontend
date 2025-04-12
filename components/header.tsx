@@ -35,7 +35,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300 ease-in-out",
         scrolled
-          ? "backdrop-blur-lg shadow-sm text-gray-800"
+          ? "bg-white shadow-xl text-primary"
           : "bg-transparent text-white",
         showNav ? "translate-y-0" : "-translate-y-full"
       )}
@@ -47,27 +47,34 @@ export default function Header() {
         <div className="flex gap-10">
           <ul className="lg:flex space-x-10 text-lg font-normal hidden">
             <li>
-              <Link href="/" className="hover:text-gray-600">
+              <Link href="/" className="hover:text-black">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-gray-600">
+              <Link href="/about" className="hover:text-black">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:text-gray-600">
+              <Link href="/services" className="hover:text-black">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-gray-600">
+              <Link href="/projects" className="hover:text-black">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-black">
                 Contact
               </Link>
             </li>
+            <li>
+              <QuotationModal />
+            </li>
           </ul>
-          <QuotationModal />
         </div>
       </nav>
     </header>

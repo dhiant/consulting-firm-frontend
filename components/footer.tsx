@@ -1,60 +1,177 @@
+"use client";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto px-4 py-8 max-w-screen-xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">
+    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+      <div className="container mx-auto px-4 py-12 max-w-screen-xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold tracking-tight">
               Construction Site Co.
             </h3>
-            <p>Transforming spaces into beautiful, functional environments</p>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Crafting innovative spaces that inspire and endure.
+            </p>
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
+              {[
+                {
+                  Icon: Facebook,
+                  href: "https://facebook.com",
+                  label: "Facebook",
+                },
+                {
+                  Icon: Twitter,
+                  href: "https://twitter.com",
+                  label: "Twitter",
+                },
+                {
+                  Icon: Instagram,
+                  href: "https://instagram.com",
+                  label: "Instagram",
+                },
+                {
+                  Icon: Linkedin,
+                  href: "https://linkedin.com",
+                  label: "LinkedIn",
+                },
+              ].map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
+                >
+                  <Icon className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="hover:underline">
-                  Home
-                </Link>
+            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About" },
+                { href: "/services", label: "Services" },
+                { href: "/portfolio", label: "Portfolio" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact" },
+              ].map(({ href, label }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-gray-300 hover:text-white text-sm font-medium transition-all duration-300 ease-in-out hover:translate-x-2 inline-block"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
+              Contact Us
+            </h4>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li className="flex items-start">
+                <span className="mr-2">
+                  <MapPin />
+                </span>
+                123 Design Street, Creativity City, 12345
               </li>
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
+              <li className="flex items-center">
+                <span className="mr-2">
+                  <Phone />
+                </span>
+                <a
+                  href="tel:+1234567890"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  (123) 456-7890
+                </a>
               </li>
-              <li>
-                <Link href="/services" className="hover:underline">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" className="hover:underline">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:underline">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:underline">
-                  Contact
-                </Link>
+              <li className="flex items-center">
+                <span className="mr-2">
+                  <Mail />
+                </span>
+                <a
+                  href="mailto:info@constructionsite.com"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  info@constructionsite.com
+                </a>
               </li>
             </ul>
           </div>
+
+          {/* Newsletter Signup */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <p>123 Design Street, Creativity City, 12345</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: info@constructionsite.com</p>
+            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
+              Stay Updated
+            </h4>
+            <p className="text-gray-300 text-sm mb-4">
+              Subscribe for the latest projects and insights.
+            </p>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col space-y-3"
+            >
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="px-4 py-2 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+                aria-label="Email for newsletter"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm transition-all duration-300 transform hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-        <div className="mt-8 text-center">
-          <p>&copy; 2024 Construction Site Co. All rights reserved.</p>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <p>
+            © {new Date().getFullYear()} Construction Site Co. All rights
+            reserved.
+          </p>
+          <div className="mt-4 md:mt-0 space-x-6">
+            <Link
+              href="/privacy"
+              className="hover:text-white transition-colors duration-300"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-white transition-colors duration-300"
+            >
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
