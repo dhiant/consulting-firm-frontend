@@ -95,7 +95,7 @@ export default function HomePage() {
 
       {/* Services Preview */}
       <section className="py-16">
-        <div className="container mx-auto max-w-screen-xl">
+        <div className="container mx-auto max-w-screen-xl px-4">
           <SlideUpAnimation>
             {/* <h2 className="text-3xl font-bold text-center uppercase mb-8 underline underline-offset-16 decoration-primary decoration-6"> */}
 
