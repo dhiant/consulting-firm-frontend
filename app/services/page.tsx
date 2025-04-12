@@ -2,6 +2,7 @@
 import Image from "next/image";
 import {
   Bolt,
+  Boxes,
   BrickWall,
   Construction,
   Drill,
@@ -10,54 +11,18 @@ import {
   Pickaxe,
   Wrench,
 } from "lucide-react";
+import { DraftingCompass, Cable, Landmark } from "lucide-react";
+import {
+  Building2,
+  Home,
+  Warehouse,
+  ShoppingBag,
+  Trees,
+  PanelsTopLeft,
+} from "lucide-react";
 import ServiceList from "./components/service-list";
 
-// const services = [
-//   {
-//     title: "Residential Design",
-//     description: "Transform your home into a personalized sanctuary that reflects your style and meets your needs.",
-//     image: "/placeholder.svg?height=400&width=600&text=Residential+Design",
-//     benefits: ["Customized living spaces", "Improved functionality", "Increased property value"],
-//     pricing: "Starting from $X,XXX",
-//   },
-//   {
-//     title: "Commercial Spaces",
-//     description: "Create inspiring work environments that boost productivity and impress clients.",
-//     image: "/placeholder.svg?height=400&width=600&text=Commercial+Spaces",
-//     benefits: ["Enhanced brand image", "Optimized workspace efficiency", "Employee satisfaction"],
-//     pricing: "Custom quotes based on project scope",
-//   },
-//   {
-//     title: "Renovation",
-//     description: "Breathe new life into existing spaces with our expert renovation services.",
-//     image: "/placeholder.svg?height=400&width=600&text=Renovation",
-//     benefits: ["Updated aesthetics", "Improved functionality", "Increased property value"],
-//     pricing: "Tailored to project size and complexity",
-//   },
-//   {
-//     title: "Space Planning",
-//     description: "Optimize your layout for maximum efficiency and flow.",
-//     image: "/placeholder.svg?height=400&width=600&text=Space+Planning",
-//     benefits: ["Improved traffic flow", "Maximized space utilization", "Enhanced functionality"],
-//     pricing: "Hourly rate or flat fee based on square footage",
-//   },
-//   {
-//     title: "Color Consultation",
-//     description: "Find the perfect color palette to set the right mood and atmosphere in your space.",
-//     image: "/placeholder.svg?height=400&width=600&text=Color+Consultation",
-//     benefits: ["Cohesive design scheme", "Psychological benefits", "Increased aesthetic appeal"],
-//     pricing: "Fixed rate per consultation",
-//   },
-//   {
-//     title: "Furniture Selection",
-//     description: "Choose the ideal furnishings to complement your space and lifestyle.",
-//     image: "/placeholder.svg?height=400&width=600&text=Furniture+Selection",
-//     benefits: ["Curated selections", "Ergonomic considerations", "Style cohesion"],
-//     pricing: "Percentage of furniture cost or hourly rate",
-//   },
-// ]
-
-const data = [
+const authorityApprovalsData = [
   {
     title: "Civil Defense Approval",
     description:
@@ -198,19 +163,70 @@ const data = [
   },
 ];
 
-const data2 = [
+const planningandDrawingsData = [
   {
-    title: "Test title 1",
-    description: "Test description 1",
-    icon: Construction,
+    title: "Architecture Drawings",
+    description:
+      "Detailed floor plans, elevations, and sections that bring your architectural vision to life with precision and clarity.",
+    icon: DraftingCompass,
   },
-  { title: "Test title 2", description: "Test description 2", icon: BrickWall },
   {
-    title: "Test title 3",
-    description: "Test description 3",
-    icon: Construction,
+    title: "MEP Drawings",
+    description:
+      "Comprehensive Mechanical, Electrical, and Plumbing layouts to ensure efficiency, safety, and compliance in your building systems.",
+    icon: Cable,
   },
-  { title: "Test title 4", description: "Test description 4", icon: BrickWall },
+  {
+    title: "Structural Drawings",
+    description:
+      "Engineering-based diagrams outlining the framework and load-bearing systems that form the foundation of your construction.",
+    icon: Landmark,
+  },
+  {
+    title: "3D Visualization",
+    description:
+      "Photorealistic 3D renders and walkthroughs to help you visualize your space before it’s built, enhancing design decisions.",
+    icon: Boxes,
+  },
+];
+
+const fitoutWorksData = [
+  {
+    title: "Commercial",
+    description:
+      "Office and business space fitouts tailored for productivity and branding.",
+    icon: Building2,
+  },
+  {
+    title: "Residential",
+    description:
+      "Custom home interiors blending comfort, function, and aesthetics.",
+    icon: Home,
+  },
+  {
+    title: "Warehouse",
+    description:
+      "Functional warehouse interiors built for storage and workflow efficiency.",
+    icon: Warehouse,
+  },
+  {
+    title: "Retail",
+    description:
+      "Engaging retail spaces designed to enhance customer experience and sales.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Landscaping",
+    description:
+      "Outdoor designs that connect nature with built environments beautifully.",
+    icon: Trees,
+  },
+  {
+    title: "Racking Installation",
+    description:
+      "Optimized storage systems for organized, high-capacity solutions.",
+    icon: PanelsTopLeft,
+  },
 ];
 
 export default function ServicesPage() {
@@ -228,46 +244,27 @@ export default function ServicesPage() {
           />
         </div>
       </section>
-      <div className="container max-w-screen-xl mx-auto px-4 py-16">
-        {/* <h2 className="text-3xl font-bold uppercase mb-8 text-center">
-          Our Services
-        </h2> */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service, index) => (
-          <Card key={index} className="flex flex-col">
-            <Image
-              src={service.image}
-              alt={service.title}
-              width={600}
-              height={400}
-              className="w-full h-64 object-cover"
-            />
-            <CardHeader>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDescription>{service.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <h4 className="font-semibold mb-2">Benefits:</h4>
-              <ul className="list-disc list-inside mb-4">
-                {service.benefits.map((benefit, i) => (
-                  <li key={i}>{benefit}</li>
-                ))}
-              </ul>
-              <p><strong>Pricing:</strong> {service.pricing}</p>
-            </CardContent>
-            <CardFooter className="mt-auto">
-              <Button>Request Consultation</Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div> */}
+      <div className="container max-w-screen-xl mx-auto px-4 pt-16">
+        <ServiceList
+          data={authorityApprovalsData}
+          title={"Authority Approvals"}
+        />
+      </div>
 
-        <ServiceList data={data} />
+      <div className="container max-w-screen-xl mx-auto px-4 py-5">
+        <ServiceList
+          data={planningandDrawingsData}
+          title={"Plannings and Drawings"}
+          enableSearch={false}
+        />
+      </div>
 
-        <section className="service-list-2 my-12">
-          <h2 className="text-3xl font-bold uppercase mb-8">Service List 2</h2>
-          <ServiceList data={data2} enableSearch={false} />
-        </section>
+      <div className="container max-w-screen-xl mx-auto px-4 pb-16">
+        <ServiceList
+          data={fitoutWorksData}
+          title={"Fitout works | Build"}
+          enableSearch={false}
+        />
       </div>
     </main>
   );
