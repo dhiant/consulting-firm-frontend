@@ -52,7 +52,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
   return (
     <TooltipProvider>
       <div
-        className={`space-y-5 ${className} bg-white p-4 rounded-tl-xl shadow-lg flex flex-col items-center`}
+        className={`space-y-5 ${className} bg-white p-4 rounded-tl-xl shadow-lg flex-col items-center hidden md:flex`}
       >
         {socialLinks.map(({ Icon, href, label, tooltip, external }) => (
           <Tooltip key={label}>

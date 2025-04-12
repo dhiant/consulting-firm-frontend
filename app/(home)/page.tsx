@@ -16,14 +16,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import SlideUpAnimation from "@/components/animations/slide-up-variants";
-// import ZoomInAnimation from "@/components/animations/zoom-in-variants";
+import ZoomInAnimation from "@/components/animations/zoom-in-variants";
 import { Testimonials } from "@/components/testimonials";
+import HeroCarousel from "./hero-carousel";
 
 export default function HomePage() {
   return (
     <div>
       {/* Dynamic Hero Section */}
-      <section className="relative h-[100vh] bg-gray-800 to-white text-white flex justify-between items-center">
+      {/* <section className="relative h-[100vh] bg-gray-800 to-white text-white flex justify-between items-center">
         <div className="container mx-auto max-w-screen-xl">
           <div className="absolute inset-0">
             <Image
@@ -52,51 +53,9 @@ export default function HomePage() {
             </div>
           </SlideUpAnimation>
         </div>
-      </section>
-
-      {/* Value Proposition */}
-      {/* <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Why Choose Us?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Expert Designers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Our team of award-winning designers brings creativity and
-                  expertise to every project.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Tailored Solutions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  We create custom designs that perfectly match your style,
-                  needs, and budget.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Sustainable Practices</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  We prioritize eco-friendly materials and energy-efficient
-                  designs for a greener future.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </section> */}
+
+      <HeroCarousel />
 
       {/* Services Preview */}
       <section className="pt-16">
