@@ -126,7 +126,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-screen-xl px-4 ">
           {/* <SlideUpAnimation> */}
           <h2 className="text-3xl font-bold mb-8 uppercase text-primary">
-            News & Blogs
+            Featured Projects
           </h2>
           {/* </SlideUpAnimation> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

@@ -232,7 +232,7 @@ const fitoutWorksData = [
 export default function ServicesPage() {
   return (
     <main>
-      <section className="relative h-[70vh] text-white bg-gray-800">
+      <section className="relative h-[70vh] text-white bg-black">
         <div className="absolute inset-0">
           <Image
             src="/images/services.jpg"

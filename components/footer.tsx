@@ -9,6 +9,7 @@ import {
   Twitter,
 } from "lucide-react";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
@@ -142,12 +143,12 @@ export default function Footer() {
                 className="px-4 py-2 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
                 aria-label="Email for newsletter"
               />
-              <button
+              <Button
                 type="submit"
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm transition-all duration-300 transform hover:scale-105"
               >
                 Subscribe
-              </button>
+              </Button>
             </form>
           </div>
         </div>

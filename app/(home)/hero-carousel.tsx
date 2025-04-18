@@ -74,7 +74,7 @@ const HeroCarousel = () => {
     slides[current];
 
   return (
-    <section className="relative h-[100vh] bg-gray-800 text-white flex items-center overflow-hidden">
+    <section className="relative h-[100vh] bg-black text-white flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out">
         <Image

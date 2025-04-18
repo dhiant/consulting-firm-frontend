@@ -34,7 +34,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Email",
       tooltip: "Email us",
       external: true,
-      className: "text-gray-600 hover:text-red-500", // Neutral email tone with hover attention
+      className: "text-[#156ED9] hover:text-[#156ED9]", // Neutral email tone with hover attention
     },
     {
       Icon: FaWhatsapp,
@@ -50,14 +50,14 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Brochure",
       tooltip: "Brochure",
       external: true,
-      className: "text-gray-700 hover:text-blue-600", // Neutral to blue for documents
+      className: "text-[#fff000] hover:text-[#ffff00]", // Neutral to blue for documents
     },
   ];
 
   return (
     <TooltipProvider>
       <div
-        className={`space-y-5 ${className} p-4 flex-col items-center hidden md:flex`}
+        className={`space-y-5 ${className} p-4 flex-col items-center hidden md:flex z-10`}
       >
         {socialLinks.map(
           ({ Icon, href, label, tooltip, external, className }) => (

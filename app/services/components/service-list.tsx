@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Search } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 interface IServiceList {
@@ -67,10 +68,17 @@ const ServiceList: React.FC<ServiceListProps> = ({
                 </div>
               </TooltipTrigger>
               <TooltipContent
-                side="bottom"
-                className="w-full max-w-none p-2 text-center"
+                side="top"
+                className="w-full max-w-none p-2 text-center bg-white text-primary border border-primary rounded-md"
               >
-                <p>{item.description}</p>
+                <Image
+                  src="/images/project1.jpg"
+                  alt="Test"
+                  height={300}
+                  width={300}
+                  className="w-full border border-primary rounded-md"
+                />
+                <p className="p-2">{item.description}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

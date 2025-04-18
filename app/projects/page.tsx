@@ -83,7 +83,7 @@ export default function PortfolioPage() {
   return (
     <div>
       {/* Dynamic Hero Section */}
-      <section className="relative h-[70vh] bg-gray-800 to-white text-white flex justify-between items-center">
+      <section className="relative h-[70vh] bg-black to-white text-white flex justify-between items-center">
         <div className="container mx-auto max-w-screen-xl">
           <div className="absolute inset-0">
             <Image
