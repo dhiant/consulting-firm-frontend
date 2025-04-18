@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={lexend.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
-        <StickyInfo className="fixed bottom-0 right-0" />
+        <StickyInfo className="fixed bottom-1/2 translate-y-1/2  right-0" />
         <Footer />
       </body>
     </html>

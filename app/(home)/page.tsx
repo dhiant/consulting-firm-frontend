@@ -122,7 +122,7 @@ export default function HomePage() {
       </section>
 
       {/* Project Highlights */}
-      <section className="pt-16">
+      <section className="py-16">
         <div className="container mx-auto max-w-screen-xl px-4 ">
           {/* <SlideUpAnimation> */}
           <h2 className="text-3xl font-bold mb-8 uppercase text-primary">
@@ -160,15 +160,13 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 max-w-screen-xl mx-auto">
-        {/* <SlideUpAnimation> */}
-        {/* <h2 className="text-3xl font-bold text-center mb-8 uppercase underline underline-offset-16 decoration-primary decoration-6"> */}
+      {/* <section className="py-16 max-w-screen-xl mx-auto">
+      
         <h2 className="text-3xl font-bold mb-8 uppercase text-center text-primary">
           Testimonials
         </h2>
-        {/* </SlideUpAnimation> */}
         <Testimonials />
-      </section>
+      </section> */}
     </div>
   );
 }

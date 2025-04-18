@@ -244,10 +244,12 @@ export default function ServicesPage() {
           />
         </div>
       </section>
+
       <div className="container max-w-screen-xl mx-auto px-4 pt-16">
         <ServiceList
           data={authorityApprovalsData}
           title={"Authority Approvals"}
+          description="We help navigate the complexities of local authority regulations and secure essential approvals for your projects efficiently and hassle-free."
         />
       </div>
 
@@ -255,6 +257,7 @@ export default function ServicesPage() {
         <ServiceList
           data={planningandDrawingsData}
           title={"Plannings and Drawings"}
+          description="Our team crafts precise planning layouts and architectural drawings tailored to meet both your vision and statutory requirements."
           enableSearch={false}
         />
       </div>
@@ -263,6 +266,7 @@ export default function ServicesPage() {
         <ServiceList
           data={fitoutWorksData}
           title={"Fitout works | Build"}
+          description="From interiors to final finishes, we execute fit-out works with precision and quality, ensuring your space is ready for purpose and style."
           enableSearch={false}
         />
       </div>

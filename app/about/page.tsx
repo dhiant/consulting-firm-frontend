@@ -98,7 +98,7 @@ export default function AboutPage() {
           Our Core Values
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6  mx-auto">
-          <Card className="text-center">
+          <Card className="text-center  border-primary">
             <CardContent className="p-6">
               <ShieldCheck className="mx-auto text-primary mb-4" size={40} />
               <h3 className="text-xl font-semibold">Integrity</h3>
@@ -108,7 +108,7 @@ export default function AboutPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center">
+          <Card className="text-center border-primary">
             <CardContent className="p-6">
               <Construction className="mx-auto text-primary mb-4" size={40} />
               <h3 className="text-xl font-semibold">Expertise</h3>
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center">
+          <Card className="text-center border-primary">
             <CardContent className="p-6">
               <Users className="mx-auto text-primary mb-4" size={40} />
               <h3 className="text-xl font-semibold">Teamwork</h3>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center">
+          <Card className="text-center border-primary">
             <CardContent className="p-6">
               <Leaf className="mx-auto text-primary mb-4" size={40} />
               <h3 className="text-xl font-semibold">Sustainability</h3>
@@ -159,7 +159,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company Timeline */}
-      <CompanyTimeline />
+      {/* <CompanyTimeline /> */}
 
       <div className="mx-auto max-w-screen-xl">
         <h2 className="text-3xl font-semibold text-primary mb-6 text-center">

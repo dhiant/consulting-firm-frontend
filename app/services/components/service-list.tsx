@@ -20,12 +20,14 @@ interface ServiceListProps {
   data: IServiceList[];
   enableSearch?: boolean;
   title: string;
+  description: string;
 }
 
 const ServiceList: React.FC<ServiceListProps> = ({
   data,
   enableSearch = true,
   title,
+  description,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -49,8 +51,9 @@ const ServiceList: React.FC<ServiceListProps> = ({
           </div>
         )}
       </div>
-      <p className="font-medium my-5 text-xl">{title}</p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <h3 className="font-bold my-5 text-3xl">{title}</h3>
+      <p className="text-primary/80">{description}</p>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-5">
         {filteredData.map((item, index) => (
           <TooltipProvider key={index}>
             <Tooltip>
