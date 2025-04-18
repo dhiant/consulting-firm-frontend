@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/carousel";
 // import SlideUpAnimation from "@/components/animations/slide-up-variants";
 // import ZoomInAnimation from "@/components/animations/zoom-in-variants";
-import { Testimonials } from "@/components/testimonials";
+// import { Testimonials } from "@/components/testimonials";
 import HeroCarousel from "./hero-carousel";
 
 export default function HomePage() {

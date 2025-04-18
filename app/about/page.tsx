@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import InspiringLuxury from "./components/inspiring-luxury";
-import { CompanyTimeline } from "./components/company-timeline";
+// import { CompanyTimeline } from "./components/company-timeline";
 import { Construction, Leaf, ShieldCheck, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
