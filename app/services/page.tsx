@@ -8,6 +8,7 @@ import {
   Drill,
   Hammer,
   HardHat,
+  MoveRight,
   Pickaxe,
   Wrench,
 } from "lucide-react";
@@ -21,6 +22,7 @@ import {
   PanelsTopLeft,
 } from "lucide-react";
 import ServiceList from "./components/service-list";
+import Link from "next/link";
 
 const authorityApprovalsData = [
   {
@@ -232,7 +234,7 @@ const fitoutWorksData = [
 export default function ServicesPage() {
   return (
     <main>
-      <section className="relative h-[70vh] text-white bg-black">
+      <section className="relative h-[100vh] text-white bg-black">
         <div className="absolute inset-0">
           <Image
             src="/images/services.jpg"
@@ -242,10 +244,27 @@ export default function ServicesPage() {
             objectFit="cover"
             loading="eager"
           />
+          <div className="relative  mx-auto px-4 h-full flex flex-col justify-center z-10 t max-w-screen-xl">
+             <h1 className="text-5xl font-bold mb-4 mx-auto">Find What You Need, Right Here </h1>
+
+             <button className="text-xl mb-8 bg-white text-black w-48 p-3 rounded-lg justify-center mx-auto"
+       
+             >
+              <Link href="/contact" className="flex items-center space-x-2">
+              <span className="text-sm">CONTACT US</span> 
+                 <MoveRight/>
+              </Link>
+                     
+                
+
+            </button>
+          </div>
+         
         </div>
       </section>
 
       <div className="container max-w-screen-xl mx-auto px-4 pt-16">
+        <h1 className="text-4xl font-bold mb-8 text-primary">OUR EXPERTISE</h1>
         <ServiceList
           data={authorityApprovalsData}
           title={"Authority Approvals"}

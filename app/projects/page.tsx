@@ -11,9 +11,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import HoverCard from "./hover";
 
 const projects = [
   {
+    id: 1,
     title: "Modern Minimalist Apartment",
     category: "Residential",
     description:
@@ -23,8 +25,20 @@ const projects = [
       "The team transformed my small apartment into a spacious, functional haven. I love coming home now!",
   },
   {
+    id: 2,
+    title: "Rustic Mountain Retreat",
+    category: "Landscaping",
+    description:
+      "A cozy mountain home that combines rustic charm with modern comforts.",
+    image: "/images/project6.jpg",
+
+    testimonial:
+      "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
+  },
+  {
+    id: 3,
     title: "Eco-Friendly Office Space",
-    category: "Commercial",
+    category: "Retail",
     description:
       "A sustainable office design that promotes productivity and employee well-being.",
     image: "/images/project2.jpg",
@@ -42,7 +56,7 @@ const projects = [
   },
   {
     title: "Boutique Hotel Lobby",
-    category: "Commercial",
+    category: "Hospital",
     description:
       "A chic and inviting lobby design for a boutique hotel, setting the tone for a luxurious stay.",
     image: "/images/project4.jpg",
@@ -52,7 +66,7 @@ const projects = [
   },
   {
     title: "Urban Loft Renovation",
-    category: "Renovation",
+    category: "Restaurant",
     description:
       "A complete overhaul of an industrial loft space into a modern, multi-functional home.",
     image: "/images/project5.jpg",
@@ -60,16 +74,27 @@ const projects = [
     testimonial:
       "I never thought my old loft could look this amazing. It's like living in a design magazine!",
   },
-  {
-    title: "Rustic Mountain Retreat",
-    category: "Residential",
-    description:
-      "A cozy mountain home that combines rustic charm with modern comforts.",
-    image: "/images/project6.jpg",
+  // {
+  //   title: "Rustic Mountain Retreat",
+  //   category: "Warehouse",
+  //   description:
+  //     "A cozy mountain home that combines rustic charm with modern comforts.",
+  //   image: "/images/project6.jpg",
 
-    testimonial:
-      "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
-  },
+  //   testimonial:
+  //     "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
+  // },
+
+  //  {
+  //   title: "Rustic Mountain Retreat",
+  //   category: "Office",
+  //   description:
+  //     "A cozy mountain home that combines rustic charm with modern comforts.",
+  //   image: "/images/project6.jpg",
+
+  //   testimonial:
+  //     "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
+  // },
 ];
 
 export default function PortfolioPage() {
@@ -83,7 +108,7 @@ export default function PortfolioPage() {
   return (
     <div>
       {/* Dynamic Hero Section */}
-      <section className="relative h-[70vh] bg-black to-white text-white flex justify-between items-center">
+      <section className="relative h-[100vh] bg-black to-white text-white flex justify-between items-center">
         <div className="container mx-auto max-w-screen-xl">
           <div className="absolute inset-0">
             <Image
@@ -96,19 +121,19 @@ export default function PortfolioPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Our Showcase</h1>
+            <h1 className="text-5xl font-bold mb-4">Crafted Dreams</h1>
             <p className="text-xl mb-8">
-              Innovative designs that reflect your style and enhance your life.
+              Take a closer look at the quality and creative precision that define AIM.
             </p>
           </div>
         </div>
       </section>
-      <div className="container mx-auto px-4 py-16 max-w-screen-xl">
-        <h1 className="text-4xl font-bold mb-8 text-primary">Our Projects</h1>
+      <div className="container mx-auto px-4 py-8 mt-24 max-w-screen-xl">
+        {/* <h1 className="text-4xl font-bold mb-8 text-primary">Our Projects</h1> */}
 
-        {/* Filter buttons */}
-        <div className="flex justify-center space-x-4 mb-8">
-          {["All", "Residential", "Commercial", "Renovation"].map(
+
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {["All", "Office", "Warehouse", "Restaurant", "Residential", "Hospital", "Retail", "Landscaping"].map(
             (category) => (
               <Button
                 key={category}
@@ -122,33 +147,20 @@ export default function PortfolioPage() {
           )}
         </div>
 
-        {/* Project grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card key={index} className="flex flex-col border-primary">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover rounded-t-xl"
-              />
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.category}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>{project.description}</p>
-              </CardContent>
-              <CardFooter className="mt-auto">
-                <p className="italic text-sm">
-                  &quot;{project.testimonial}&quot;
-                </p>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 p-3">
+        {filteredProjects.map((card) => (
+          <HoverCard
+            key={card.id}
+            title={card.title}
+            subtitle={card.category}
+            image={card.image}
+            desc={card.description}
+          />
+        ))}
+      </div>
+
     </div>
   );
 }

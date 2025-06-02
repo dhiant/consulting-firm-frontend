@@ -14,13 +14,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { MoveRight } from 'lucide-react';
+
 
 const ContactCard = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
-    message: "",
+
   });
 
   const [loading, setLoading] = useState(false);
@@ -37,12 +38,12 @@ const ContactCard = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { fullName, email, phone, message } = formData;
+    const { fullName, email } = formData;
 
     console.log(fullName);
-    console.log(message);
 
-    if (!email || !phone) {
+
+    if (!email) {
       toast.error("Please fill in required fields.");
       return;
     }
@@ -57,8 +58,7 @@ const ContactCard = () => {
       setFormData({
         fullName: "",
         email: "",
-        phone: "",
-        message: "",
+
       });
 
       toast.success("Message sent successfully!");
@@ -71,64 +71,50 @@ const ContactCard = () => {
   };
 
   return (
-    <Card>
+    <Card className="bg-primary">
       <CardHeader>
-        <CardTitle>Get in Touch</CardTitle>
-        <CardDescription>
-          Fill out the form below to reach out to us.
-        </CardDescription>
+        <CardTitle className="text-white">Discover Quality and Precision: Request a Quote for Our Expert Services</CardTitle>
+
       </CardHeader>
       <CardContent>
         <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="space-y-2">
-            <Label htmlFor="fullName">Full name</Label>
-            <Input
-              id="fullName"
-              placeholder="John Doe"
-              value={formData.fullName}
-              onChange={handleChange}
-            />
+          <div className="flex flex-row justify-between">
+            <div className="space-y-2">
+              <Label htmlFor="fullName" className="text-white">Name</Label>
+              <Input
+                className="text-white"
+                id="fullName"
+                placeholder="Enter Your Name"
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+              <div className="text-white">I am not a Robot</div>
+            </div>
+
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-white">
+                Email
+              </Label>
+              <Input
+                className="text-white"
+                id="email"
+
+                type="email"
+                placeholder="Enter Your Email Address"
+                required
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <div>
+                <Button type="submit" className="w-full bg-white text-black" disabled={loading}>
+                  {loading ? "Sending..." : "Request a Quote"}
+                  <MoveRight />
+                </Button>
+              </div>
+
+            </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">
-              Email <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="john@example.com"
-              required
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="phone">
-              Phone <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder="(123) 456-7890"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              placeholder="How can we help you?"
-              value={formData.message}
-              onChange={handleChange}
-            />
-          </div>
-          <CardFooter className="p-0 pt-4">
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Sending..." : "Send Message"}
-            </Button>
-          </CardFooter>
         </form>
       </CardContent>
       <ToastContainer />

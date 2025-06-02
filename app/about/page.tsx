@@ -54,7 +54,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Dynamic Hero Section */}
-      <section className="relative h-[70vh] bg-black to-white text-white flex justify-between items-center">
+      <section className="relative h-[100vh] bg-black to-white text-white flex justify-between items-center">
         <div className="container mx-auto max-w-screen-xl">
           <div className="absolute inset-0">
             <Image
@@ -67,108 +67,85 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">who we are</h1>
+            <h1 className="text-5xl font-bold mb-4"> Crafting Innovative Design and Build Solutions</h1>
             <p className="text-xl mb-8">
-              Innovative designs that reflect your style and enhance your life.
+              Experienced professionals dedicated to providing expert solutions with precision and care.
+
             </p>
           </div>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section className="py-16 px-6 max-w-screen-xl mx-auto text-center md:text-left">
+      <section className="py-3 px-6 max-w-screen-xl mx-auto text-center md:text-left mb-12 mt-12">
         <h2 className="text-3xl font-semibold text-primary mb-6">Who We Are</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-lg">
-          <p>
-            Founded in 20XX, our firm provides full-service consulting across
-            all phases of construction, from project planning and cost
-            estimation to on-site supervision and project delivery.
+        <div className=" text-lg">
+
+          <p className="mb-3">
+            <span className="text-bold text-black font-bold ">AIM</span>  is a Dubai-based company that specializes in providing comprehensive consultation services for construction approvals, interior design, and
+            design-build projects, all in compliance with Dubai's regulatory authorities. With a team of experienced professionals, we manage every stage of the
+            project seamlessly—from securing necessary government permits and approvals to delivering meticulous design and planning services. We offer
+            hassle-free solutions throughout the entire process, catering to projects of any complexity or scope across Dubai and ensuring smooth execution
+            from start to finish.
           </p>
+          <p className="mb-3">
+
+
+            Our approach is built on a foundation of trust, transparency, and collaboration. We understand the intricacies of Dubai's regulatory environment
+            and are committed to ensuring that all our clients’ projects comply with the highest standards. From residential to commercial developments, our
+            expertise spans a wide range of fields, including hospitality, retail, and office spaces. We prioritize clear communication and work closely with our
+            clients to understand their vision, ensuring that every detail is carefully considered and executed. With a focus on efficiency and excellence, we are
+            your trusted partner in achieving successful project outcomes—on time and within budget.
+          </p>
+
           <p>
-            Our diverse team of engineers, architects, and project managers
-            ensures each project meets high standards in quality, time, and
-            cost-efficiency.
+            At <span className="text-bold text-black font-bold">AIM</span>, we believe that every project is an opportunity to create something exceptional. We combine innovation with industry expertise to provide
+            practical, sustainable solutions that meet the evolving needs of our clients. By leveraging the latest technologies and design trends, we ensure that
+            each project not only meets regulatory requirements but also aligns with our clients' long-term goals. Whether you’re embarking on a new
+            construction, renovation, or a specialized build, we are dedicated to delivering results that stand the test of time
           </p>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-16 px-6 bg-background mx-auto max-w-screen-xl">
-        <h2 className="text-3xl font-semibold text-center text-primary mb-10">
-          Our Core Values
+      <section className="py-3 px-6  bg-background mx-auto max-w-screen-xl">
+        <h2 className="text-3xl font-semibold text-primary mb-10">
+          What Drives AIM
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6  mx-auto">
-          <Card className="text-center  border-primary">
-            <CardContent className="p-6">
-              <ShieldCheck className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold">Integrity</h3>
-              <p className="text-muted-foreground mt-2">
-                We operate with honesty and transparency in all aspects of our
-                work.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="text-center border-primary">
-            <CardContent className="p-6">
-              <Construction className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold">Expertise</h3>
-              <p className="text-muted-foreground mt-2">
-                Our expert team delivers precise, data-driven construction
-                guidance.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="text-center border-primary">
-            <CardContent className="p-6">
-              <Users className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold">Teamwork</h3>
-              <p className="text-muted-foreground mt-2">
-                Collaboration drives every successful project we undertake.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="text-center border-primary">
-            <CardContent className="p-6">
-              <Leaf className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold">Sustainability</h3>
-              <p className="text-muted-foreground mt-2">
-                We promote sustainable practices that support long-term
-                development.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6  mx-auto">
 
-      {/* Stats Section */}
-      <section className="py-16 px-6 max-w-screen-xl mx-auto text-center">
-        <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-4xl font-bold text-primary">15+</h3>
-            <p className="text-muted-foreground">Years of Experience</p>
+            <h1>Our Mission</h1>
+            <p>Our mission is to serve as your comprehensive solution for all engineering needs. With a highly skilled in-house team comprising
+              consultants, contractors, and interior designers, we are committed to delivering a seamless experience. We expertly manage every phase of
+              your project with precision and care, ensuring a smooth and hassle-free process from start to finish.
+            </p>
+            <br />
+            <div className=" mt-2 ">AIM is dedicated to providing stellar results with wholehearted commitment to every project and to surpassing expectations. By focusing on
+              quality, efficiency, and attention to detail, AIM ensures that every project is accomplished with the highest standards of excellence.</div>
+
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-primary">200+</h3>
-            <p className="text-muted-foreground">Completed Projects</p>
+            <h1>Our Vision</h1>
+            <p>AIM is a trusted partner, known for its reliability and efficiency in delivering high-quality services. With a strong commitment to each project
+              and dedicated resources, AIM ensures a positive and accommodating experience. We take pride in building long-term relationships with our
+              clients by consistently meeting their expectations and delivering results that stand the test of time.</p>
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-primary">50+</h3>
-            <p className="text-muted-foreground">Qualified Experts</p>
+            <h1>Our Values</h1>
+            <p>At AIM, we believe in creating a healthy work environment where our team thrives both professionally and personally. We foster a culture of
+              work-life balance, allowing our team to love what they do while maintaining their well-being. Our commitment to excellence is reflected in
+              our unwavering focus on listening to our clients' needs and delivering tailored solutions. With complete transparency in all our processes,
+              we ensure our clients are always informed and confident in our work, building trust and long-lasting partnerships.</p>
           </div>
         </div>
       </section>
 
-      {/* Company Timeline */}
-      {/* <CompanyTimeline /> */}
 
-      <div className="mx-auto max-w-screen-xl">
-        <h2 className="text-3xl font-semibold text-primary mb-6 text-center">
-          Our Teams
-        </h2>
-        <div className="flex flex-row items-center justify-center mb-10 w-full">
-          <AnimatedTooltip items={people} />
-        </div>
-      </div>
+
+
+
+
     </div>
   );
 }

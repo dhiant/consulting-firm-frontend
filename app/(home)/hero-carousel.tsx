@@ -9,25 +9,25 @@ import SlideUpAnimation from "@/components/animations/slide-up-variants";
 const slides = [
   {
     image: "/images/home.jpg",
-    heading: "Transform Your Space",
+    heading: "Your Vision, Our Solution",
     subheading:
-      "Innovative designs that reflect your style and enhance your life.",
-    buttonLink: "/portfolio",
-    buttonText: "Explore Our Work",
+      "AIM to transform ideas into iconic spaces.",
+    buttonLink: "/services",
+    buttonText: "EXPLORE OUR SERVICES ",
   },
   {
     image: "/images/services.jpg",
-    heading: "Modern Interior Magic",
-    subheading: "Experience elegance and comfort like never before.",
-    buttonLink: "/services",
-    buttonText: "Our Services",
+    heading: "Designing Spaces, Engineering Solutions ",
+    subheading: "AIM to transform spaces into statements.",
+    buttonLink: "/projects",
+    buttonText: "EXPLORE OUR WORK",
   },
   {
     image: "/images/about.jpg",
-    heading: "Creative Living Spaces",
-    subheading: "Bringing your dream home to life with artistry and precision.",
+    heading: "We Express in Design, We Execute in Structure",
+    subheading: "AIM to sculpt ideas into structures, design into identity.",
     buttonLink: "/contact",
-    buttonText: "Get in Touch",
+    buttonText: "CHALLLENGE US",
   },
 ];
 
