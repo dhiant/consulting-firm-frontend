@@ -1,27 +1,17 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { MoveRight } from 'lucide-react';
-
+import { MoveRight } from "lucide-react";
 
 const ContactCard = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-
   });
 
   const [loading, setLoading] = useState(false);
@@ -42,7 +32,6 @@ const ContactCard = () => {
 
     console.log(fullName);
 
-
     if (!email) {
       toast.error("Please fill in required fields.");
       return;
@@ -58,7 +47,6 @@ const ContactCard = () => {
       setFormData({
         fullName: "",
         email: "",
-
       });
 
       toast.success("Message sent successfully!");
@@ -73,14 +61,18 @@ const ContactCard = () => {
   return (
     <Card className="bg-primary">
       <CardHeader>
-        <CardTitle className="text-white">Discover Quality and Precision: Request a Quote for Our Expert Services</CardTitle>
-
+        <CardTitle className="text-white">
+          Discover Quality and Precision: Request a Quote for Our Expert
+          Services
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="flex flex-row justify-between">
             <div className="space-y-2">
-              <Label htmlFor="fullName" className="text-white">Name</Label>
+              <Label htmlFor="fullName" className="text-white">
+                Name
+              </Label>
               <Input
                 className="text-white"
                 id="fullName"
@@ -91,7 +83,6 @@ const ContactCard = () => {
               <div className="text-white">I am not a Robot</div>
             </div>
 
-
             <div className="space-y-2">
               <Label htmlFor="email" className="text-white">
                 Email
@@ -99,7 +90,6 @@ const ContactCard = () => {
               <Input
                 className="text-white"
                 id="email"
-
                 type="email"
                 placeholder="Enter Your Email Address"
                 required
@@ -107,12 +97,15 @@ const ContactCard = () => {
                 onChange={handleChange}
               />
               <div>
-                <Button type="submit" className="w-full bg-white text-black" disabled={loading}>
+                <Button
+                  type="submit"
+                  className="w-full bg-white text-black"
+                  disabled={loading}
+                >
                   {loading ? "Sending..." : "Request a Quote"}
                   <MoveRight />
                 </Button>
               </div>
-
             </div>
           </div>
         </form>

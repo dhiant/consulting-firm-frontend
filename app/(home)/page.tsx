@@ -1,21 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  // CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 // import SlideUpAnimation from "@/components/animations/slide-up-variants";
 // import ZoomInAnimation from "@/components/animations/zoom-in-variants";
 // import { Testimonials } from "@/components/testimonials";
@@ -66,12 +48,10 @@ const projects = [
     testimonial:
       "The attention to detail in our villa is extraordinary. It's the perfect vacation home we've always dreamed of.",
   },
-
-]
+];
 export default function HomePage() {
   return (
     <div>
-
       <HeroCarousel />
       <div className="p-4 mt-6 ">
         <div className=" grid grid-cols-4 mb-12 border">
@@ -89,7 +69,6 @@ export default function HomePage() {
       <ServiceContext />
 
       <SectorsSection />
-
     </div>
   );
 }

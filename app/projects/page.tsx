@@ -3,14 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import HoverCard from "./hover";
 
 const projects = [
@@ -123,7 +115,8 @@ export default function PortfolioPage() {
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
             <h1 className="text-5xl font-bold mb-4">Crafted Dreams</h1>
             <p className="text-xl mb-8">
-              Take a closer look at the quality and creative precision that define AIM.
+              Take a closer look at the quality and creative precision that
+              define AIM.
             </p>
           </div>
         </div>
@@ -131,23 +124,27 @@ export default function PortfolioPage() {
       <div className="container mx-auto px-4 py-8 mt-24 max-w-screen-xl">
         {/* <h1 className="text-4xl font-bold mb-8 text-primary">Our Projects</h1> */}
 
-
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {["All", "Office", "Warehouse", "Restaurant", "Residential", "Hospital", "Retail", "Landscaping"].map(
-            (category) => (
-              <Button
-                key={category}
-                onClick={() => setFilter(category)}
-                variant={filter === category ? "default" : "outline"}
-                className="border-primary"
-              >
-                {category}
-              </Button>
-            )
-          )}
+          {[
+            "All",
+            "Office",
+            "Warehouse",
+            "Restaurant",
+            "Residential",
+            "Hospital",
+            "Retail",
+            "Landscaping",
+          ].map((category) => (
+            <Button
+              key={category}
+              onClick={() => setFilter(category)}
+              variant={filter === category ? "default" : "outline"}
+              className="border-primary"
+            >
+              {category}
+            </Button>
+          ))}
         </div>
-
-
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 p-3">
         {filteredProjects.map((card) => (
@@ -160,7 +157,6 @@ export default function PortfolioPage() {
           />
         ))}
       </div>
-
     </div>
   );
 }

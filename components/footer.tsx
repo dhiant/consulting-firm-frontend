@@ -2,19 +2,13 @@
 import {
   Copy,
   ExternalLink,
-  Facebook,
-  Instagram,
-  Linkedin,
   Mail,
   MapPin,
   MoveRight,
   Phone,
   PhoneCall,
-  Router,
-  Twitter,
 } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 
 export default function Footer() {
@@ -29,12 +23,17 @@ export default function Footer() {
               Logo of company
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-             Connect with us for a personalized quote and service consultation. We respond quickly and attentively to your request.
+              Connect with us for a personalized quote and service consultation.
+              We respond quickly and attentively to your request.
             </p>
             {/* Social Media Icons */}
             <div className="flex  space-x-4">
-             <button onClick={()=>router.push("/contact")} className="border py-2 px-5 mt-12 flex flex-row ">Contact US <MoveRight className="ml-2"/></button>
-            
+              <button
+                onClick={() => router.push("/contact")}
+                className="border py-2 px-5 mt-12 flex flex-row "
+              >
+                Contact US <MoveRight className="ml-2" />
+              </button>
             </div>
           </div>
 
@@ -70,17 +69,9 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3 text-gray-300 text-sm">
-              <li className="flex items-start">
-               
-               Authority Approval
-              </li>
-              <li className="flex items-center">
-                Planning and Design
-              </li>
-              <li className="flex items-center">
-               Fit-out-Build
-               
-              </li>
+              <li className="flex items-start">Authority Approval</li>
+              <li className="flex items-center">Planning and Design</li>
+              <li className="flex items-center">Fit-out-Build</li>
             </ul>
           </div>
 
@@ -111,13 +102,12 @@ export default function Footer() {
             </form>
           </div> */}
 
-           <div>
+          <div>
             <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
               DUBAI OFFICE
             </h4>
             <ul className="space-y-3 text-gray-300 text-sm">
-
-               <li className="flex items-center">
+              <li className="flex items-center">
                 <span className="mr-2">
                   <Phone />
                 </span>
@@ -134,46 +124,43 @@ export default function Footer() {
                 </span>
                 058 896 8000
               </li>
-            
-             
+
               <li className="flex items-center">
                 <span className="mr-2">
                   <Mail />
                 </span>
-               <div className="flex flex-row ">
-                 <a
-                  href="mailto:info@constructionsite.com"
-                  className="hover:text-white transition-colors duration-300 mr-2"
-                >
-                  info@constructionsite.com
-                
-                </a>
-                  <Copy/>
-               </div>
+                <div className="flex flex-row ">
+                  <a
+                    href="mailto:info@constructionsite.com"
+                    className="hover:text-white transition-colors duration-300 mr-2"
+                  >
+                    info@constructionsite.com
+                  </a>
+                  <Copy />
+                </div>
               </li>
 
-               <li className="flex items-start">
- <div className="flex flex-row">
-                 <span className="mr-2 ">
-                  <MapPin />
-                </span>
-                Project Office:OpalTower-Business Bay-Dubai.
-                <ExternalLink/>
-               </div>
+              <li className="flex items-start">
+                <div className="flex flex-row">
+                  <span className="mr-2 ">
+                    <MapPin />
+                  </span>
+                  Project Office:OpalTower-Business Bay-Dubai.
+                  <ExternalLink />
+                </div>
               </li>
 
-               <li className="flex  items-start">
-               <div className="flex flex-row">
-                 <span className="mr-2 ">
-                  <MapPin />
-                </span>
-                Project Office:OpalTower-Business Bay-Dubai
-                <ExternalLink/>
-               </div>
+              <li className="flex  items-start">
+                <div className="flex flex-row">
+                  <span className="mr-2 ">
+                    <MapPin />
+                  </span>
+                  Project Office:OpalTower-Business Bay-Dubai
+                  <ExternalLink />
+                </div>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* Bottom Bar */}

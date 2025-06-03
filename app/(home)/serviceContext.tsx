@@ -1,20 +1,6 @@
 "use client";
-import {
-  Copy,
-  ExternalLink,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  MoveRight,
-  Phone,
-  PhoneCall,
-  Router,
-  Twitter,
-} from "lucide-react";
-import Link from "next/link";
-import { Button } from "./ui/button";
+import { MoveRight } from "lucide-react";
+
 import { useRouter } from "next/navigation";
 
 export default function ServiceContext() {
@@ -33,9 +19,7 @@ export default function ServiceContext() {
               Turning Concepts into Built Realities
             </p>
             {/* Social Media Icons */}
-
           </div>
-
 
           <div>
             <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
@@ -43,12 +27,13 @@ export default function ServiceContext() {
             </h4>
             <ul className="space-y-3 text-black text-md">
               <li className="flex items-start">
-
-                Start the Authority Approval process with us. With our in-depth knowledge of local regulations, we’ll handle submitting your drawings to the
-                authorities and secure the necessary permits to begin your project. We’ll guide you through the entire approval process, ensuring your
-                project complies with all regulations and securing the necessary approvals to move forward.
+                Start the Authority Approval process with us. With our in-depth
+                knowledge of local regulations, we’ll handle submitting your
+                drawings to the authorities and secure the necessary permits to
+                begin your project. We’ll guide you through the entire approval
+                process, ensuring your project complies with all regulations and
+                securing the necessary approvals to move forward.
               </li>
-
             </ul>
           </div>
 
@@ -58,12 +43,13 @@ export default function ServiceContext() {
             </h4>
             <ul className="space-y-3 text-black text-md">
               <li className="flex items-start">
-
-                Embark on the Design and Drawings phase with us. We’ll collaborate closely to create detailed plans that bring your vision to life. Our
-                experienced team ensures each design is aesthetically pleasing and fully compliant with authority requirements, setting the stage for
-                a smooth and successful project.
+                Embark on the Design and Drawings phase with us. We’ll
+                collaborate closely to create detailed plans that bring your
+                vision to life. Our experienced team ensures each design is
+                aesthetically pleasing and fully compliant with authority
+                requirements, setting the stage for a smooth and successful
+                project.
               </li>
-
             </ul>
           </div>
           <div>
@@ -72,23 +58,24 @@ export default function ServiceContext() {
             </h4>
             <ul className="space-y-3 text-black text-md">
               <li className="flex items-start">
-                Begin the Fit-Out and Build phase with us. Our skilled team will transform your design into a fully realized space, managing every
-                stage of construction with care and expertise. We focus on craftsmanship and efficiency to deliver a final product that meets your
-                vision and stands the test of time.
+                Begin the Fit-Out and Build phase with us. Our skilled team will
+                transform your design into a fully realized space, managing
+                every stage of construction with care and expertise. We focus on
+                craftsmanship and efficiency to deliver a final product that
+                meets your vision and stands the test of time.
               </li>
-
             </ul>
           </div>
-
-
-
         </div>
         <div className="flex justify-center mx-auto space-x-4">
-          <button onClick={() => router.push("/contact")} className="border py-2 px-5 mt-12 flex flex-row ">Contact US <MoveRight className="ml-2" /></button>
-
+          <button
+            onClick={() => router.push("/contact")}
+            className="border py-2 px-5 mt-12 flex flex-row "
+          >
+            Contact US <MoveRight className="ml-2" />
+          </button>
         </div>
         {/* Bottom Bar */}
-
       </div>
     </div>
   );

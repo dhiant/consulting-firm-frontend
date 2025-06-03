@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
-import ContactCard from "./contact-card";
 import ContactForm from "./contactform";
 
 export default function ContactPage() {
@@ -31,8 +29,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between space-y-3">
             <p>
-              At AIM, we truly value our clients and would be excited to collaborate with you. Reach out for a custom quote or any service-related
-              questions, and we will respond promptly.
+              At AIM, we truly value our clients and would be excited to
+              collaborate with you. Reach out for a custom quote or any
+              service-related questions, and we will respond promptly.
             </p>
             <div className="flex items-center space-x-3">
               <div className="bg-primary p-2 text-white hover:text-black cursor-pointer rounded-full">
@@ -75,8 +74,6 @@ export default function ContactPage() {
                 </span>
               </div>
             </div>
-
-
           </div>
 
           {/* <ContactCard /> */}
