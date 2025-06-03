@@ -1,13 +1,12 @@
-import Image from "next/image";
 import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
-import ContactCard from "./contact-card";
+import ContactForm from "./contactform";
 
 export default function ContactPage() {
   return (
     <main>
-      <section className="relative h-[70vh] bg-black to-white text-white flex justify-between items-center">
+      <section className="relative h-[10vh] bg-primary to-white text-white flex justify-between items-center">
         <div className="container mx-auto max-w-screen-xl">
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <Image
               src="/images/contact.jpg"
               alt="Consturction Site Showcase"
@@ -16,12 +15,12 @@ export default function ContactPage() {
               className="opacity-50"
               loading="eager"
             />
-          </div>
+          </div> */}
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
+            {/* <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
             <p className="text-xl mb-8">
               Innovative designs that reflect your style and enhance your life.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -30,10 +29,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between space-y-3">
             <p>
-              We value our clients and would be delighted to have you as one.
-              Please reach out to us for a personalized quote or any inquiries
-              about our services. Rest assured, we will respond promptly to your
-              message.
+              At AIM, we truly value our clients and would be excited to
+              collaborate with you. Reach out for a custom quote or any
+              service-related questions, and we will respond promptly.
             </p>
             <div className="flex items-center space-x-3">
               <div className="bg-primary p-2 text-white hover:text-black cursor-pointer rounded-full">
@@ -70,19 +68,7 @@ export default function ContactPage() {
                 <MapPin className="h-8 w-8" />
               </div>
               <div className="flex flex-col">
-                <span className=" font-normal">Project Office</span>
-                <span className="font-semibold">
-                  Opal Tower - Business Bay - Dubai
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3">
-              <div className="bg-primary p-2 text-white cursor-pointer rounded-full">
-                <MapPin className="h-8 w-8" />
-              </div>
-              <div className="flex flex-col">
-                <span className=" font-normal">Project Office</span>
+                <span className=" font-normal">Office</span>
                 <span className="font-semibold">
                   Opal Tower - Business Bay - Dubai
                 </span>
@@ -90,7 +76,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <ContactCard />
+          {/* <ContactCard /> */}
+          <ContactForm />
         </div>
       </div>
     </main>

@@ -12,7 +12,7 @@ const QuotationModal = () => {
   return (
     <Dialog>
       <DialogTrigger className="flex gap-2 items-center hover:text-black">
-        <span>Free Quote</span> <MoveUpRight size={16} />
+        <span>Get a Quote</span> <MoveUpRight size={16} />
       </DialogTrigger>
 
       <DialogContent className="p-1">

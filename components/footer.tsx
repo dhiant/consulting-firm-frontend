@@ -1,17 +1,18 @@
 "use client";
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
+  Copy,
+  ExternalLink,
   Mail,
   MapPin,
+  MoveRight,
   Phone,
-  Twitter,
+  PhoneCall,
 } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 py-12 max-w-screen-xl">
@@ -19,46 +20,20 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold tracking-tight">
-              Construction Site Co.
+              Logo of company
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Crafting innovative spaces that inspire and endure.
+              Connect with us for a personalized quote and service consultation.
+              We respond quickly and attentively to your request.
             </p>
             {/* Social Media Icons */}
-            <div className="flex space-x-4">
-              {[
-                {
-                  Icon: Facebook,
-                  href: "https://facebook.com",
-                  label: "Facebook",
-                },
-                {
-                  Icon: Twitter,
-                  href: "https://twitter.com",
-                  label: "Twitter",
-                },
-                {
-                  Icon: Instagram,
-                  href: "https://instagram.com",
-                  label: "Instagram",
-                },
-                {
-                  Icon: Linkedin,
-                  href: "https://linkedin.com",
-                  label: "LinkedIn",
-                },
-              ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
-                >
-                  <Icon className="w-6 h-6" />
-                </a>
-              ))}
+            <div className="flex  space-x-4">
+              <button
+                onClick={() => router.push("/contact")}
+                className="border py-2 px-5 mt-12 flex flex-row "
+              >
+                Contact US <MoveRight className="ml-2" />
+              </button>
             </div>
           </div>
 
@@ -72,7 +47,7 @@ export default function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
                 { href: "/services", label: "Services" },
-                { href: "/portfolio", label: "Portfolio" },
+                { href: "/projects", label: "Projects" },
                 { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Contact" },
               ].map(({ href, label }) => (
@@ -91,42 +66,17 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
-              Contact Us
+              Services
             </h4>
             <ul className="space-y-3 text-gray-300 text-sm">
-              <li className="flex items-start">
-                <span className="mr-2">
-                  <MapPin />
-                </span>
-                123 Design Street, Creativity City, 12345
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">
-                  <Phone />
-                </span>
-                <a
-                  href="tel:+1234567890"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  (123) 456-7890
-                </a>
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">
-                  <Mail />
-                </span>
-                <a
-                  href="mailto:info@constructionsite.com"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  info@constructionsite.com
-                </a>
-              </li>
+              <li className="flex items-start">Authority Approval</li>
+              <li className="flex items-center">Planning and Design</li>
+              <li className="flex items-center">Fit-out-Build</li>
             </ul>
           </div>
 
           {/* Newsletter Signup */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
               Stay Updated
             </h4>
@@ -150,6 +100,66 @@ export default function Footer() {
                 Subscribe
               </Button>
             </form>
+          </div> */}
+
+          <div>
+            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
+              DUBAI OFFICE
+            </h4>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li className="flex items-center">
+                <span className="mr-2">
+                  <Phone />
+                </span>
+                <a
+                  href="tel:043522142"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  043522142
+                </a>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">
+                  <PhoneCall />
+                </span>
+                058 896 8000
+              </li>
+
+              <li className="flex items-center">
+                <span className="mr-2">
+                  <Mail />
+                </span>
+                <div className="flex flex-row ">
+                  <a
+                    href="mailto:info@constructionsite.com"
+                    className="hover:text-white transition-colors duration-300 mr-2"
+                  >
+                    info@constructionsite.com
+                  </a>
+                  <Copy />
+                </div>
+              </li>
+
+              <li className="flex items-start">
+                <div className="flex flex-row">
+                  <span className="mr-2 ">
+                    <MapPin />
+                  </span>
+                  Project Office:OpalTower-Business Bay-Dubai.
+                  <ExternalLink />
+                </div>
+              </li>
+
+              <li className="flex  items-start">
+                <div className="flex flex-row">
+                  <span className="mr-2 ">
+                    <MapPin />
+                  </span>
+                  Project Office:OpalTower-Business Bay-Dubai
+                  <ExternalLink />
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
