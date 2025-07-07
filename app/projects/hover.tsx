@@ -125,7 +125,7 @@ export default function HoverCard({ title, subtitle, desc, image }) {
 
     <div>
       <div
-        className="relative w-full h-[370px] md:w-full md:h-[375px] lg:w-full lg:h-[375px] xl:w-full xl:h-[375px]  overflow-hidden group cursor-pointer"
+        className="relative w-[370px] h-[500px] lg:w-[350px] lg:h-[500px] xl:w-[400px] xl:h-[550px] mb-12 overflow-hidden group cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >

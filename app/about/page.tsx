@@ -49,7 +49,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Dynamic Hero Section */}
-      <section className="relative h-[100vh] bg-black to-white text-white flex justify-between items-center">
+      <section className="relative h-[100vh] bg-black to-white text-white flex justify-between items-center ">
         <div className="container mx-auto max-w-screen-xl">
           <div className="absolute inset-0">
             <Image
@@ -76,10 +76,10 @@ export default function AboutPage() {
 
       {/* Who We Are */}
       <section className="py-3 px-6 max-w-screen-xl mx-auto text-center md:text-left mb-12 mt-12">
-        <h2 className="text-3xl font-semibold text-primary mb-6">Who We Are</h2>
+        <h2 className="text-[40px] font-semibold text-primary mb-6">Who We Are</h2>
         <div className=" text-lg">
           <p className="mb-3">
-            <span className="text-bold text-black font-bold ">AIM</span> is a
+            <span className="text-bold text-black font-bold font-sans ">AIMTERIOR</span> is a
             Dubai-based company that specializes in providing comprehensive
             consultation services for construction approvals, interior design,
             and design-build projects, all in compliance with Dubai&apos;s
@@ -105,7 +105,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            At <span className="text-bold text-black font-bold">AIM</span>, we
+            At <span className="text-bold text-black font-bold">AIMTERIOR</span>, we
             believe that every project is an opportunity to create something
             exceptional. We combine innovation with industry expertise to
             provide practical, sustainable solutions that meet the evolving
@@ -120,12 +120,12 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-3 px-6  bg-background mx-auto max-w-screen-xl">
-        <h2 className="text-3xl font-semibold text-primary mb-10">
-          What Drives AIM
+      <section className="py-3 px-6  bg-[#0D1B2A] mx-auto max-w-screen-xl text-white mb-6">
+        <h2 className="text-[40px] font-semibold text-white mb-10">
+          What Drives AIMTERIOR
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6  mx-auto">
-          <div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-[20px] mx-auto">
+          <div className="border-r-2 mr-3">
             <h1>Our Mission</h1>
             <p>
               Our mission is to serve as your comprehensive solution for all
@@ -137,19 +137,19 @@ export default function AboutPage() {
             </p>
             <br />
             <div className=" mt-2 ">
-              AIM is dedicated to providing stellar results with wholehearted
+              AIMTERIOR is dedicated to providing stellar results with wholehearted
               commitment to every project and to surpassing expectations. By
-              focusing on quality, efficiency, and attention to detail, AIM
+              focusing on quality, efficiency, and attention to detail, AIMTERIOR
               ensures that every project is accomplished with the highest
               standards of excellence.
             </div>
           </div>
-          <div>
+          <div className="border-r-2 mr-3">
             <h1>Our Vision</h1>
             <p>
-              AIM is a trusted partner, known for its reliability and efficiency
+              AIMTERIOR is a trusted partner, known for its reliability and efficiency
               in delivering high-quality services. With a strong commitment to
-              each project and dedicated resources, AIM ensures a positive and
+              each project and dedicated resources, AIMTERIOR ensures a positive and
               accommodating experience. We take pride in building long-term
               relationships with our clients by consistently meeting their
               expectations and delivering results that stand the test of time.
@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div>
             <h1>Our Values</h1>
             <p>
-              At AIM, we believe in creating a healthy work environment where
+              At AIMTERIOR, we believe in creating a healthy work environment where
               our team thrives both professionally and personally. We foster a
               culture of work-life balance, allowing our team to love what they
               do while maintaining their well-being. Our commitment to

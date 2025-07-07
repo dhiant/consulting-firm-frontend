@@ -16,7 +16,7 @@ const QuotationModal = () => {
         <span>Get a Quote</span> <MoveUpRight size={16} />
       </DialogTrigger>
 
-      <DialogContent className="p-1">
+      <DialogContent className="">
         <DialogDescription>
           <ContactCard />
         </DialogDescription>
