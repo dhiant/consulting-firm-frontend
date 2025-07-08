@@ -104,10 +104,10 @@ const CarouselSection = () => {
   };
 
   return (
-    <section className="mx-5 justify-between mb-16">
+    <section className="mx-5 justify-between mb-6">
       <div className="flex flex-col lg:flex-row md:flex-col lg:gap-20 mx-auto max-w-screen-xl px-4">
         <div className="mr-8">
-          <h2 className="text-3xl font-bold mb-5 uppercase text-primary">
+          <h2 className="text-[34px] font-bold mb-5 uppercase text-primary">
             Crafting Exceptional Spaces
           </h2>
           <p className="">
@@ -172,7 +172,7 @@ const CarouselSection = () => {
           </p>
         </div>
 
-        <div className="lg:w-[55%]">
+        <div className="">
           <Carousel
             opts={{
               align: "start",
@@ -182,20 +182,31 @@ const CarouselSection = () => {
           >
             <CarouselContent className="space-x-2">
               {sectors.map((item, index) => (
+                
                 <CarouselItem
                   key={index}
                   className="basis-1/2 md:basis-1/3 lg:basis-1/3"
                 >
-                  <div className="w-full h-full overflow-hidden group">
+                  <div className="flex flex-col h-full">
+
+                     <div className="w-full  overflow-hidden group">
                     <Image
                       src={item.image}
                       alt={item.title} // Use item.title for alt text for better accessibility
                       width={500}
                       height={500}
-                      className="w-full h-[200px] object-cover transition-transform duration-700 ease-in-out hover:scale-[1.09] rounded-lg"
+                      className="w-full h-[250px] lg:h-[300px] object-cover transition-transform duration-700 ease-in-out hover:scale-[1.09] rounded-lg"
                     />
                   </div>
+
+                     <h1 className="mt-2 text-lg font-semibold text-center">{item.title}</h1>
+                  </div>
+                 
+               
+                
                 </CarouselItem>
+              
+               
               ))}
             </CarouselContent>
           </Carousel>

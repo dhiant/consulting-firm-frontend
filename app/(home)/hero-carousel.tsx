@@ -91,14 +91,14 @@ const HeroCarousel = () => {
       {/* Overlay Content */}
       <SlideUpAnimation className="relative container mx-auto px-4 h-full flex flex-col justify-center z-10 transition-opacity duration-1000 ease-in-out max-w-screen-xl">
         <h1
-          className={`text-5xl font-bold mb-4 transition-all duration-700 ${
+          className={`text-[80px] font-bold mb-4 transition-all duration-700 ${
             fade ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
           }`}
         >
           {heading}
         </h1>
         <p
-          className={`text-xl mb-8 transition-all duration-700 delay-100 ${
+          className={`text-[18px] mb-8 transition-all duration-700 delay-100 ${
             fade ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
           }`}
         >
