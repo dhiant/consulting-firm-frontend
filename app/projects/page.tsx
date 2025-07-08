@@ -123,6 +123,10 @@ export default function PortfolioPage() {
       </section>
       <div className="container mx-auto px-4 py-8 mt-24 max-w-screen-xl">
         {/* <h1 className="text-4xl font-bold mb-8 text-primary">Our Projects</h1> */}
+        <div className="my-4">
+          <h1 className="text-center text-[40px]">Our Work </h1>
+          <p className="text-[#767D85]">Our work reflects a thoughtful blend of architecture, engineering, and interior fit-out, shaped by a clear understanding of space, function, and form.</p>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {[
@@ -146,7 +150,7 @@ export default function PortfolioPage() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 p-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-3">
         {filteredProjects.map((card) => (
           <HoverCard
             key={card.id}

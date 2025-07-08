@@ -90,8 +90,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import QuotationModal from "./quotation-modal";
+
 import { Menu, X } from "lucide-react"; // Optional: icon library like lucide
+import QuotationModal from "./quotation-modal-adv";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
