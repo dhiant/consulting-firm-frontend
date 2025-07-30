@@ -106,9 +106,9 @@ export default function BlogPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Discover the latest trends, design philosophies, and expert
-              insights from AIMTERIOR's team. Explore our thought leadership on
-              architecture, interior design, and the evolving landscape of
-              Dubai's construction industry.
+              insights from AIMTERIOR&apos;s team. Explore our thought
+              leadership on architecture, interior design, and the evolving
+              landscape of Dubai&apos;s construction industry.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
@@ -132,7 +132,7 @@ export default function BlogPage() {
                 { name: "Project Stories", icon: "🏗️" },
                 { name: "Industry News", icon: "📰" },
                 { name: "Expert Tips", icon: "💡" },
-              ].map((category, index) => (
+              ].map((category) => (
                 <div key={category.name} className="group text-center">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:border-indigo-400/50">
                     <div className="text-2xl mb-2">{category.icon}</div>

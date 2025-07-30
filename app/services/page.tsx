@@ -286,8 +286,8 @@ export default function ServicesPage() {
             <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
               From authority approvals to final construction, AIMTERIOR delivers
               end-to-end services that streamline your project journey.
-              Experience the difference of working with Dubai's most trusted
-              architectural and design consultancy.
+              Experience the difference of working with Dubai&apos;s most
+              trusted architectural and design consultancy.
             </p>
 
             {/* CTA Buttons */}
@@ -544,8 +544,8 @@ export default function ServicesPage() {
               Ready to Start Your Project?
             </h2>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Let's discuss your requirements and create a customized solution
-              that brings your vision to life
+              Let&apos;s discuss your requirements and create a customized
+              solution that brings your vision to life
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

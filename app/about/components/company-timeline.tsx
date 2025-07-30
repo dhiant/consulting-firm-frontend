@@ -242,8 +242,8 @@ export function CompanyTimeline() {
           <p className="text-gray-600 text-sm md:text-base font-normal mb-8 leading-relaxed">
             Launched the company and completed 3 residential construction
             projects, setting the foundation for a successful future. Our
-            founding vision was to transform Dubai's architectural landscape
-            with precision and innovation.
+            founding vision was to transform Dubai&apost;s architectural
+            landscape with precision and innovation.
           </p>
 
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">

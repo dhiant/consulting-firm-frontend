@@ -1,23 +1,28 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Mail, MoveRight, Phone } from "lucide-react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
 const ContactCard = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phoneNumber:"",
-    company:"",
-    message:"",
-    interest:"",
+    phoneNumber: "",
+    company: "",
+    message: "",
+    interest: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -53,10 +58,10 @@ const ContactCard = () => {
       setFormData({
         fullName: "",
         email: "",
-      phoneNumber:"",
-    company:"",
-    message:"",
-    interest:"",
+        phoneNumber: "",
+        company: "",
+        message: "",
+        interest: "",
       });
 
       toast.success("Message sent successfully!");
@@ -70,11 +75,7 @@ const ContactCard = () => {
 
   return (
     <Card className=" mt-4">
-     
       <CardContent>
-
-
-     
         <h2 className="text-3xl font-bold text-gray-900 my-6">Contact us</h2>
 
         <div className="flex items-center gap-4 text-gray-700 mb-6">
@@ -88,13 +89,16 @@ const ContactCard = () => {
           </span>
         </div>
 
-        <form onSubmit={handleSubmit} className=" my-3 space-y-4 bg-white   w-full max-w-2xl  relative">
+        <form
+          onSubmit={handleSubmit}
+          className=" my-3 space-y-4 bg-white   w-full max-w-2xl  relative"
+        >
           <div>
             <Select
               onValueChange={(value) =>
-    setFormData({ ...formData, interest: value })
-  }
->
+                setFormData({ ...formData, interest: value })
+              }
+            >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="I am interested in" />
               </SelectTrigger>
@@ -108,37 +112,37 @@ const ContactCard = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
-            id="fullName"
+              id="fullName"
               type="text"
               placeholder="Full name******"
               className="border-b border-gray-300 focus:outline-none p-2"
               value={formData.fullName}
-                onChange={handleChange}
-           />
+              onChange={handleChange}
+            />
             <Input
-            id="phoneNumber"
+              id="phoneNumber"
               type="text"
               placeholder="Phone number******"
               className="border-b border-gray-300 focus:outline-none p-2"
               value={formData.phoneNumber}
-                onChange={handleChange}
-           />
+              onChange={handleChange}
+            />
             <Input
-            id="email"
+              id="email"
               type="email"
               placeholder="Email address******"
               className="border-b border-gray-300 focus:outline-none p-2"
               value={formData.email}
-                onChange={handleChange}
-           />
+              onChange={handleChange}
+            />
             <Input
-            id="company"
+              id="company"
               type="text"
               placeholder="Company******"
               className="border-b border-gray-300 focus:outline-none p-2"
               value={formData.company}
-                onChange={handleChange}
-           />
+              onChange={handleChange}
+            />
           </div>
 
           <div>
@@ -156,12 +160,11 @@ const ContactCard = () => {
           <div className="flex items-center gap-4">
             <Button
               type="submit"
-             
               className="border px-6 py-2 text-sm font-semibold text-white hover:bg-gray-700"
-             disabled={loading}
+              disabled={loading}
             >
-             {loading?"Sending":"Send a Quote"}
-             <MoveRight />
+              {loading ? "Sending" : "Send a Quote"}
+              <MoveRight />
             </Button>
             <span className="text-xs text-gray-500">
               By submitting this form you agree to our{" "}
@@ -171,7 +174,6 @@ const ContactCard = () => {
             </span>
           </div>
         </form>
-    
       </CardContent>
       <ToastContainer />
     </Card>

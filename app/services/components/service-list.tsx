@@ -156,7 +156,7 @@ const ServiceList: React.FC<ServiceListProps> = ({
           <p className="text-gray-600">
             Showing {filteredData.length} of {data.length} services
             {searchTerm && (
-              <span className="font-semibold"> for "{searchTerm}"</span>
+              <span className="font-semibold"> for {searchTerm}</span>
             )}
           </p>
         </div>

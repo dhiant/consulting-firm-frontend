@@ -36,7 +36,7 @@ export default function AboutPage() {
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
-              Crafting Tomorrow's
+              {"Crafting Tomorrow's"}
               <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Architectural Legacy
               </span>
@@ -46,7 +46,7 @@ export default function AboutPage() {
               Where vision meets expertise. AIMTERIOR transforms architectural
               dreams into stunning realities, delivering exceptional design
               solutions with precision, innovation, and uncompromising quality
-              across Dubai's dynamic landscape.
+              across Dubai&apost;s dynamic landscape.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay">
@@ -153,9 +153,9 @@ export default function AboutPage() {
                       is a Dubai-based company that specializes in providing
                       comprehensive consultation services for construction
                       approvals, interior design, and design-build projects, all
-                      in compliance with Dubai's regulatory authorities. With a
-                      team of experienced professionals, we manage every stage
-                      of the project seamlessly—from securing necessary
+                      in compliance with Dubai&apost;s regulatory authorities.
+                      With a team of experienced professionals, we manage every
+                      stage of the project seamlessly—from securing necessary
                       government permits and approvals to delivering meticulous
                       design and planning services.
                     </p>
@@ -188,11 +188,11 @@ export default function AboutPage() {
                     <p className="text-gray-600 leading-relaxed">
                       Our approach is built on a foundation of trust,
                       transparency, and collaboration. We understand the
-                      intricacies of Dubai's regulatory environment and are
-                      committed to ensuring that all our clients' projects
-                      comply with the highest standards. From residential to
-                      commercial developments, our expertise spans hospitality,
-                      retail, and office spaces.
+                      intricacies of Dubai&apos;s regulatory environment and are
+                      committed to ensuring that all our clients projects comply
+                      with the highest standards. From residential to commercial
+                      developments, our expertise spans hospitality, retail, and
+                      office spaces.
                     </p>
                   </div>
                 </div>

@@ -43,7 +43,7 @@ export default function ContactPage() {
                   ></div>
                 </div>
                 <span className="text-sm font-semibold tracking-wider uppercase">
-                  Let's Connect
+                  {"Let's Connect"}
                 </span>
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
-              Your dream project starts with a conversation. Whether you're
+              Your dream project starts with a conversation. Whether you&apos;re
               planning a residential renovation, commercial fit-out, or need
               authority approvals, AIMTERIOR is here to bring your vision to
               life with expertise and precision.

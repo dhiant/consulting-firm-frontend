@@ -144,7 +144,7 @@ export default function ServiceContext() {
           </div>
 
           <p className="text-gray-400 mt-6 text-sm">
-            Ready to transform your space? Let's discuss your vision.
+            {"Ready to transform your space? Let's discuss your vision."}
           </p>
         </div>
       </div>

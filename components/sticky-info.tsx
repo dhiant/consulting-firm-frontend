@@ -323,7 +323,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
               <div className="absolute bottom-16 right-0 bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 min-w-[200px] animate-in slide-in-from-bottom-2 fade-in duration-300">
                 <div className="space-y-3">
                   {priorityLinks.map(
-                    ({ Icon, href, label, tooltip, external, className }) => (
+                    ({ Icon, href, label, external, className }) => (
                       <div key={label}>
                         {external ? (
                           <a

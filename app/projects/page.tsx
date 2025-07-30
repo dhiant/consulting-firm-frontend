@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import HoverCard from "./hover";
 
 const projects = [
@@ -157,7 +156,7 @@ export default function PortfolioPage() {
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Explore our curated collection of transformative projects. Each
               design tells a unique story of innovation, precision, and the
-              seamless fusion of form with function across Dubai's diverse
+              seamless fusion of form with function across Dubai&apos;s diverse
               architectural landscape.
             </p>
 
@@ -280,10 +279,7 @@ export default function PortfolioPage() {
               </span>{" "}
               of <span className="font-bold">{projects.length}</span> projects
               {filter !== "All" && (
-                <span className="text-emerald-600">
-                  {" "}
-                  in "{filter}" category
-                </span>
+                <span className="text-emerald-600"> in {filter} category</span>
               )}
             </p>
           </div>
@@ -368,7 +364,7 @@ export default function PortfolioPage() {
                     ))}
                   </div>
                   <p className="text-gray-700 leading-relaxed mb-6 italic">
-                    "{project.testimonial}"
+                    {project.testimonial}
                   </p>
                 </div>
 
@@ -399,8 +395,8 @@ export default function PortfolioPage() {
               Ready to Create Your Dream Project?
             </h2>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Let's collaborate to bring your vision to life with our expertise
-              in architecture, design, and construction excellence.
+              Let&apos;s collaborate to bring your vision to life with our
+              expertise in architecture, design, and construction excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
