@@ -90,9 +90,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-
 import { Menu, X } from "lucide-react"; // Optional: icon library like lucide
 import QuotationModal from "./quotation-modal-adv";
+import Image from "next/image";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -132,8 +132,14 @@ export default function Header() {
         )}
       >
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center max-w-screen-xl">
-          <Link href="/" className="text-2xl font-bold">
-            COMPANY LOGO
+          <Link href="/" className="text-xl font-bold flex items-center">
+            <Image
+              alt="..."
+              src="/images/company_logo.png"
+              height={50}
+              width={50}
+            />
+            <span className="mt-2">AIMTERIOR</span>
           </Link>
 
           {/* Desktop nav */}
