@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import SlideUpAnimation from "@/components/animations/slide-up-variants";
 
 const slides = [
   {
