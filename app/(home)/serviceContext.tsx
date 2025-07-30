@@ -1,84 +1,152 @@
 "use client";
-import { MoveRight } from "lucide-react";
-
+import { MoveRight, CheckCircle, FileText, Hammer } from "lucide-react";
 import { useRouter } from "next/navigation";
+
+const services = [
+  {
+    icon: CheckCircle,
+    title: "Authority Approval",
+    description:
+      "Start the Authority Approval process with us. With our in-depth knowledge of local regulations, we'll handle submitting your drawings to the authorities and secure the necessary permits to begin your project. We'll guide you through the entire approval process, ensuring your project complies with all regulations.",
+    features: [
+      "Permit Processing",
+      "Regulatory Compliance",
+      "Documentation",
+      "Timeline Management",
+    ],
+  },
+  {
+    icon: FileText,
+    title: "Planning and Design",
+    description:
+      "Embark on the Design and Drawings phase with us. We'll collaborate closely to create detailed plans that bring your vision to life. Our experienced team ensures each design is aesthetically pleasing and fully compliant with authority requirements.",
+    features: [
+      "Architectural Design",
+      "3D Visualization",
+      "Technical Drawings",
+      "Concept Development",
+    ],
+  },
+  {
+    icon: Hammer,
+    title: "Fit-out-Build",
+    description:
+      "Begin the Fit-Out and Build phase with us. Our skilled team will transform your design into a fully realized space, managing every stage of construction with care and expertise. We focus on craftsmanship and efficiency.",
+    features: [
+      "Project Management",
+      "Quality Control",
+      "Timeline Delivery",
+      "Expert Craftsmanship",
+    ],
+  },
+];
 
 export default function ServiceContext() {
   const router = useRouter();
+
   return (
-    // <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white my-12 mx-4">
-    <div className="bg-[#0D1B2A] border text-white my-12 mx-4">
-      <div className="container mx-auto px-4 py-12 max-w-screen-xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-tight">
-              The AIM Approach
-            </h3>
-            <p className="text-white text-md leading-relaxed">
-              Turning Concepts into Built Realities
-            </p>
-            {/* Social Media Icons */}
+    <div className="relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-black"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0iIzM3NEEzNiIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPHN2Zz4K')] opacity-30"></div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold text-white/90 uppercase tracking-wider">
+              Our Process
+            </span>
           </div>
 
-          <div className=" mr-3 border-r-2 border-white/20 ">
-            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
-              Authority Approval
-            </h4>
-            <ul className="space-y-3 text-md">
-              <li className="flex items-start">
-                Start the Authority Approval process with us. With our in-depth
-                knowledge of local regulations, we’ll handle submitting your
-                drawings to the authorities and secure the necessary permits to
-                begin your project. We’ll guide you through the entire approval
-                process, ensuring your project complies with all regulations and
-                securing the necessary approvals to move forward.
-              </li>
-            </ul>
-          </div>
-
-          <div className=" border-r-2 border-white/20">
-            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
-              Planning and Design
-            </h4>
-            <ul className="space-y-3  text-md">
-              <li className="flex items-start">
-                Embark on the Design and Drawings phase with us. We’ll
-                collaborate closely to create detailed plans that bring your
-                vision to life. Our experienced team ensures each design is
-                aesthetically pleasing and fully compliant with authority
-                requirements, setting the stage for a smooth and successful
-                project.
-              </li>
-            </ul>
-             
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
-              Fit-out-Build
-            </h4>
-            <ul className="space-y-3 text-md">
-              <li className="flex items-start">
-                Begin the Fit-Out and Build phase with us. Our skilled team will
-                transform your design into a fully realized space, managing
-                every stage of construction with care and expertise. We focus on
-                craftsmanship and efficiency to deliver a final product that
-                meets your vision and stands the test of time.
-              </li>
-            </ul>
-
-            
-          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            The{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              AIM
+            </span>{" "}
+            Approach
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Turning Concepts into Built Realities
+          </p>
         </div>
-        <div className="flex  justify-center space-x-4">
-          <button
-            onClick={() => router.push("/contact")}
-            className="border p-3 px-5 mt-12 flex flex-row  "
-          >
-            Contact US <MoveRight className="ml-2" />
-          </button>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-105">
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-300 leading-relaxed mb-6 text-sm">
+                    {service.description}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center text-sm text-gray-400"
+                      >
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Decorative Element */}
+                  <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-full blur-xl"></div>
+                </div>
+
+                {/* Connection Line (for desktop) */}
+                {index < services.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-white/20 to-transparent transform -translate-y-1/2 z-10">
+                    <div className="absolute right-0 top-1/2 w-2 h-2 bg-white/30 rounded-full transform -translate-y-1/2"></div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-      
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6">
+            <button
+              onClick={() => router.push("/contact")}
+              className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
+            >
+              <span>Start Your Project</span>
+              <MoveRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+
+            <button
+              onClick={() => router.push("/services")}
+              className="group border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/5"
+            >
+              View All Services
+            </button>
+          </div>
+
+          <p className="text-gray-400 mt-6 text-sm">
+            Ready to transform your space? Let's discuss your vision.
+          </p>
+        </div>
       </div>
     </div>
   );

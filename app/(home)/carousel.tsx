@@ -115,98 +115,122 @@ const CarouselSection = () => {
             <span className="block"> what we’ve created.</span>{" "}
           </p>
 
-          {/* Custom Carousel Navigation Buttons */}
-          <div className="flex items-center my-4 border border-gray-300 rounded-full overflow-hidden w-fit">
-            <button
-              onClick={() => api?.scrollPrev()} // Scroll to previous slide
-              disabled={!canScrollPrev} // Disable if cannot scroll previous
-              className={`p-3 text-gray-600 hover:bg-gray-100 transition-colors duration-200
-                ${!canScrollPrev ? "opacity-50 cursor-not-allowed" : ""}`}
-              aria-label="Previous slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
+          {/* Enhanced Navigation Buttons */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+              <button
+                onClick={() => api?.scrollPrev()}
+                disabled={!canScrollPrev}
+                className={`p-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ${
+                  !canScrollPrev ? "opacity-40 cursor-not-allowed" : ""
+                }`}
+                aria-label="Previous slide"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-            <div className="w-px h-6 bg-gray-300"></div> {/* Divider line */}
-            <button
-              onClick={() => api?.scrollNext()} // Scroll to next slide
-              disabled={!canScrollNext} // Disable if cannot scroll next
-              className={`p-3 text-gray-600 hover:bg-gray-100 transition-colors duration-200
-                ${!canScrollNext ? "opacity-50 cursor-not-allowed" : ""}`}
-              aria-label="Next slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <div className="w-px h-8 bg-gray-200"></div>
+              <button
+                onClick={() => api?.scrollNext()}
+                disabled={!canScrollNext}
+                className={`p-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ${
+                  !canScrollNext ? "opacity-40 cursor-not-allowed" : ""
+                }`}
+                aria-label="Next slide"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <p
+          <button
             onClick={handleClick}
-            className="underline mb-12 cursor-pointer hover:text-blue-600 transition-colors duration-200"
+            className="group inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            All Projects
-          </p>
+            <span>View All Projects</span>
+            <svg
+              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
 
-        <div className="">
+        <div className="lg:w-2/3">
           <Carousel
             opts={{
               align: "start",
+              loop: true,
             }}
-            setApi={setApi} // Set the carousel API instance
+            setApi={setApi}
             className="w-full"
           >
-            <CarouselContent className="space-x-2">
+            <CarouselContent className="space-x-6">
               {sectors.map((item, index) => (
-                
                 <CarouselItem
                   key={index}
                   className="basis-1/2 md:basis-1/3 lg:basis-1/3"
                 >
-                  <div className="flex flex-col h-full">
+                  <div className="group relative h-full">
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={500}
+                        height={500}
+                        className="w-full h-[280px] lg:h-[320px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                      />
 
-                     <div className="w-full  overflow-hidden group">
-                    <Image
-                      src={item.image}
-                      alt={item.title} // Use item.title for alt text for better accessibility
-                      width={500}
-                      height={500}
-                      className="w-full h-[250px] lg:h-[300px] object-cover transition-transform duration-700 ease-in-out hover:scale-[1.09] rounded-lg"
-                    />
-                  </div>
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                     <h1 className="mt-2 text-lg font-semibold text-center">{item.title}</h1>
+                      {/* Title Overlay */}
+                      <div className="absolute bottom-6 left-6 right-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Title below image */}
+                    <h3 className="mt-4 text-lg font-semibold text-center text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                      {item.title}
+                    </h3>
                   </div>
-                 
-               
-                
                 </CarouselItem>
-              
-               
               ))}
             </CarouselContent>
           </Carousel>
