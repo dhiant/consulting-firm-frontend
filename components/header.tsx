@@ -91,8 +91,51 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-import { Menu, X } from "lucide-react"; // Optional: icon library like lucide
+import { Menu, X } from "lucide-react";
 import QuotationModal from "./quotation-modal-adv";
+
+// Logo Component
+const AimteriorLogo = ({ className = "", textColor = "currentColor" }) => (
+  <div className={`flex items-center space-x-2 ${className}`}>
+    <div className="relative">
+      {/* Logo Symbol - Stylized Mountain/Architecture */}
+      <div className="w-8 h-8 relative">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-current"
+        >
+          <path
+            d="M4 28L16 4L28 28H4Z"
+            stroke={textColor}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+          <path
+            d="M8 22L16 10L24 22"
+            stroke={textColor}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+          <circle cx="16" cy="8" r="2" fill={textColor} />
+        </svg>
+      </div>
+    </div>
+    <span
+      className="text-2xl font-bold tracking-tight"
+      style={{ color: textColor }}
+    >
+      AIMTERIOR
+    </span>
+  </div>
+);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -124,50 +167,46 @@ export default function Header() {
 
       <header
         className={cn(
-          "fixed top-0 z-50 w-full transition-all duration-300 ease-in-out",
+          "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out backdrop-blur-sm",
           scrolled
-            ? "bg-white shadow-xl text-primary"
+            ? "bg-white/95 shadow-xl text-slate-800 border-b border-gray-100"
             : "bg-transparent text-white",
           showNav ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center max-w-screen-xl">
-          <Link href="/" className="text-2xl font-bold">
-            COMPANY LOGO
+        <nav className="container mx-auto px-6 py-4 flex justify-between items-center max-w-screen-xl">
+          <Link
+            href="/"
+            className="transition-all duration-300 hover:scale-105"
+          >
+            <AimteriorLogo textColor={scrolled ? "#1e293b" : "#ffffff"} />
           </Link>
 
           {/* Desktop nav */}
-          <ul className="lg:flex space-x-10 text-lg font-normal hidden">
-            <li>
-              <Link href="/" className="hover:text-black">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-black">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-black">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:text-black">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/blogs" className="hover:text-black">
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-black">
-                Contact
-              </Link>
-            </li>
+          <ul className="lg:flex space-x-8 text-base font-medium hidden">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/projects", label: "Projects" },
+              { href: "/blogs", label: "Blogs" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  className={cn(
+                    "relative px-3 py-2 rounded-lg transition-all duration-300",
+                    "hover:scale-105 hover:shadow-lg",
+                    scrolled
+                      ? "hover:bg-slate-100 hover:text-slate-900"
+                      : "hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
             <li>
               <QuotationModal />
             </li>
@@ -175,62 +214,61 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-2xl focus:outline-none"
+            className={cn(
+              "lg:hidden p-2 rounded-lg transition-all duration-300",
+              "hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2",
+              scrolled
+                ? "hover:bg-slate-100 focus:ring-slate-500"
+                : "hover:bg-white/10 focus:ring-white"
+            )}
             onClick={() => setSidebarOpen(true)}
           >
-            <Menu />
+            <Menu size={24} />
           </button>
         </nav>
       </header>
 
-      {/* Sidebar */}
+      {/* Enhanced Sidebar */}
       <aside
         className={cn(
-          "fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out",
+          "fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out",
           sidebarOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="p-4 flex justify-between items-center border-b">
-          <span className="text-xl font-bold">Menu</span>
-          <button onClick={() => setSidebarOpen(false)} className="text-2xl">
-            <X />
+        <div className="p-6 flex justify-between items-center border-b border-gray-200 bg-gradient-to-r from-slate-50 to-gray-50">
+          <AimteriorLogo textColor="#1e293b" />
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+          >
+            <X size={24} />
           </button>
         </div>
-        <ul className="flex flex-col gap-4 p-4 text-lg text-black">
-          <li>
-            <Link href="/" onClick={() => setSidebarOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" onClick={() => setSidebarOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" onClick={() => setSidebarOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects" onClick={() => setSidebarOpen(false)}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="/blogs" onClick={() => setSidebarOpen(false)}>
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" onClick={() => setSidebarOpen(false)}>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <QuotationModal />
-          </li>
-        </ul>
+        <nav className="p-6">
+          <ul className="space-y-4">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/projects", label: "Projects" },
+              { href: "/blogs", label: "Blogs" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  onClick={() => setSidebarOpen(false)}
+                  className="block px-4 py-3 text-lg font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-all duration-200 hover:translate-x-1"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+            <li className="pt-4 border-t border-gray-200">
+              <QuotationModal />
+            </li>
+          </ul>
+        </nav>
       </aside>
     </>
   );
