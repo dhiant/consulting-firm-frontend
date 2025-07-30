@@ -125,7 +125,11 @@ export default function PortfolioPage() {
         {/* <h1 className="text-4xl font-bold mb-8 text-primary">Our Projects</h1> */}
         <div className="my-4">
           <h1 className="text-center text-[40px]">Our Work </h1>
-          <p className="text-[#767D85]">Our work reflects a thoughtful blend of architecture, engineering, and interior fit-out, shaped by a clear understanding of space, function, and form.</p>
+          <p className="text-[#767D85]">
+            Our work reflects a thoughtful blend of architecture, engineering,
+            and interior fit-out, shaped by a clear understanding of space,
+            function, and form.
+          </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -150,16 +154,18 @@ export default function PortfolioPage() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-3">
-        {filteredProjects.map((card) => (
-          <HoverCard
-            key={card.id}
-            title={card.title}
-            subtitle={card.category}
-            image={card.image}
-            desc={card.description}
-          />
-        ))}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-3">
+          {filteredProjects.map((card) => (
+            <HoverCard
+              key={card.id}
+              title={card.title}
+              subtitle={card.category}
+              image={card.image}
+              desc={card.description}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

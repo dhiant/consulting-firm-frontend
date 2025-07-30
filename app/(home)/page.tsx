@@ -53,19 +53,21 @@ export default function HomePage() {
   return (
     <div>
       <HeroCarousel />
-      <div className="p-4 mt-5 ">
+      <div className="p-5 mt-5">
         <div>
-
-         <h1 className="text-[40px]  my-9 font-sans ">Find What you are looking with us</h1>
-
+          <h1 className="text-[40px] font-semibold text-primary mb-5 text-center">
+            Find What you are looking with us
+          </h1>
         </div>
 
-        <div className="text-center my-3">
-          <h1 className="mb-5 ">Tailored Support for Every Stage of Your Project</h1>
-          <p className="text-[#767D85] ">From full project delivery to focused expertise where you need it most, we provide clear, hassle-free solutions that keep things moving forward</p>
-
+        <div className="text-center my-8">
+          <p className="text-[#767D85] ">
+            From full project delivery to focused expertise where you need it
+            most, we provide clear, hassle-free solutions that keep things
+            moving forward
+          </p>
         </div>
-      
+
         <div className=" grid grid-cols-3 mb-12 border bg-gray-100">
           {projects.map((card) => (
             <ServicePreview

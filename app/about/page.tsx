@@ -1,49 +1,30 @@
+import { ArrowUpRight, Eye, Heart, Target } from "lucide-react";
 import Image from "next/image";
 
-// const people = [
-//   {
-//     id: 1,
-//     name: "John Doe",
-//     designation: "Software Engineer",
-//     image:
-//       "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
-//   },
-//   {
-//     id: 2,
-//     name: "Robert Johnson",
-//     designation: "Product Manager",
-//     image:
-//       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-//   },
-//   {
-//     id: 3,
-//     name: "Jane Smith",
-//     designation: "Data Scientist",
-//     image:
-//       "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-//   },
-//   {
-//     id: 4,
-//     name: "Emily Davis",
-//     designation: "UX Designer",
-//     image:
-//       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-//   },
-//   {
-//     id: 5,
-//     name: "Tyler Durden",
-//     designation: "Soap Developer",
-//     image:
-//       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-//   },
-//   {
-//     id: 6,
-//     name: "Dora",
-//     designation: "The Explorer",
-//     image:
-//       "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
-//   },
-// ];
+const sections = [
+  {
+    icon: Target,
+    title: "Our Mission",
+    content: [
+      "Our mission is to serve as your comprehensive solution for all engineering needs. With a highly skilled in-house team comprising consultants, contractors, and interior designers, we are committed to delivering a seamless experience. We expertly manage every phase of your project with precision and care, ensuring a smooth and hassle-free process from start to finish.",
+      "AIMTERIOR is dedicated to providing stellar results with wholehearted commitment to every project and to surpassing expectations. By focusing on quality, efficiency, and attention to detail, AIMTERIOR ensures that every project is accomplished with the highest standards of excellence.",
+    ],
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    content: [
+      "AIMTERIOR is a trusted partner, known for its reliability and efficiency in delivering high-quality services. With a strong commitment to each project and dedicated resources, AIMTERIOR ensures a positive and accommodating experience. We take pride in building long-term relationships with our clients by consistently meeting their expectations and delivering results that stand the test of time.",
+    ],
+  },
+  {
+    icon: Heart,
+    title: "Our Values",
+    content: [
+      "At AIMTERIOR, we believe in creating a healthy work environment where our team thrives both professionally and personally. We foster a culture of work-life balance, allowing our team to love what they do while maintaining their well-being. Our commitment to excellence is reflected in our unwavering focus on listening to our clients needs and delivering tailored solutions. With complete transparency in all our processes, we ensure our clients are always informed and confident in our work, building trust and long-lasting partnerships.",
+    ],
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -76,11 +57,15 @@ export default function AboutPage() {
 
       {/* Who We Are */}
       <section className="py-3 px-6 max-w-screen-xl mx-auto text-center md:text-left mb-12 mt-12">
-        <h2 className="text-[40px] font-semibold text-primary mb-6">Who We Are</h2>
+        <h2 className="text-[40px] font-semibold text-primary mb-6">
+          Who We Are
+        </h2>
         <div className=" text-lg">
           <p className="mb-3">
-            <span className="text-bold text-black font-bold font-sans ">AIMTERIOR</span> is a
-            Dubai-based company that specializes in providing comprehensive
+            <span className="text-bold text-black font-bold font-sans ">
+              AIMTERIOR
+            </span>{" "}
+            is a Dubai-based company that specializes in providing comprehensive
             consultation services for construction approvals, interior design,
             and design-build projects, all in compliance with Dubai&apos;s
             regulatory authorities. With a team of experienced professionals, we
@@ -105,10 +90,10 @@ export default function AboutPage() {
           </p>
 
           <p>
-            At <span className="text-bold text-black font-bold">AIMTERIOR</span>, we
-            believe that every project is an opportunity to create something
-            exceptional. We combine innovation with industry expertise to
-            provide practical, sustainable solutions that meet the evolving
+            At <span className="text-bold text-black font-bold">AIMTERIOR</span>
+            , we believe that every project is an opportunity to create
+            something exceptional. We combine innovation with industry expertise
+            to provide practical, sustainable solutions that meet the evolving
             needs of our clients. By leveraging the latest technologies and
             design trends, we ensure that each project not only meets regulatory
             requirements but also aligns with our clients long-term goals.
@@ -120,54 +105,80 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-3 px-6  bg-[#0D1B2A] mx-auto max-w-screen-xl text-white mb-6">
-        <h2 className="text-[40px] font-semibold text-white mb-10">
-          What Drives AIMTERIOR
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-[20px] mx-auto">
-          <div className="border-r-2 mr-3">
-            <h1>Our Mission</h1>
-            <p>
-              Our mission is to serve as your comprehensive solution for all
-              engineering needs. With a highly skilled in-house team comprising
-              consultants, contractors, and interior designers, we are committed
-              to delivering a seamless experience. We expertly manage every
-              phase of your project with precision and care, ensuring a smooth
-              and hassle-free process from start to finish.
-            </p>
-            <br />
-            <div className=" mt-2 ">
-              AIMTERIOR is dedicated to providing stellar results with wholehearted
-              commitment to every project and to surpassing expectations. By
-              focusing on quality, efficiency, and attention to detail, AIMTERIOR
-              ensures that every project is accomplished with the highest
-              standards of excellence.
-            </div>
-          </div>
-          <div className="border-r-2 mr-3">
-            <h1>Our Vision</h1>
-            <p>
-              AIMTERIOR is a trusted partner, known for its reliability and efficiency
-              in delivering high-quality services. With a strong commitment to
-              each project and dedicated resources, AIMTERIOR ensures a positive and
-              accommodating experience. We take pride in building long-term
-              relationships with our clients by consistently meeting their
-              expectations and delivering results that stand the test of time.
-            </p>
-          </div>
-          <div>
-            <h1>Our Values</h1>
-            <p>
-              At AIMTERIOR, we believe in creating a healthy work environment where
-              our team thrives both professionally and personally. We foster a
-              culture of work-life balance, allowing our team to love what they
-              do while maintaining their well-being. Our commitment to
-              excellence is reflected in our unwavering focus on listening to
-              our clients needs and delivering tailored solutions. With complete
-              transparency in all our processes, we ensure our clients are
-              always informed and confident in our work, building trust and
-              long-lasting partnerships.
-            </p>
+      <section className="py-16 px-6 bg-[#0D1B2A] mx-auto max-w-screen-xl text-white mb-6 rounded-lg">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            What Drives AIMTERIOR
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+        </div>
+
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
+          {sections.map((section, index) => {
+            const IconComponent = section.icon;
+            return (
+              <div
+                key={section.title}
+                className={`
+                relative group h-full
+                ${
+                  index < sections.length - 1
+                    ? "lg:border-r-2 lg:border-white/20 lg:pr-8"
+                    : ""
+                }
+                hover:bg-white/5 transition-all duration-300 rounded-lg p-6
+              `}
+              >
+                {/* Icon and Title */}
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-white/20 transition-all duration-300">
+                    <IconComponent className="w-6 h-6 text-white group-hover:text-blue-300 transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                    {section.title}
+                  </h3>
+                  <ArrowUpRight className="w-5 h-5 text-white/40 ml-auto opacity-0 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="space-y-6">
+                  {section.content.map((paragraph, pIndex) => (
+                    <p
+                      key={pIndex}
+                      className="text-white/90 leading-relaxed text-lg group-hover:text-white transition-colors duration-300"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Number Badge */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white/60 text-sm font-bold group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all duration-300">
+                  {index + 1}
+                </div>
+
+                {/* Hover Accent Line */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
+
+                {/* Subtle Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Decorative Element */}
+        <div className="mt-16 flex justify-center">
+          <div className="flex space-x-2">
+            <div className="w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+            <div
+              className="w-2 h-2 bg-white/40 rounded-full animate-pulse"
+              style={{ animationDelay: "0.2s" }}
+            ></div>
+            <div
+              className="w-2 h-2 bg-white/60 rounded-full animate-pulse"
+              style={{ animationDelay: "0.4s" }}
+            ></div>
           </div>
         </div>
       </section>
