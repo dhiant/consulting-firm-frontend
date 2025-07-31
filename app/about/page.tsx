@@ -168,7 +168,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom Decorative Element */}
-        <div className="mt-16 flex justify-center">
+        {/* <div className="mt-16 flex justify-center">
           <div className="flex space-x-2">
             <div className="w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
             <div
@@ -180,7 +180,7 @@ export default function AboutPage() {
               style={{ animationDelay: "0.4s" }}
             ></div>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );
