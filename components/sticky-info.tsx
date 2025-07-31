@@ -18,7 +18,8 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "LinkedIn",
       tooltip: "Follow us on LinkedIn",
       external: true,
-      className: "text-[#0A66C2] hover:text-[#004182]", // LinkedIn blue to dark blue
+      // className: "text-[#0A66C2] hover:text-[#004182]", // LinkedIn blue to dark blue
+      className: "text-[#0a2c4c]"
     },
     {
       Icon: FaInstagram,
@@ -26,7 +27,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Instagram",
       tooltip: "Check our Instagram",
       external: true,
-      className: "text-[#E1306C] hover:text-[#C13584]", // Instagram pink to purple-pink
+      // className: "text-[#E1306C] hover:text-[#C13584]", // Instagram pink to purple-pink
+      className: "text-[#0a2c4c]"
+
     },
     {
       Icon: CiMail,
@@ -34,7 +37,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Email",
       tooltip: "Email us",
       external: true,
-      className: "text-[#156ED9] hover:text-[#156ED9]", // Neutral email tone with hover attention
+      // className: "text-[#156ED9] hover:text-[#156ED9]", // Neutral email tone with hover attention
+      className: "text-[#0a2c4c]"
+
     },
     {
       Icon: FaWhatsapp,
@@ -42,7 +47,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "WhatsApp",
       tooltip: "Chat on WhatsApp",
       external: true,
-      className: "text-[#25D366] hover:text-[#128C7E]", // WhatsApp green to dark green
+      // className: "text-[#25D366] hover:text-[#128C7E]", // WhatsApp green to dark green
+      className: "text-[#0a2c4c]"
+
     },
     {
       Icon: IoNewspaperOutline,
@@ -50,7 +57,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Brochure",
       tooltip: "Brochure",
       external: true,
-      className: "text-[#fff000] hover:text-[#ffff00]", // Neutral to blue for documents
+      // className: "text-[#fff000] hover:text-[#ffff00]", // Neutral to blue for documents
+      className: "text-[#0a2c4c]"
+
     },
   ];
 
