@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+// temp fix
 const StickyInfo = ({ className }: { className?: string }) => {
   const socialLinks = [
     {
