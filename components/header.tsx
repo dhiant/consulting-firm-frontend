@@ -135,7 +135,7 @@ export default function Header() {
           <Link href="/" className="text-xl font-bold flex items-center">
             <Image
               alt="..."
-              src="/images/company_logo.png"
+              src={scrolled?"/images/company_logo.png":"/images/company_logo_white.png"}
               height={50}
               width={50}
             />
