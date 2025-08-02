@@ -27,7 +27,9 @@ export default function ContactForm() {
     <div className=" border-black bg-opacity-50 flex items-center justify-center ">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-8 relative">
         {/* <button className="absolute top-4 right-4 text-gray-700 text-2xl">&times;</button> */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact us</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Send a Message
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
