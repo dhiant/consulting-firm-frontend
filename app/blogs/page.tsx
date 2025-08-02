@@ -1,45 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-const featuredPost = {
-  date: "May 10, 2023",
-  title:
-    "The Benefits of Working with Engineering Consultants for Home Renovations",
-  excerpt:
-    "Home renovations can be a significant investment for homeowners, and it's crucial to get them right the first time. When considering a home renovation project, many homeowners may wonder whether they need to hire engineering consultants. In this article, we will discuss the benefits of working with engineering consultants for home renovations.",
-  image: "/images/project1.jpg",
-  slug: "benefits-of-working-with-engineering-consultants",
-};
-
-const blogPosts = [
-  {
-    date: "December 16, 2021",
-    title: "How To Reduce Villa Renovation Costs",
-    excerpt:
-      "With the amelioration of material and service costs, searching for ways for cost-effective solutions for home renovation projects will be a huge relief to clients. It may be challenging to properly...",
-    image: "/images/project2.jpg",
-    slug: "reduce-villa-renovation-costs",
-  },
-  {
-    date: "October 18, 2021",
-    title: "Japanese Style Interior Design Offers Modesty to Villas in Dubai",
-    excerpt:
-      "When talking about minimalist living, Japanese-style interior designs first come into mind. Minimalist modern interior designs often highlight a lot of open spaces promoting natural lighting, basic...",
-    image: "/images/project3.jpg",
-
-    slug: "japanese-style-interior-design",
-  },
-  {
-    date: "August 28, 2021",
-    title: "How To Glam Up Your Interior Design",
-    excerpt:
-      "Do you love sophistication and a luxurious lifestyle? Hence, a glam interior design in Dubai is perfect for your home. Glam desig...",
-    image: "/images/project4.jpg",
-
-    slug: "glam-up-your-interior-design",
-  },
-];
+import { blogPosts, featuredPost } from "./data";
 
 export default function BlogPage() {
   return (
@@ -49,7 +11,7 @@ export default function BlogPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/about.jpg"
-              alt="Consturction Site Showcase"
+              alt="Construction Site Showcase"
               layout="fill"
               objectFit="cover"
               className="opacity-50"
@@ -74,7 +36,7 @@ export default function BlogPage() {
         <div className="grid md:grid-cols-2 gap-8 my-20">
           <div className="featured-image overflow-hidden rounded-lg transition-transform duration-500 hover:scale-[1.02]">
             <Image
-              src={featuredPost.image || "/placeholder.svg"}
+              src={featuredPost.image}
               alt={featuredPost.title}
               width={600}
               height={400}
@@ -107,7 +69,7 @@ export default function BlogPage() {
               >
                 <div className="overflow-hidden">
                   <Image
-                    src={post.image || "/placeholder.svg"}
+                    src={post.image}
                     alt={post.title}
                     width={500}
                     height={300}

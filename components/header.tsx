@@ -70,11 +70,18 @@ export default function Header() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`relative inline-block transition-all duration-300 hover:-translate-y-0.5 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:${
-                    scrolled ? "bg-black" : "bg-white"
-                  } after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform`}
+                  className={`relative group transition-colors duration-300 ${
+                    scrolled
+                      ? "text-black hover:text-black"
+                      : "text-white hover:text-white"
+                  }`}
                 >
                   {label}
+                  <span
+                    className={`absolute left-0 bottom-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                      scrolled ? "bg-black" : "bg-white"
+                    }`}
+                  ></span>
                 </Link>
               </li>
             ))}
@@ -107,38 +114,26 @@ export default function Header() {
           </button>
         </div>
         <ul className="flex flex-col gap-4 p-4 text-lg text-black">
+          {[
+            { href: "/", label: "Home" },
+            { href: "/about", label: "About" },
+            { href: "/services", label: "Services" },
+            { href: "/projects", label: "Projects" },
+            { href: "/blogs", label: "Blogs" },
+            { href: "/contact", label: "Contact" },
+          ].map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="relative group transition-colors duration-300 hover:text-black"
+              >
+                {label}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+          ))}
           <li>
-            <Link href="/" onClick={() => setSidebarOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" onClick={() => setSidebarOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" onClick={() => setSidebarOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects" onClick={() => setSidebarOpen(false)}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="/blogs" onClick={() => setSidebarOpen(false)}>
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" onClick={() => setSidebarOpen(false)}>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <QuotationModal scrolled={scrolled} />
+            <QuotationModal scrolled={true} />
           </li>
         </ul>
       </aside>

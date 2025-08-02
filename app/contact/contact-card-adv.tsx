@@ -78,17 +78,6 @@ const ContactCard = () => {
       <CardContent>
         <h2 className="text-3xl font-bold text-gray-900 my-6">Contact us</h2>
 
-        <div className="flex items-center gap-4 text-gray-700 mb-6">
-          <span className="flex items-center gap-1">
-            <Phone />
-            Toll free 800 KPS
-          </span>
-          <span className="flex items-center gap-1">
-            <Mail />
-            <a href="mailto:Hello@kpsworld.com">Hello@kpsworld.com</a>
-          </span>
-        </div>
-
         <form
           onSubmit={handleSubmit}
           className=" my-3 space-y-4 bg-white   w-full max-w-2xl  relative"
