@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { Mail, MoveRight, Phone } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import {
   Select,
   SelectContent,

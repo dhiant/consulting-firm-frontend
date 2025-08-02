@@ -1,6 +1,5 @@
 "use client";
 
-import { Mail, Phone } from "lucide-react";
 import React from "react";
 import { toast } from "sonner";
 import {
