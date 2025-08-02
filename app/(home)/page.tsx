@@ -53,7 +53,7 @@ export default function HomePage() {
   return (
     <div>
       <HeroCarousel />
-      <div className="p-5 mt-5">
+      <div className="px-5 py-16 max-w-screen-xl mx-auto">
         <div>
           <h1 className="text-[40px] font-semibold text-primary mb-5 text-center">
             Find What you are looking with us
@@ -68,7 +68,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className=" grid grid-cols-3 mb-12 border bg-gray-100">
+        <div className=" grid grid-cols-3  border bg-gray-100">
           {projects.map((card) => (
             <ServicePreview
               key={card.id}

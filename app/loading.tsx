@@ -1,7 +1,7 @@
 import React from "react";
 
 const Loading = () => {
-  return <div>Company Logo</div>;
+  return <div></div>;
 };
 
 export default Loading;

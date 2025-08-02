@@ -1,5 +1,6 @@
-import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
+import { MailIcon, MapPin, PhoneCallIcon } from "lucide-react";
 import ContactForm from "./contactform";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
@@ -39,7 +40,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">Email</span>
-                <span className="font-semibold">info@luxedesign.ae</span>
+                <span className="font-semibold">info@aiminterior.ae</span>
               </div>
             </div>
 
@@ -49,17 +50,17 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">Phone Number</span>
-                <span className="font-semibold">04 448 3328</span>
+                <span className="font-semibold">048878015</span>
               </div>
             </div>
 
             <div className="flex items-center space-x-3">
               <div className="bg-primary p-2 text-white hover:text-black cursor-pointer rounded-full">
-                <PhoneIncoming className="h-8 w-8" />
+                <FaWhatsapp className="h-9 w-9" />
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">WhatsApp Number</span>
-                <span className="font-semibold">058 896 8000</span>
+                <span className="font-semibold">+971 50 120 4990</span>
               </div>
             </div>
 
@@ -69,9 +70,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className=" font-normal">Office</span>
-                <span className="font-semibold">
-                  Opal Tower - Business Bay - Dubai
-                </span>
+                <span className="font-semibold">SM1-02-713</span>
               </div>
             </div>
           </div>

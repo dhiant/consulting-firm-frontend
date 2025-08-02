@@ -1,91 +1,3 @@
-// "use client";
-// import Link from "next/link";
-// import { useEffect, useState } from "react";
-// import { cn } from "@/lib/utils";
-// import QuotationModal from "./quotation-modal";
-
-// export default function Header() {
-//   const [scrolled, setScrolled] = useState(false);
-//   const [showNav, setShowNav] = useState(true);
-//   const [lastScrollY, setLastScrollY] = useState(0);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const currentScrollY = window.scrollY;
-
-//       setScrolled(currentScrollY > 50);
-
-//       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-//         setShowNav(false);
-//       } else {
-//         setShowNav(true);
-//       }
-
-//       setLastScrollY(currentScrollY);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, [lastScrollY]);
-
-//   return (
-//     <header
-//       className={cn(
-//         "fixed top-0 z-50 w-full transition-all duration-300 ease-in-out",
-//         scrolled
-//           ? "bg-white shadow-xl text-primary"
-//           : "bg-transparent text-white",
-//         showNav ? "translate-y-0" : "-translate-y-full"
-//       )}
-//     >
-//       <nav className="container mx-auto px-4 py-4 flex justify-between items-center max-w-screen-xl">
-//         <Link href="/" className="text-2xl font-bold">
-//           COMPANY LOGO
-//         </Link>
-//         <div className="flex gap-10">
-//           <ul className="lg:flex space-x-10 text-lg font-normal hidden">
-//             <li>
-//               <Link href="/" className="hover:text-black">
-//                 Home
-//               </Link>
-//             </li>
-//             <li>
-//               <Link href="/about" className="hover:text-black">
-//                 About
-//               </Link>
-//             </li>
-//             <li>
-//               <Link href="/services" className="hover:text-black">
-//                 Services
-//               </Link>
-//             </li>
-//             <li>
-//               <Link href="/projects" className="hover:text-black">
-//                 Projects
-//               </Link>
-//             </li>
-//             <li>
-//               <Link href="/blogs" className="hover:text-black">
-//                 Blogs
-//               </Link>
-//             </li>
-//             <li>
-//               <Link href="/contact" className="hover:text-black">
-//                 Contact
-//               </Link>
-//             </li>
-//             <li>
-//               <QuotationModal />
-//             </li>
-//           </ul>
-//         </div>
-//       </nav>
-//     </header>
-//   );
-// }
-
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -132,50 +44,42 @@ export default function Header() {
         )}
       >
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center max-w-screen-xl">
-          <Link href="/" className="text-xl font-bold flex items-center">
+          <Link href="/" className="text-3xl font-bold flex items-center">
             <Image
               alt="..."
-              src={scrolled?"/images/company_logo.png":"/images/company_logo_white.png"}
+              src={
+                scrolled
+                  ? "/images/company_logo.png"
+                  : "/images/company_logo_white.png"
+              }
               height={50}
-              width={50}
+              width={80}
             />
-            <span className="mt-2">AIMTERIOR</span>
           </Link>
 
           {/* Desktop nav */}
           <ul className="lg:flex space-x-10 text-lg font-normal hidden">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/projects", label: "Projects" },
+              { href: "/blogs", label: "Blogs" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`relative inline-block transition-all duration-300 hover:-translate-y-0.5 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:${
+                    scrolled ? "bg-black" : "bg-white"
+                  } after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
             <li>
-              <Link href="/" className="hover:text-black">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-black">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-black">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:text-black">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/blogs" className="hover:text-black">
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-black">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <QuotationModal />
+              <QuotationModal scrolled={scrolled} />
             </li>
           </ul>
 
@@ -234,7 +138,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <QuotationModal />
+            <QuotationModal scrolled={scrolled} />
           </li>
         </ul>
       </aside>

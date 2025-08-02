@@ -8,11 +8,14 @@ import {
 } from "@/components/ui/dialog";
 import ContactCard from "@/app/contact/contact-card-adv";
 
-
-const QuotationModal = () => {
+const QuotationModal = ({ scrolled }: { scrolled: boolean }) => {
   return (
     <Dialog>
-      <DialogTrigger className="flex gap-2 items-center hover:text-black">
+      <DialogTrigger
+        className={`flex items-center gap-2 relative transition-all duration-300 hover:-translate-y-0.5 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:${
+          scrolled ? "bg-black" : "bg-white"
+        } after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform`}
+      >
         <span>Get a Quote</span> <MoveUpRight size={16} />
       </DialogTrigger>
 

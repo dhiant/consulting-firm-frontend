@@ -8,7 +8,6 @@ import {
   Drill,
   Hammer,
   HardHat,
-  MoveRight,
   Pickaxe,
   Wrench,
 } from "lucide-react";
@@ -22,7 +21,7 @@ import {
   PanelsTopLeft,
 } from "lucide-react";
 import ServiceList from "./components/service-list";
-import Link from "next/link";
+import CTAButton from "@/components/cta-buttton";
 
 const authorityApprovalsData = [
   {
@@ -245,21 +244,12 @@ export default function ServicesPage() {
             loading="eager"
           />
           <div className="relative  mx-auto px-4 h-full flex flex-col justify-center z-10 t max-w-screen-xl">
-             <h1 className="text-5xl font-bold mb-4 mx-auto">Find What You Need, Right Here </h1>
+            <h1 className="text-5xl font-bold mb-4 mx-auto">
+              Find What You Need, Right Here{" "}
+            </h1>
 
-             <button className="text-xl mb-8 bg-white text-black w-48 p-3 rounded-lg justify-center mx-auto"
-       
-             >
-              <Link href="/contact" className="flex items-center space-x-2">
-              <span className="text-sm">CONTACT US</span> 
-                 <MoveRight/>
-              </Link>
-                     
-                
-
-            </button>
+            <CTAButton />
           </div>
-         
         </div>
       </section>
 

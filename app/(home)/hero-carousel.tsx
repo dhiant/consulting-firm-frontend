@@ -8,27 +8,26 @@ import SlideUpAnimation from "@/components/animations/slide-up-variants";
 
 const slides = [
   {
-    image: "/images/home.jpg",
+    image: "/images/hero-home1.png",
     heading: "Your Vision, Our Solution",
-    subheading:
-      "AIM to transform ideas into iconic spaces.",
+    subheading: "AIM to transform ideas into iconic spaces.",
     buttonLink: "/services",
     buttonText: "EXPLORE OUR SERVICES ",
   },
   {
-    image: "/images/services.jpg",
+    image: "/images/hero-home2.png",
     heading: "Designing Spaces, Engineering Solutions ",
     subheading: "AIM to transform spaces into statements.",
     buttonLink: "/projects",
     buttonText: "EXPLORE OUR WORK",
   },
-  {
-    image: "/images/about.jpg",
-    heading: "We Express in Design, We Execute in Structure",
-    subheading: "AIM to sculpt ideas into structures, design into identity.",
-    buttonLink: "/contact",
-    buttonText: "CHALLLENGE US",
-  },
+  // {
+  //   image: "/images/about.jpg",
+  //   heading: "We Express in Design, We Execute in Structure",
+  //   subheading: "AIM to sculpt ideas into structures, design into identity.",
+  //   buttonLink: "/contact",
+  //   buttonText: "CHALLLENGE US",
+  // },
 ];
 
 const HeroCarousel = () => {

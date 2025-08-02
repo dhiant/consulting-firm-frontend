@@ -1,15 +1,9 @@
 "use client";
-import {
-  Copy,
-  ExternalLink,
-  Mail,
-  MapPin,
-  MoveRight,
-  Phone,
-  PhoneCall,
-} from "lucide-react";
+import { Mail, MapPin, MoveRight, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const router = useRouter();
@@ -20,7 +14,12 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold tracking-tight">
-              Logo of company
+              <Image
+                src="/images/company_logo_white.png"
+                alt="logo"
+                width={100}
+                height={100}
+              />
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Connect with us for a personalized quote and service consultation.
@@ -75,33 +74,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter Signup */}
-          {/* <div>
-            <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
-              Stay Updated
-            </h4>
-            <p className="text-gray-300 text-sm mb-4">
-              Subscribe for the latest projects and insights.
-            </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col space-y-3"
-            >
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-2 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                aria-label="Email for newsletter"
-              />
-              <Button
-                type="submit"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm transition-all duration-300 transform hover:scale-105"
-              >
-                Subscribe
-              </Button>
-            </form>
-          </div> */}
-
           <div>
             <h4 className="text-lg font-semibold mb-6 uppercase tracking-wide">
               DUBAI OFFICE
@@ -112,17 +84,23 @@ export default function Footer() {
                   <Phone />
                 </span>
                 <a
-                  href="tel:043522142"
-                  className="hover:text-white transition-colors duration-300"
+                  href="tel:048878015"
+                  className="hover:text-white hover:underline transition-colors duration-300"
                 >
-                  043522142
+                  048878015
                 </a>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">
-                  <PhoneCall />
+                  <FaWhatsapp className="text-2xl" />
                 </span>
-                058 896 8000
+                <a
+                  href="tel:+971501204990"
+                  className="hover:text-white hover:underline transition-colors duration-300"
+                >
+                  {" "}
+                  +971 50 120 4990
+                </a>
               </li>
 
               <li className="flex items-center">
@@ -131,12 +109,11 @@ export default function Footer() {
                 </span>
                 <div className="flex flex-row ">
                   <a
-                    href="mailto:info@constructionsite.com"
-                    className="hover:text-white transition-colors duration-300 mr-2"
+                    href="mailto:info@aimterior.com"
+                    className="hover:text-white hover:underline transition-colors duration-300 mr-2"
                   >
-                    info@constructionsite.com
+                    info@aimterior.com
                   </a>
-                  <Copy />
                 </div>
               </li>
 
@@ -145,18 +122,7 @@ export default function Footer() {
                   <span className="mr-2 ">
                     <MapPin />
                   </span>
-                  Project Office:OpalTower-Business Bay-Dubai.
-                  <ExternalLink />
-                </div>
-              </li>
-
-              <li className="flex  items-start">
-                <div className="flex flex-row">
-                  <span className="mr-2 ">
-                    <MapPin />
-                  </span>
-                  Project Office:OpalTower-Business Bay-Dubai
-                  <ExternalLink />
+                  SM1-02-713
                 </div>
               </li>
             </ul>

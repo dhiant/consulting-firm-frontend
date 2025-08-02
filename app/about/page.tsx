@@ -61,21 +61,19 @@ export default function AboutPage() {
           Who We Are
         </h2>
         <div className=" text-lg">
-          <p className="mb-3">
-            <span className="text-bold text-black font-bold font-sans ">
-              AIMTERIOR
-            </span>{" "}
-            is a Dubai-based company that specializes in providing comprehensive
+          <p className="mb-3 text-justify">
+            <span className="text-bold text-black font-bold">AIMTERIOR</span> is
+            a Dubai-based company that specializes in providing comprehensive
             consultation services for construction approvals, interior design,
             and design-build projects, all in compliance with Dubai&apos;s
             regulatory authorities. With a team of experienced professionals, we
-            manage every stage of the project seamlessly—from securing necessary
+            manage every stage of the project seamlessly from securing necessary
             government permits and approvals to delivering meticulous design and
             planning services. We offer hassle-free solutions throughout the
             entire process, catering to projects of any complexity or scope
             across Dubai and ensuring smooth execution from start to finish.
           </p>
-          <p className="mb-3">
+          <p className="mb-3 text-justify">
             Our approach is built on a foundation of trust, transparency, and
             collaboration. We understand the intricacies of Dubai&apos;s
             regulatory environment and are committed to ensuring that all our
@@ -85,11 +83,11 @@ export default function AboutPage() {
             We prioritize clear communication and work closely with our clients
             to understand their vision, ensuring that every detail is carefully
             considered and executed. With a focus on efficiency and excellence,
-            we are your trusted partner in achieving successful project
-            outcomes—on time and within budget.
+            we are your trusted partner in achieving successful project outcomes
+            on time and within budget.
           </p>
 
-          <p>
+          <p className="text-justify">
             At <span className="text-bold text-black font-bold">AIMTERIOR</span>
             , we believe that every project is an opportunity to create
             something exceptional. We combine innovation with industry expertise
