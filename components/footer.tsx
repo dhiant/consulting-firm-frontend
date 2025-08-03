@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
+import CTAButton from "./cta-buttton";
 
 export default function Footer() {
   const router = useRouter();
@@ -25,14 +26,8 @@ export default function Footer() {
               Connect with us for a personalized quote and service consultation.
               We respond quickly and attentively to your request.
             </p>
-            {/* Social Media Icons */}
-            <div className="flex  space-x-4">
-              <button
-                onClick={() => router.push("/contact")}
-                className="border py-2 px-5 mt-12 flex flex-row "
-              >
-                Contact US <MoveRight className="ml-2" />
-              </button>
+            <div className="flex justify-start">
+              <CTAButton />
             </div>
           </div>
 

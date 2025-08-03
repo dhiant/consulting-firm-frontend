@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { CiLinkedin, CiMail } from "react-icons/ci";
 import { IoNewspaperOutline } from "react-icons/io5";
+import { IoChevronUp } from "react-icons/io5";
 import {
   Tooltip,
   TooltipContent,
@@ -31,6 +32,13 @@ const StickyInfo = ({ className }: { className?: string }) => {
     // Cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const socialLinks = [
     {
@@ -83,6 +91,17 @@ const StickyInfo = ({ className }: { className?: string }) => {
         makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
       } transition-all duration-500 ease-in-out hover:scale-125`,
     },
+    {
+      Icon: IoChevronUp,
+      href: "#",
+      label: "Back to Top",
+      tooltip: "Back to top",
+      external: false,
+      onClick: scrollToTop,
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
+    },
   ];
 
   return (
@@ -91,10 +110,18 @@ const StickyInfo = ({ className }: { className?: string }) => {
         className={`space-y-5 ${className} p-4 flex-col items-center hidden md:flex z-10 rounded-l-xl`}
       >
         {socialLinks.map(
-          ({ Icon, href, label, tooltip, external, className }) => (
+          ({ Icon, href, label, tooltip, external, className, onClick }) => (
             <Tooltip key={label}>
               <TooltipTrigger asChild>
-                {external ? (
+                {onClick ? (
+                  <button
+                    onClick={onClick}
+                    aria-label={label}
+                    className={`${className} transition-colors duration-300`}
+                  >
+                    <Icon size={28} className="cursor-pointer" />
+                  </button>
+                ) : external ? (
                   <a
                     href={href}
                     target="_blank"
