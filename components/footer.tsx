@@ -1,13 +1,11 @@
 "use client";
-import { Mail, MapPin, MoveRight, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import CTAButton from "./cta-buttton";
 
 export default function Footer() {
-  const router = useRouter();
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 py-12 max-w-screen-xl">
