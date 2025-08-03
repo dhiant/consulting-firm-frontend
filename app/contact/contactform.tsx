@@ -38,9 +38,40 @@ export default function ContactForm() {
                 <SelectValue placeholder="I am interested in" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="world1">World1</SelectItem>
-                <SelectItem value="world2">World2</SelectItem>
-                <SelectItem value="world3">World3</SelectItem>
+                <SelectItem value="dm-approvals">
+                  Dubai Municipality (DM) Approvals
+                </SelectItem>
+                <SelectItem value="dda-approvals">
+                  Dubai Development Authority (DDA) Approvals
+                </SelectItem>
+                <SelectItem value="trakhees-approvals">
+                  Trakhees Approvals
+                </SelectItem>
+                <SelectItem value="building-permits">
+                  Building Permits
+                </SelectItem>
+                <SelectItem value="food-safety">
+                  Food Safety Approval
+                </SelectItem>
+                <SelectItem value="swimming-pool">
+                  Swimming Pool Approval
+                </SelectItem>
+                <SelectItem value="shisha-permit">
+                  Shisha Permit Approval
+                </SelectItem>
+                <SelectItem value="warehouse-fitout">
+                  Warehouse Fit-Out & Mezzanine
+                </SelectItem>
+                <SelectItem value="landscaping">
+                  Landscaping & Outdoor Approval
+                </SelectItem>
+                <SelectItem value="completion-certificate">
+                  Completion Certificate
+                </SelectItem>
+                <SelectItem value="general-consultation">
+                  General Consultation
+                </SelectItem>
+                <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
           </div>
