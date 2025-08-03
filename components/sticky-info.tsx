@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { CiLinkedin, CiMail } from "react-icons/ci";
@@ -12,6 +13,25 @@ import {
 
 // temp fix
 const StickyInfo = ({ className }: { className?: string }) => {
+  const [makeIconDarker, setMakeIconDarker] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      setMakeIconDarker(scrollY > viewportHeight * 0.6);
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const socialLinks = [
     {
       Icon: CiLinkedin,
@@ -19,8 +39,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "LinkedIn",
       tooltip: "Follow us on LinkedIn",
       external: true,
-      // className: "text-[#0A66C2] hover:text-[#004182]", // LinkedIn blue to dark blue
-      className: "text-[#0a2c4c]"
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
     },
     {
       Icon: FaInstagram,
@@ -28,9 +49,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Instagram",
       tooltip: "Check our Instagram",
       external: true,
-      // className: "text-[#E1306C] hover:text-[#C13584]", // Instagram pink to purple-pink
-      className: "text-[#0a2c4c]"
-
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
     },
     {
       Icon: CiMail,
@@ -38,9 +59,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Email",
       tooltip: "Email us",
       external: true,
-      // className: "text-[#156ED9] hover:text-[#156ED9]", // Neutral email tone with hover attention
-      className: "text-[#0a2c4c]"
-
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
     },
     {
       Icon: FaWhatsapp,
@@ -48,9 +69,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "WhatsApp",
       tooltip: "Chat on WhatsApp",
       external: true,
-      // className: "text-[#25D366] hover:text-[#128C7E]", // WhatsApp green to dark green
-      className: "text-[#0a2c4c]"
-
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
     },
     {
       Icon: IoNewspaperOutline,
@@ -58,9 +79,9 @@ const StickyInfo = ({ className }: { className?: string }) => {
       label: "Brochure",
       tooltip: "Brochure",
       external: true,
-      // className: "text-[#fff000] hover:text-[#ffff00]", // Neutral to blue for documents
-      className: "text-[#0a2c4c]"
-
+      className: `${
+        makeIconDarker ? "text-gray-400 scale-110" : "text-gray-200 scale-100"
+      } transition-all duration-500 ease-in-out hover:scale-125`,
     },
   ];
 

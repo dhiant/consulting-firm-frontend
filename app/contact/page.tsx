@@ -1,27 +1,32 @@
 import { MailIcon, MapPin, PhoneCallIcon } from "lucide-react";
 import ContactForm from "./contactform";
 import { FaWhatsapp } from "react-icons/fa";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
     <main>
-      <section className="relative h-[10vh] bg-primary to-white text-white flex justify-between items-center">
+      {/* Dynamic Hero Section */}
+      <section className="relative h-[100vh] bg-black to-white text-white flex justify-between items-center ">
         <div className="container mx-auto max-w-screen-xl">
-          {/* <div className="absolute inset-0">
+          <div className="absolute inset-0">
             <Image
               src="/images/contact.jpg"
-              alt="Consturction Site Showcase"
+              alt="Contact Us"
               layout="fill"
               objectFit="cover"
               className="opacity-50"
               loading="eager"
             />
-          </div> */}
+          </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            {/* <h1 className="text-5xl font-bold mb-4">Transform Your Space</h1>
-            <p className="text-xl mb-8">
-              Innovative designs that reflect your style and enhance your life.
-            </p> */}
+            <h1 className="text-7xl font-bold mb-4 transition-all duration-700">
+              Let&apos;s Work Together
+            </h1>
+            <p className="text-lg mb-8 transition-all duration-700 delay-100">
+              Ready to start your next project? Get in touch with our team of
+              experienced professionals for expert guidance and solutions.
+            </p>
           </div>
         </div>
       </section>

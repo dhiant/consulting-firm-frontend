@@ -244,11 +244,16 @@ export default function ServicesPage() {
             loading="eager"
           />
           <div className="relative  mx-auto px-4 h-full flex flex-col justify-center z-10 t max-w-screen-xl">
-            <h1 className="text-5xl font-bold mb-4 mx-auto">
-              Find What You Need, Right Here{" "}
+            <h1 className="text-7xl font-bold mb-4 transition-all duration-700">
+              Comprehensive Solutions
             </h1>
-
-            <CTAButton />
+            <p className="text-lg mb-8 transition-all duration-700 delay-100">
+              Expert services tailored to your needs, delivered with precision,
+              creativity, and unwavering attention to detail.
+            </p>
+            <div className="flex justify-start">
+              <CTAButton />
+            </div>
           </div>
         </div>
       </section>

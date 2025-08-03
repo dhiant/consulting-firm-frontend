@@ -113,10 +113,12 @@ export default function PortfolioPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Crafted Dreams</h1>
-            <p className="text-xl mb-8">
-              Take a closer look at the quality and creative precision that
-              define AIM.
+            <h1 className="text-7xl font-bold mb-4 transition-all duration-700">
+              Showcasing Our Work
+            </h1>
+            <p className="text-lg mb-8 transition-all duration-700 delay-100">
+              Explore our portfolio of successful projects that demonstrate our
+              commitment to quality and innovative problem-solving.
             </p>
           </div>
         </div>

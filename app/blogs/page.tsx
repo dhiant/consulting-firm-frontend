@@ -19,9 +19,12 @@ export default function BlogPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Latest News and Blogs</h1>
-            <p className="text-xl mb-8">
-              Innovative designs that reflect your style and enhance your life.
+            <h1 className="text-7xl font-bold mb-4 transition-all duration-700">
+              Insights & Inspiration
+            </h1>
+            <p className="text-lg mb-8 transition-all duration-700 delay-100">
+              Stay informed with expert perspectives, industry trends, and
+              valuable insights from our experienced team of professionals.
             </p>
           </div>
         </div>

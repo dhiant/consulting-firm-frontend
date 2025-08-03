@@ -43,11 +43,10 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">
-              {" "}
-              Crafting Innovative Design and Build Solutions
-            </h1>
-            <p className="text-xl mb-8">
+            <h1 className="text-7xl font-bold mb-4 transition-all duration-700">
+              Crafting Innovative Design
+            </h1>{" "}
+            <p className="text-lg mb-8 transition-all duration-700 delay-100">
               Experienced professionals dedicated to providing expert solutions
               with precision and care.
             </p>
