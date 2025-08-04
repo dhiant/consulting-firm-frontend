@@ -1,3 +1,5 @@
+// footer
+
 "use client";
 import {
   Copy,
