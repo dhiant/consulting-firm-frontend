@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const slides = [
   {
-    image: "/images/home.jpg",
+    image: "/images/hero-home1.png",
     heading: "Transforming Visions Into Reality",
     subheading:
       "Where architectural excellence meets interior innovation. AIMTERIOR brings your dreams to life with precision, creativity, and uncompromising quality.",
@@ -15,21 +15,21 @@ const slides = [
     buttonText: "DISCOVER OUR EXPERTISE",
   },
   {
-    image: "/images/services.jpg",
+    image: "/images/hero-home2.png",
     heading: "Authority Approvals Made Simple",
     subheading:
       "Navigate Dubai's regulatory landscape with confidence. From permits to final approvals, we handle the complexities so you can focus on your vision.",
     buttonLink: "/services",
     buttonText: "VIEW OUR SERVICES",
   },
-  {
-    image: "/images/about.jpg",
-    heading: "Design Excellence, Built to Last",
-    subheading:
-      "Every project tells a story. Let us craft yours with innovative design solutions that blend functionality with breathtaking aesthetics.",
-    buttonLink: "/projects",
-    buttonText: "SEE OUR PORTFOLIO",
-  },
+  // {
+  //   image: "/images/about.jpg",
+  //   heading: "Design Excellence, Built to Last",
+  //   subheading:
+  //     "Every project tells a story. Let us craft yours with innovative design solutions that blend functionality with breathtaking aesthetics.",
+  //   buttonLink: "/projects",
+  //   buttonText: "SEE OUR PORTFOLIO",
+  // },
 ];
 
 const HeroCarousel = () => {
@@ -75,16 +75,14 @@ const HeroCarousel = () => {
     slides[current];
 
   return (
-    <section className="relative h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden">
+    <section className="relative h-screen text-white overflow-hidden">
       {/* Background Image with Enhanced Overlay */}
       <div className="absolute inset-0">
         <Image
           src={image}
           alt="Slide background"
           fill
-          className={`object-cover transition-all duration-1000 ease-in-out ${
-            fade ? "opacity-0 scale-105" : "opacity-60 scale-100"
-          }`}
+          className={`object-cover transition-all duration-1000 ease-in-out`}
           priority
         />
         {/* Gradient Overlay for Better Text Readability */}
@@ -103,7 +101,7 @@ const HeroCarousel = () => {
               }`}
             >
               <div className="inline-flex items-center space-x-3 bg-white/15 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-2xl">
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold tracking-widest uppercase text-white/90">
                   AIMTERIOR
                 </span>
@@ -112,7 +110,7 @@ const HeroCarousel = () => {
 
             {/* Main Heading */}
             <h1
-              className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-[1.1] tracking-tight transition-all duration-700 delay-100 ease-out ${
+              className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight transition-all duration-700 delay-100 ease-out ${
                 fade ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"
               }`}
             >
@@ -123,7 +121,7 @@ const HeroCarousel = () => {
 
             {/* Subheading */}
             <p
-              className={`text-lg sm:text-xl md:text-2xl mb-12 max-w-3xl leading-relaxed text-gray-200 font-light transition-all duration-700 delay-200 ease-out ${
+              className={`text-lg md:text-xl mb-12 max-w-3xl leading-relaxed text-gray-200 font-light transition-all duration-700 delay-200 ease-out ${
                 fade ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"
               }`}
             >
@@ -160,7 +158,6 @@ const HeroCarousel = () => {
               </Button>
               <Button
                 asChild
-                size="lg"
                 variant="outline"
                 className="group border-2 border-white/60 text-white hover:bg-white hover:text-slate-900 px-10 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10"
               >
@@ -200,7 +197,7 @@ const HeroCarousel = () => {
               }`}
             >
               {current === index && (
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full animate-pulse"></div>
               )}
             </button>
           ))}

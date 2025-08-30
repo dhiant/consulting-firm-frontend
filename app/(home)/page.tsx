@@ -38,16 +38,6 @@ const projects = [
     testimonial:
       "Our new office has boosted team morale and impressed our clients. It's both beautiful and environmentally responsible.",
   },
-  // {
-  //   id: 4,
-  //   title: "Luxury Beachfront Villa",
-  //   category: "Residential",
-  //   description:
-  //     "An opulent beachfront property that blends indoor and outdoor living seamlessly.",
-  //   image: "/images/project3.jpg",
-  //   testimonial:
-  //     "The attention to detail in our villa is extraordinary. It's the perfect vacation home we've always dreamed of.",
-  // },
 ];
 export default function HomePage() {
   return (
@@ -62,15 +52,15 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 mb-6">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-brand-50 uppercase tracking-wider">
                 Our Expertise
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {"Find What You're Looking"} <br />
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-50 to-brand-400 bg-clip-text text-transparent">
                 For With Us
               </span>
             </h2>
@@ -113,7 +103,7 @@ export default function HomePage() {
       </div>
 
       {/* Statistics Section */}
-      <div className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
+      <div className="relative py-20 bg-gradient-to-r from-brand-50 to-brand-400 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>

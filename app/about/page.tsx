@@ -16,7 +16,7 @@ export default function AboutPage() {
             loading="eager"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div> */}
         </div>
 
         {/* Floating Elements */}
@@ -37,7 +37,7 @@ export default function AboutPage() {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
               {"Crafting Tomorrow's"}
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Architectural Legacy
               </span>
             </h1>
@@ -46,11 +46,11 @@ export default function AboutPage() {
               Where vision meets expertise. AIMTERIOR transforms architectural
               dreams into stunning realities, delivering exceptional design
               solutions with precision, innovation, and uncompromising quality
-              across Dubai&apost;s dynamic landscape.
+              across Dubai&apos;s dynamic landscape.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <span className="flex items-center space-x-2">
                   <span>Our Story</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
@@ -108,15 +108,15 @@ export default function AboutPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 mb-6">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold uppercase tracking-wider">
                 About Us
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Who We{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-50 to-brand-400 bg-clip-text text-transparent">
                 Are
               </span>
             </h2>
@@ -129,7 +129,7 @@ export default function AboutPage() {
               {/* Company Introduction */}
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -149,7 +149,7 @@ export default function AboutPage() {
                       Dubai-Based Excellence
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      <span className="font-bold text-blue-600">AIMTERIOR</span>{" "}
+                      <span className="font-bold text-brand-50">AIMTERIOR</span>{" "}
                       is a Dubai-based company that specializes in providing
                       comprehensive consultation services for construction
                       approvals, interior design, and design-build projects, all
@@ -166,7 +166,7 @@ export default function AboutPage() {
               {/* Trust & Collaboration */}
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -201,7 +201,7 @@ export default function AboutPage() {
               {/* Innovation & Excellence */}
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -222,9 +222,7 @@ export default function AboutPage() {
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
                       At{" "}
-                      <span className="font-bold text-purple-600">
-                        AIMTERIOR
-                      </span>
+                      <span className="font-bold text-brand-50">AIMTERIOR</span>
                       , we believe that every project is an opportunity to
                       create something exceptional. We combine innovation with
                       industry expertise to provide practical, sustainable
@@ -267,7 +265,7 @@ export default function AboutPage() {
               {/* Floating Stats */}
               <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">500+</div>
+                  <div className="text-3xl font-bold text-brand-50">500+</div>
                   <div className="text-sm text-gray-600 font-medium">
                     Projects Delivered
                   </div>
@@ -276,7 +274,7 @@ export default function AboutPage() {
 
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">98%</div>
+                  <div className="text-3xl font-bold text-brand-50">98%</div>
                   <div className="text-sm text-gray-600 font-medium">
                     Client Satisfaction
                   </div>
@@ -301,7 +299,7 @@ export default function AboutPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-white/90 uppercase tracking-wider">
                 Our Foundation
               </span>
@@ -309,7 +307,7 @@ export default function AboutPage() {
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               What Drives{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-200 to-brand-400 bg-clip-text text-transparent">
                 AIMTERIOR
               </span>
             </h2>
@@ -321,7 +319,7 @@ export default function AboutPage() {
             <div className="group relative">
               <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-105">
                 <div className="mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-50 to-brand-400 rounded-2xl flex items-center justify-center shadow-lg">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -368,7 +366,7 @@ export default function AboutPage() {
             <div className="group relative">
               <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-105">
                 <div className="mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-50 to-brand-400 rounded-2xl flex items-center justify-center shadow-lg">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -413,7 +411,7 @@ export default function AboutPage() {
             <div className="group relative">
               <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-105">
                 <div className="mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-50 to-brand-400 rounded-2xl flex items-center justify-center shadow-lg">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -459,15 +457,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-16">
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 mb-6">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-brand-50 uppercase tracking-wider">
                 Our Journey
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Company{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-50 to-brand-400 bg-clip-text text-transparent">
                 Timeline
               </span>
             </h2>
@@ -480,7 +478,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-r from-brand-50 to-brand-400 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
@@ -499,24 +497,24 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Ahmed Al-Mansouri",
-                role: "Lead Architect",
-                experience: "15+ Years",
-              },
-              {
-                name: "Sarah Johnson",
-                role: "Interior Designer",
-                experience: "12+ Years",
-              },
-              {
-                name: "Omar Hassan",
-                role: "Project Manager",
+                name: "Rush K.",
+                role: "Managing Director",
                 experience: "10+ Years",
               },
               {
-                name: "Lisa Chen",
-                role: "Regulatory Specialist",
-                experience: "8+ Years",
+                name: "Ann E.",
+                role: "Principal Architect",
+                experience: "9+ Years",
+              },
+              {
+                name: "J. Harvey",
+                role: "Design Architect",
+                experience: "7+ Years",
+              },
+              {
+                name: "C. Ivan",
+                role: "Structural Engineer",
+                experience: "6+ Years",
               },
             ].map((member, index) => (
               <div key={index} className="text-center group">

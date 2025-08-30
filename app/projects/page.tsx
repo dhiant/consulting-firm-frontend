@@ -130,13 +130,13 @@ export default function PortfolioPage() {
             <div className="mb-8 animate-fade-in">
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 backdrop-blur-sm px-6 py-3 rounded-full border border-emerald-400/30">
                 <div className="relative flex space-x-1">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
                   <div
-                    className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"
+                    className="w-2 h-2 bg-brand-100 rounded-full animate-pulse"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"
+                    className="w-2 h-2 bg-brand-400 rounded-full animate-pulse"
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>
@@ -148,7 +148,7 @@ export default function PortfolioPage() {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
               Where Dreams Take
-              <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Architectural Form
               </span>
             </h1>
@@ -161,7 +161,7 @@ export default function PortfolioPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center space-x-2">
                   <span>Explore Projects</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
@@ -211,16 +211,16 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-100 mb-6">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-emerald-100 mb-6">
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-brand-50 uppercase tracking-wider">
                 Portfolio Showcase
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Our Creative{" "}
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-50 to-brand-400 bg-clip-text text-transparent">
                 Portfolio
               </span>
             </h2>
@@ -247,8 +247,8 @@ export default function PortfolioPage() {
                   onClick={() => setFilter(category)}
                   className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 ${
                     filter === category
-                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg"
-                      : "bg-white text-gray-700 border-2 border-gray-200 hover:border-emerald-400 hover:text-emerald-600"
+                      ? "bg-gradient-to-r from-brand-50 to-brand-400 text-white shadow-lg"
+                      : "bg-white text-gray-700 border-2 border-gray-200 hover:border-brand-50 hover:text-brand-400"
                   }`}
                 >
                   {category}
@@ -287,7 +287,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Project Statistics */}
-      <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-600 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-r from-brand-50 to-brand-400 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
@@ -330,16 +330,16 @@ export default function PortfolioPage() {
       <section className="relative py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-100 mb-6">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-emerald-100 mb-6">
+              <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-brand-50 uppercase tracking-wider">
                 Client Success Stories
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               What Our Clients{" "}
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-50 to-brand-400 bg-clip-text text-transparent">
                 Say About Us
               </span>
             </h2>
@@ -369,14 +369,14 @@ export default function PortfolioPage() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">
                       {project.title.charAt(0)}
                     </span>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">{project.title}</h4>
-                    <p className="text-emerald-600 text-sm">
+                    <p className="text-brand-50 text-sm">
                       {project.category} Project
                     </p>
                   </div>
@@ -400,7 +400,7 @@ export default function PortfolioPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center justify-center space-x-3">
                   <span>Start Your Project</span>
                   <svg
@@ -419,7 +419,7 @@ export default function PortfolioPage() {
                 </span>
               </button>
 
-              <button className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-brand-50 text-brand-50 hover:bg-brand-50 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105">
                 View All Services
               </button>
             </div>

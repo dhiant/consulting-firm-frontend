@@ -28,7 +28,7 @@ export default function ServicePreview({ title, subtitle, desc, image }) {
         {/* Category Badge */}
         <div className="absolute top-4 left-4 z-10">
           <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 shadow-lg">
-            <Building2 className="w-3 h-3 text-blue-600" />
+            <Building2 className="w-3 h-3 text-brand-50" />
             <span className="text-xs font-semibold text-gray-800 uppercase tracking-wider">
               {subtitle}
             </span>
@@ -55,7 +55,7 @@ export default function ServicePreview({ title, subtitle, desc, image }) {
             </p>
 
             {/* Learn More Button */}
-            <div className="flex items-center space-x-2 text-sm font-medium">
+            <div className="flex items-center space-x-2 text-sm font-medium text-brand-50">
               <span>Learn More</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </div>
@@ -65,7 +65,7 @@ export default function ServicePreview({ title, subtitle, desc, image }) {
         {/* Hover Effect Border */}
         <div
           className={`absolute inset-0 border-2 rounded-2xl transition-all duration-500 ${
-            hovered ? "border-blue-400/50" : "border-transparent"
+            hovered ? "border-brand-50/50" : "border-transparent"
           }`}
         />
       </div>

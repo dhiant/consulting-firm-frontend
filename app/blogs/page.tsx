@@ -81,13 +81,13 @@ export default function BlogPage() {
             <div className="mb-8 animate-fade-in">
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-600/20 to-pink-600/20 backdrop-blur-sm px-6 py-3 rounded-full border border-indigo-400/30">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-brand-50 rounded-full animate-bounce"></div>
                   <div
-                    className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-brand-100 rounded-full animate-bounce"
                     style={{ animationDelay: "0.1s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-pink-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-brand-400 rounded-full animate-bounce"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                 </div>
@@ -99,7 +99,7 @@ export default function BlogPage() {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
               Design Stories &
-              <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Industry Insights
               </span>
             </h1>
@@ -112,7 +112,7 @@ export default function BlogPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center space-x-2">
                   <span>Latest Articles</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">

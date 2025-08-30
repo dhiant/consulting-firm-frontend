@@ -104,7 +104,7 @@ const CarouselSection = () => {
   };
 
   return (
-    <section className="mx-5 justify-between mb-6">
+    <section className="mx-5 justify-between mb-6 py-20">
       <div className="flex flex-col lg:flex-row md:flex-col lg:gap-20 mx-auto max-w-screen-xl px-4">
         <div className="mr-8">
           <h2 className="text-[34px] font-bold mb-5 uppercase text-primary">
@@ -170,7 +170,7 @@ const CarouselSection = () => {
 
           <button
             onClick={handleClick}
-            className="group inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="mb-5 group inline-flex items-center space-x-2 bg-gradient-to-r from-brand-50 to-brand-400 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             <span>View All Projects</span>
             <svg

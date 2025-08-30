@@ -12,61 +12,9 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-// Reusable Logo Component
-const AimteriorLogo = ({ className = "", size = "2xl" }) => (
-  <div className={`flex items-center space-x-3 ${className}`}>
-    <div className="relative">
-      {/* Logo Symbol - Enhanced */}
-      <div className="w-10 h-10 relative">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white"
-        >
-          <path
-            d="M5 35L20 5L35 35H5Z"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-          <path
-            d="M10 28L20 12L30 28"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-          <circle cx="20" cy="10" r="2.5" fill="currentColor" />
-          <path
-            d="M15 22L20 16L25 22"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-        </svg>
-      </div>
-    </div>
-    <div className="flex flex-col">
-      <span className={`text-${size} font-bold tracking-tight text-white`}>
-        AIMTERIOR
-      </span>
-      <span className="text-xs text-gray-300 tracking-wider uppercase">
-        Architecture & Design
-      </span>
-    </div>
-  </div>
-);
 
 export default function Footer() {
   const router = useRouter();
@@ -87,7 +35,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section - Enhanced */}
           <div className="lg:col-span-1 space-y-6">
-            <AimteriorLogo />
+            <Image
+              alt="..."
+              src={"/images/company_logo_white.png"}
+              height={50}
+              width={80}
+            />
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
               Transforming spaces with innovative architectural solutions and
               premium interior design. Your vision, our expertise.

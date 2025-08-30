@@ -2,19 +2,29 @@
 
 import { Input } from "@/components/ui/input";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Search, ArrowRight } from "lucide-react";
-import Image from "next/image";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import { Search, CheckCircle, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 interface IServiceList {
+  id: number;
   title: string;
   description: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  serviceTitle?: string;
+  services?: {
+    name: string;
+    description: string;
+  }[];
+  featuresTitle?: string;
+  features?: string[];
 }
 
 interface ServiceListProps {
@@ -37,130 +47,152 @@ const ServiceList: React.FC<ServiceListProps> = ({
   );
 
   return (
-    <section className="py-8">
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 mb-6">
-          <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-          <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
-            Service Category
-          </span>
-        </div>
-
-        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-          {title.split(" ").map((word, index) =>
-            index === title.split(" ").length - 1 ? (
-              <span
-                key={index}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-              >
-                {word}
-              </span>
-            ) : (
-              <span key={index}>{word} </span>
-            )
-          )}
-        </h3>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-          {description}
-        </p>
-
-        {/* Enhanced Search */}
+    <section>
+      <div className="flex justify-center mt-12">
         {enableSearch && (
-          <div className="max-w-md mx-auto">
-            <div className="relative">
-              <Input
-                type="text"
-                placeholder="Search services..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 pr-4 py-3 text-lg border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
-              />
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            </div>
+          <div className="relative w-full md:w-[500px]">
+            <Input
+              type="text"
+              placeholder="Search services..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="p-2 border border-gray-300 rounded"
+            />
+            <Search className="absolute right-1.5 top-1.5" />
           </div>
         )}
       </div>
-
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <h3 className="font-bold my-5 text-3xl">{title}</h3>
+      <p className="text-primary/80">{description}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-5">
         {filteredData.map((item, index) => (
-          <TooltipProvider key={index}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="group relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 cursor-pointer hover:-translate-y-2">
-                  {/* Icon Background */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
+          <Dialog key={index}>
+            <DialogTrigger asChild>
+              <div className="group relative flex flex-col justify-start items-center px-4 py-6 gap-y-4 shadow-all-directions cursor-pointer hover:shadow-primary rounded-lg transition-all duration-300 hover:scale-105 border border-transparent hover:border-primary/20">
+                {<item.icon className="w-12 h-12 text-primary" />}
+                <h3 className="text-center font-semibold text-gray-900 text-sm leading-tight">
+                  {item.title}
+                </h3>
 
-                  {/* Content */}
-                  <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <div className="flex items-center gap-1 text-primary text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity mt-auto">
+                  <span>Learn more</span>
+                  <ArrowRight className="w-3 h-3" />
+                </div>
+              </div>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  {<item.icon className="w-8 h-8 text-primary" />}
+                  <DialogTitle className="text-2xl font-bold">
                     {item.title}
-                  </h4>
+                  </DialogTitle>
+                </div>
+              </DialogHeader>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {item.description}
+              <div className="space-y-6">
+                {/* Description */}
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                    <ReactMarkdown>{item.description}</ReactMarkdown>
                   </p>
-
-                  {/* Hover Arrow */}
-                  <div className="flex items-center text-blue-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-
-                  {/* Decorative Element */}
-                  <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* Border Animation */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-2xl transition-colors duration-300"></div>
                 </div>
-              </TooltipTrigger>
-              <TooltipContent
-                side="top"
-                className="max-w-sm p-0 bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden"
-              >
-                <div className="relative">
-                  <Image
-                    src="/images/project1.jpg"
-                    alt={item.title}
-                    height={200}
-                    width={400}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h5 className="text-white font-bold text-lg mb-1">
-                      {item.title}
-                    </h5>
+
+                {/* Services Section */}
+                {item.services && item.services.length > 0 && (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-xl font-semibold text-primary border-b border-primary pb-2">
+                        {item.serviceTitle || "Our Services Include:"}
+                      </h4>
+                      <Badge variant="secondary" className="text-xs">
+                        {item.services.length} Services
+                      </Badge>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {item.services.map((service, serviceIndex) => (
+                        <div
+                          key={serviceIndex}
+                          className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow hover:border-primary/30"
+                        >
+                          <h5 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            {service.name}
+                          </h5>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {service.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-700 leading-relaxed">
-                    {item.description}
+                )}
+
+                {/* Features Section */}
+                {item.features && item.features.length > 0 && (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-xl font-semibold text-primary border-b border-primary pb-2">
+                        {item.featuresTitle || "Why Choose Us?"}
+                      </h4>
+                      <Badge
+                        variant="outline"
+                        className="text-xs border-green-200 text-green-700"
+                      >
+                        {item.features.length} Benefits
+                      </Badge>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {item.features.map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-3 bg-green-50 p-3 rounded-lg hover:bg-green-100 transition-colors"
+                        >
+                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          <span className="text-sm font-medium text-gray-700">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Call to Action */}
+                <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-6 rounded-lg text-center border border-primary/20">
+                  <p className="text-primary font-semibold mb-2 text-lg">
+                    Ready to get started?
                   </p>
-                  <div className="mt-4 flex items-center text-blue-600 text-sm font-semibold">
-                    <span>Click for more details</span>
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                  <p className="text-sm text-gray-600 mb-4">
+                    Contact us today for a consultation and let us help you
+                    navigate the approval process.
+                  </p>
+                  <div className="flex justify-center gap-4">
+                    <Badge
+                      onClick={() => {
+                        window.open("https://wa.me/1234567890", "_blank");
+                      }}
+                      className="bg-primary text-white px-4 py-2 cursor-pointer hover:bg-primary/90 transition-colors"
+                    >
+                      Get Free Consultation
+                    </Badge>
+
+                    <Badge
+                      variant="outline"
+                      className="px-4 py-2 cursor-pointer hover:bg-gray-50 transition-colors"
+                      onClick={() => {
+                        window.open("https://brochurelink.com", "_blank");
+                      }}
+                    >
+                      Download Brochure
+                    </Badge>
                   </div>
                 </div>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+              </div>
+            </DialogContent>
+          </Dialog>
         ))}
       </div>
-
-      {/* Results Count */}
-      {enableSearch && searchTerm && (
-        <div className="text-center mt-8">
-          <p className="text-gray-600">
-            Showing {filteredData.length} of {data.length} services
-            {searchTerm && (
-              <span className="font-semibold"> for {searchTerm}</span>
-            )}
-          </p>
-        </div>
-      )}
     </section>
   );
 };

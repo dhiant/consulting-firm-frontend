@@ -72,7 +72,6 @@ const StickyInfo = ({ className }: { className?: string }) => {
       className: "text-[#E1306C] hover:text-white",
       hoverEffect:
         "hover:bg-gradient-to-r hover:from-[#E1306C] hover:to-[#C13584] hover:shadow-lg hover:shadow-[#E1306C]/30",
-      badge: "New",
       priority: "high",
     },
     {
@@ -95,7 +94,6 @@ const StickyInfo = ({ className }: { className?: string }) => {
       className: "text-[#25D366] hover:text-white",
       hoverEffect:
         "hover:bg-[#25D366] hover:shadow-lg hover:shadow-[#25D366]/30",
-      badge: "Online",
       priority: "high",
     },
     {
@@ -218,7 +216,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
             {secondaryLinks.length > 0 && (
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center justify-center w-10 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200 text-gray-600 hover:text-gray-800"
+                className="flex items-center justify-center w-10 h-8 rounded-lg bg-brand-50/10 hover:bg-brand-50/20 transition-all duration-300 text-brand-50 hover:text-brand-50 border border-brand-50/30 hover:border-brand-50/50 hover:scale-105"
                 aria-label={isExpanded ? "Show less" : "Show more"}
               >
                 {isExpanded ? (
@@ -303,7 +301,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
           </div>
 
           {/* Connection Line Animation */}
-          <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500 to-transparent mt-4 animate-pulse"></div>
+          <div className="w-0.5 h-8 bg-gradient-to-b from-brand-50 to-transparent mt-4 animate-pulse"></div>
         </div>
 
         {/* Mobile Floating Action Button */}
@@ -311,7 +309,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
           <div className="relative">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center justify-center"
+              className="w-14 h-14 bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center justify-center"
               aria-label="Contact options"
             >
               <CiMail size={24} />

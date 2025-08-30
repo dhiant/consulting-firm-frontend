@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Enhanced Contact Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-orange-900 via-red-900 to-pink-900 text-white flex items-center overflow-hidden">
+      <section className="relative h-[100vh] bg-gradient-to-br from-brand-50 via-brand-200 to-brand-400 text-white flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -17,7 +17,7 @@ export default function ContactPage() {
             loading="eager"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/85 via-red-900/75 to-pink-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-50/85 via-brand-200/75 to-brand-400/70"></div>
           {/* Contact Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-1/4 left-1/3 w-40 h-40 border-2 border-white rotate-12 animate-spin-slow"></div>
@@ -30,15 +30,15 @@ export default function ContactPage() {
           <div className="text-center max-w-4xl mx-auto">
             {/* Contact Badge */}
             <div className="mb-8 animate-fade-in">
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-600/20 to-pink-600/20 backdrop-blur-sm px-6 py-3 rounded-full border border-orange-400/30">
+              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-50/20 to-brand-200/20 backdrop-blur-sm px-6 py-3 rounded-full border border-brand-400/30">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-brand-50 rounded-full animate-bounce"></div>
                   <div
-                    className="w-2 h-2 bg-red-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-brand-100 rounded-full animate-bounce"
                     style={{ animationDelay: "0.1s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-pink-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-brand-400 rounded-full animate-bounce"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                 </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
               Ready to Transform
-              <span className="block bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Your Vision?
               </span>
             </h1>
@@ -65,21 +65,21 @@ export default function ContactPage() {
             {/* Quick Contact Options */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-delay">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <span className="text-2xl">📞</span>
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Call Us</h3>
                 <p className="text-sm text-gray-300">+971 4 352 2142</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <span className="text-2xl">✉️</span>
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Email Us</h3>
                 <p className="text-sm text-gray-300">info@aimterior.com</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <span className="text-2xl">📍</span>
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Visit Us</h3>
@@ -89,7 +89,7 @@ export default function ContactPage() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-delay">
-              <button className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Get Free Consultation</span>
                   <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
@@ -103,8 +103,8 @@ export default function ContactPage() {
         </div>
 
         {/* Floating Contact Elements */}
-        <div className="absolute top-16 right-16 w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-red-400 to-pink-400 rounded-full opacity-30 animate-float-delayed"></div>
+        <div className="absolute top-16 right-16 w-16 h-16 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full opacity-30 animate-float-delayed"></div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
@@ -112,7 +112,7 @@ export default function ContactPage() {
             Start the Conversation
           </div>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gradient-to-b from-orange-400 to-pink-400 rounded-full mt-2 animate-bounce"></div>
+            <div className="w-1 h-2 bg-gradient-to-b from-brand-50 to-brand-400 rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
       </section>

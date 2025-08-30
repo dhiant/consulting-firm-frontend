@@ -54,7 +54,7 @@ export default function ServiceContext() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-brand-400 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-white/90 uppercase tracking-wider">
               Our Process
             </span>
@@ -62,7 +62,7 @@ export default function ServiceContext() {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             The{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-300 to-brand-400 bg-clip-text text-transparent">
               AIM
             </span>{" "}
             Approach
@@ -82,7 +82,7 @@ export default function ServiceContext() {
                 <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-105">
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-300 to-brand-400 rounded-2xl flex items-center justify-center shadow-lg">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -103,7 +103,7 @@ export default function ServiceContext() {
                         key={idx}
                         className="flex items-center text-sm text-gray-400"
                       >
-                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></div>
+                        <div className="w-1.5 h-1.5 bg-brand-400 rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}
@@ -129,7 +129,7 @@ export default function ServiceContext() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-6">
             <button
               onClick={() => router.push("/contact")}
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
+              className="group bg-gradient-to-r from-brand-100 to-brand-400 hover:from-brand-200 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
             >
               <span>Start Your Project</span>
               <MoveRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
