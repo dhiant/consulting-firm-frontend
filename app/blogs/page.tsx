@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 const featuredPost = {
   date: "May 10, 2023",
@@ -45,18 +46,19 @@ export default function BlogPage() {
   return (
     <div>
       {/* Enhanced Blogs Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white flex items-center overflow-hidden">
+      <section className="relative h-screen text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/about.jpg"
+            src="/images/blog.png"
             alt="AIMTERIOR Insights & Stories"
             fill
-            className="object-cover opacity-25"
+            className="object-cover"
             loading="eager"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 via-purple-900/80 to-pink-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
           {/* Blog Pattern - Floating Elements */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-1/5 left-1/4 w-32 h-4 bg-white rotate-12 animate-pulse"></div>
@@ -79,7 +81,7 @@ export default function BlogPage() {
           <div className="max-w-4xl">
             {/* Blog Badge */}
             <div className="mb-8 animate-fade-in">
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-600/20 to-pink-600/20 backdrop-blur-sm px-6 py-3 rounded-full border border-indigo-400/30">
+              <div className="inline-flex items-center space-x-3 bg-white/15 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-2xl">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-brand-50 rounded-full animate-bounce"></div>
                   <div
@@ -149,14 +151,7 @@ export default function BlogPage() {
         <div className="absolute bottom-32 left-16 w-20 h-28 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 -rotate-6 animate-float-delayed"></div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="text-xs text-gray-300 mb-2 uppercase tracking-wider">
-            Explore Our Content
-          </div>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gradient-to-b from-indigo-400 to-pink-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold mb-5 text-center">BLOG & INSIGHTS</h1>

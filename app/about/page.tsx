@@ -1,22 +1,24 @@
 import Image from "next/image";
 import { CompanyTimeline } from "./components/company-timeline";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 export default function AboutPage() {
   return (
     <div>
       {/* Enhanced Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white flex items-center overflow-hidden">
+      <section className="relative h-screen text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/about.jpg"
+            src="/images/about.png"
             alt="AIMTERIOR Design Excellence"
             fill
-            className="object-cover opacity-40"
+            className="object-cover"
             loading="eager"
             priority
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         </div>
 
         {/* Floating Elements */}
@@ -28,7 +30,7 @@ export default function AboutPage() {
             {/* Brand Badge */}
             <div className="mb-6 animate-fade-in">
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold tracking-wider uppercase">
                   About AIMTERIOR
                 </span>
@@ -87,15 +89,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="text-sm text-gray-300 mb-4 uppercase tracking-wider">
-            Scroll to explore
-          </div>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Who We Are */}
@@ -240,7 +234,7 @@ export default function AboutPage() {
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/about.jpg"
+                  src="/images/about.png"
                   alt="AIMTERIOR Office"
                   width={600}
                   height={700}

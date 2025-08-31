@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import HoverCard from "./hover";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 const projects = [
   {
     id: 1,
-    title: "Modern Minimalist Apartment",
+    title: "Minimalist Apartment",
     category: "Residential",
     description:
       "A sleek, minimalist design for a city apartment that maximizes space and light.",
@@ -37,6 +38,7 @@ const projects = [
       "Our new office has boosted team morale and impressed our clients. It's both beautiful and environmentally responsible.",
   },
   {
+    id: 4,
     title: "Luxury Beachfront Villa",
     category: "Residential",
     description:
@@ -46,6 +48,7 @@ const projects = [
       "The attention to detail in our villa is extraordinary. It's the perfect vacation home we've always dreamed of.",
   },
   {
+    id: 5,
     title: "Boutique Hotel Lobby",
     category: "Hospital",
     description:
@@ -56,6 +59,7 @@ const projects = [
       "The lobby design has significantly improved our guests' first impressions. It's elegant yet welcoming.",
   },
   {
+    id: 6,
     title: "Urban Loft Renovation",
     category: "Restaurant",
     description:
@@ -65,27 +69,6 @@ const projects = [
     testimonial:
       "I never thought my old loft could look this amazing. It's like living in a design magazine!",
   },
-  // {
-  //   title: "Rustic Mountain Retreat",
-  //   category: "Warehouse",
-  //   description:
-  //     "A cozy mountain home that combines rustic charm with modern comforts.",
-  //   image: "/images/project6.jpg",
-
-  //   testimonial:
-  //     "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
-  // },
-
-  //  {
-  //   title: "Rustic Mountain Retreat",
-  //   category: "Office",
-  //   description:
-  //     "A cozy mountain home that combines rustic charm with modern comforts.",
-  //   image: "/images/project6.jpg",
-
-  //   testimonial:
-  //     "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
-  // },
 ];
 
 export default function PortfolioPage() {
@@ -99,18 +82,19 @@ export default function PortfolioPage() {
   return (
     <div>
       {/* Enhanced Projects Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 text-white flex items-center overflow-hidden">
+      <section className="relative h-screen text-white overflow-hidden">
         {/* Background Image with Dynamic Overlay */}
         <div className="absolute inset-0">
           <Image
             src="/images/about.jpg"
             alt="AIMTERIOR Portfolio Showcase"
             fill
-            className="object-cover opacity-35"
+            className="object-cover"
             loading="eager"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/85 via-teal-900/70 to-slate-900/75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
           {/* Dynamic Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="grid grid-cols-12 grid-rows-12 h-full w-full">
@@ -128,7 +112,7 @@ export default function PortfolioPage() {
           <div className="max-w-4xl">
             {/* Portfolio Badge */}
             <div className="mb-8 animate-fade-in">
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 backdrop-blur-sm px-6 py-3 rounded-full border border-emerald-400/30">
+              <div className="inline-flex items-center space-x-3 bg-white/15 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-2xl">
                 <div className="relative flex space-x-1">
                   <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
                   <div
@@ -197,14 +181,7 @@ export default function PortfolioPage() {
         <div className="absolute bottom-32 right-32 w-24 h-32 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 animate-float-delayed opacity-30"></div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="text-xs text-gray-300 mb-2 uppercase tracking-wider">
-            View Our Work
-          </div>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gradient-to-b from-emerald-400 to-teal-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
       {/* Main Projects Section */}
       <section className="relative py-20 bg-gradient-to-b from-white to-gray-50">

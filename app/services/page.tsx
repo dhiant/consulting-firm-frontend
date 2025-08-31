@@ -31,6 +31,10 @@ import {
 } from "lucide-react";
 import ServiceList from "./components/service-list";
 import Link from "next/link";
+import ScrollIndicator from "@/components/scroll-indicator";
+import { FaRegClipboard } from "react-icons/fa";
+import { TbGeometry } from "react-icons/tb";
+import { MdConstruction } from "react-icons/md";
 
 const authorityApprovalsData = [
   {
@@ -953,17 +957,19 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Enhanced Services Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-slate-900 via-gray-800 to-slate-800 text-white flex items-center overflow-hidden">
+      <section className="relative h-screen text-white overflow-hidden">
         {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/services.jpg"
+            src="/images/services.png"
             alt="AIMTERIOR Professional Services"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             loading="eager"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         </div>
 
         <div className="relative container mx-auto px-6 h-full flex items-center max-w-screen-xl z-10">
@@ -995,7 +1001,7 @@ export default function ServicesPage() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
+            <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               From authority approvals to final construction, AIMTERIOR delivers
               end-to-end services that streamline your project journey.
               Experience the difference of working with Dubai&apos;s most
@@ -1003,7 +1009,7 @@ export default function ServicesPage() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-delay">
+            <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
               <Link href="/contact" className="group">
                 <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   <span className="flex items-center justify-center space-x-3">
@@ -1020,8 +1026,8 @@ export default function ServicesPage() {
             {/* Service Categories Preview */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">📋</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <FaRegClipboard className="text-2xl" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">
                   Authority Approvals
@@ -1031,8 +1037,8 @@ export default function ServicesPage() {
                 </p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">📐</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <TbGeometry className="text-2xl" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">
                   Design & Planning
@@ -1042,8 +1048,8 @@ export default function ServicesPage() {
                 </p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">🏗️</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <MdConstruction className="text-2xl" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Fit-out & Build</h3>
                 <p className="text-sm text-gray-300">
@@ -1055,14 +1061,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce">
-          <div className="text-xs text-gray-300 mb-2 uppercase tracking-wider">
-            Explore Our Expertise
-          </div>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Main Services Section */}
@@ -1070,7 +1069,7 @@ export default function ServicesPage() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 mb-6">
+            <div className="inline-flex items-center space-x-2 bg-bl px-4 py-2 rounded-full border border-blue-100 mb-6">
               <div className="w-2 h-2 bg-brand-50 rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-brand-50 uppercase tracking-wider">
                 Our Expertise

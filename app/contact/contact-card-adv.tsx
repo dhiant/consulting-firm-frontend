@@ -7,7 +7,6 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import {
   Mail,
-  MoveRight,
   Phone,
   Building2,
   User,
@@ -100,9 +99,7 @@ const ContactCard = () => {
               </div>
               <div>
                 <h2 className="text-3xl font-bold">Get Your Quote</h2>
-                <p className="text-brand-50/90 text-sm">
-                  Let's discuss your project
-                </p>
+                <p className="text-sm">{"Let's discuss your project"}</p>
               </div>
             </div>
 
@@ -110,15 +107,15 @@ const ContactCard = () => {
             <div className="flex items-center gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>Toll free 800 KPS</span>
+                <span>048878015</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <a
-                  href="mailto:Hello@kpsworld.com"
+                  href="mailto:info@aimterior.com"
                   className="hover:underline transition-all duration-300"
                 >
-                  Hello@kpsworld.com
+                  info@aimterior.com
                 </a>
               </div>
             </div>

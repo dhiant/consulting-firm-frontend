@@ -1,105 +1,135 @@
 "use client";
 
-import { ArrowRight, Eye } from "lucide-react";
+import { ExternalLink, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function HoverCard({ title, subtitle, desc, image }) {
+interface HoverCardProps {
+  title: string;
+  subtitle: string;
+  desc: string;
+  image: string;
+}
+
+export default function HoverCard({
+  title,
+  subtitle,
+  desc,
+  image,
+}: HoverCardProps) {
   const [hovered, setHovered] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   return (
-    <div className="group relative max-w-sm mx-auto">
-      <div
-        className="relative w-full h-[500px] overflow-hidden rounded-2xl shadow-lg transition-all duration-700 ease-in-out group-hover:shadow-2xl group-hover:scale-105 cursor-pointer"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {/* Background Image */}
+    <div
+      className="group relative w-80 mx-auto bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Enhanced Image Container with Gradient Overlay */}
+      <div className="relative h-72 overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
-        />
-
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500" />
-
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 z-10">
-          <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 shadow-lg">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-            <span className="text-xs font-semibold text-gray-800 uppercase tracking-wider">
-              {subtitle}
-            </span>
-          </div>
-        </div>
-
-        {/* View Button */}
-        <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 hover:bg-white/30 transition-colors duration-300">
-            <Eye className="w-5 h-5 text-white" />
-          </button>
-        </div>
-
-        {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-          {/* Title */}
-          <h3 className="text-2xl font-bold mb-3 leading-tight transition-all duration-500 group-hover:translate-y-0 translate-y-2">
-            {title}
-          </h3>
-
-          {/* Description - Shows on hover */}
-          <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              hovered
-                ? "max-h-32 opacity-100 translate-y-0 mb-6"
-                : "max-h-0 opacity-0 translate-y-4"
-            }`}
-          >
-            <p className="text-sm text-gray-200 leading-relaxed line-clamp-3">
-              {desc}
-            </p>
-          </div>
-
-          {/* Action Button */}
-          <div
-            className={`transition-all duration-500 ease-in-out ${
-              hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <button className="group/btn inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105">
-              <span>View Project</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-            </button>
-          </div>
-        </div>
-
-        {/* Hover Effect Border */}
-        <div
-          className={`absolute inset-0 border-2 rounded-2xl transition-all duration-500 ${
-            hovered ? "border-emerald-400/50" : "border-transparent"
+          className={`object-cover transition-transform duration-700 ${
+            hovered ? "scale-110" : "scale-100"
           }`}
         />
 
-        {/* Mobile Content (for screens smaller than lg) */}
-        <div className="lg:hidden absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 text-white">
-          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 mb-3">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-            <span className="text-xs font-semibold uppercase tracking-wider">
-              {subtitle}
-            </span>
-          </div>
-          <h3 className="text-xl font-bold mb-2 leading-tight">{title}</h3>
-          <p className="text-sm text-gray-200 leading-relaxed mb-4 line-clamp-2">
-            {desc}
-          </p>
-          <button className="inline-flex items-center space-x-2 text-emerald-400 font-semibold text-sm">
-            <span>View Details</span>
-            <ArrowRight className="w-4 h-4" />
+        {/* Gradient Overlay */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        />
+
+        {/* Floating Action Buttons */}
+        <div
+          className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-500 ${
+            hovered ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+          }`}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLiked(!liked);
+            }}
+            className={`w-10 h-10 rounded-full backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+              liked
+                ? "bg-red-500 text-white shadow-lg"
+                : "bg-white/20 text-white hover:bg-white/30"
+            }`}
+          >
+            <Heart
+              className={`w-4 h-4 transition-all duration-300 ${
+                liked ? "fill-current scale-110" : ""
+              }`}
+            />
+          </button>
+
+          <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white/30">
+            <Share2 className="w-4 h-4" />
           </button>
         </div>
+
+        {/* Category Badge */}
+        <div
+          className={`absolute bottom-4 left-4 transition-all duration-500 ${
+            hovered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+          }`}
+        >
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-800 backdrop-blur-sm border border-white/50">
+            {subtitle}
+          </span>
+        </div>
+
+        {/* Description and See Details Overlay */}
+        <div
+          className={`absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col justify-center items-center p-6 transition-all duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="text-center text-white">
+            <p className="text-sm leading-relaxed mb-6 max-w-xs">{desc}</p>
+          </div>
+        </div>
       </div>
+
+      {/* Enhanced Content Section */}
+      <div className="p-6 relative">
+        {/* Title with enhanced typography */}
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-50 transition-colors duration-300">
+          {title}
+        </h3>
+
+        {/* Action Button with enhanced styling */}
+        <div className="flex items-center justify-between">
+          <button className="flex items-center space-x-2 text-gray-500 hover:text-brand-50 transition-colors duration-300">
+            <ExternalLink className="w-4 h-4" />
+            <span className="text-sm">Details</span>
+          </button>
+        </div>
+
+        {/* Subtle bottom border animation */}
+        <div
+          className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-brand-50 to-brand-400 transition-all duration-500 ${
+            hovered ? "w-full" : "w-0"
+          }`}
+        />
+      </div>
+
+      {/* Floating Elements for extra visual interest */}
+      <div
+        className={`absolute -top-2 -right-2 w-4 h-4 bg-brand-50 rounded-full opacity-0 transition-all duration-700 ${
+          hovered ? "opacity-100 scale-100" : "scale-0"
+        }`}
+      />
+      <div
+        className={`absolute -bottom-2 -left-2 w-3 h-3 bg-brand-100 rounded-full opacity-0 transition-all duration-700 delay-100 ${
+          hovered ? "opacity-100 scale-100" : "scale-0"
+        }`}
+      />
     </div>
   );
 }

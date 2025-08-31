@@ -1,23 +1,25 @@
 import { MailIcon, MapPin, PhoneCallIcon, PhoneIncoming } from "lucide-react";
 import Image from "next/image";
 import ContactForm from "./contactform";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 export default function ContactPage() {
   return (
     <main>
       {/* Enhanced Contact Hero Section */}
-      <section className="relative h-[100vh] bg-gradient-to-br from-brand-50 via-brand-200 to-brand-400 text-white flex items-center overflow-hidden">
+      <section className="relative h-screen text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/contact.jpg"
+            src="/images/contact.png"
             alt="AIMTERIOR Contact"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             loading="eager"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-50/85 via-brand-200/75 to-brand-400/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
           {/* Contact Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-1/4 left-1/3 w-40 h-40 border-2 border-white rotate-12 animate-spin-slow"></div>
@@ -30,7 +32,7 @@ export default function ContactPage() {
           <div className="text-center max-w-4xl mx-auto">
             {/* Contact Badge */}
             <div className="mb-8 animate-fade-in">
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-50/20 to-brand-200/20 backdrop-blur-sm px-6 py-3 rounded-full border border-brand-400/30">
+              <div className="inline-flex items-center space-x-3 bg-white/15 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-2xl">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-brand-50 rounded-full animate-bounce"></div>
                   <div
@@ -65,22 +67,22 @@ export default function ContactPage() {
             {/* Quick Contact Options */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-delay">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">📞</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <PhoneCallIcon className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Call Us</h3>
                 <p className="text-sm text-gray-300">+971 4 352 2142</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">✉️</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <MailIcon className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Email Us</h3>
                 <p className="text-sm text-gray-300">info@aimterior.com</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-2xl">📍</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                  <MapPin className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Visit Us</h3>
                 <p className="text-sm text-gray-300">Business Bay, Dubai</p>
@@ -107,14 +109,7 @@ export default function ContactPage() {
         <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-brand-50 to-brand-400 rounded-full opacity-30 animate-float-delayed"></div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="text-xs text-gray-300 mb-2 uppercase tracking-wider">
-            Start the Conversation
-          </div>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gradient-to-b from-brand-50 to-brand-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
       <div className="container max-w-screen-xl mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold uppercase mb-12">Contact Us</h2>
@@ -131,7 +126,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">Email</span>
-                <span className="font-semibold">info@luxedesign.ae</span>
+                <span className="font-semibold">info@aimterior.com</span>
               </div>
             </div>
 
@@ -141,7 +136,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">Phone Number</span>
-                <span className="font-semibold">04 448 3328</span>
+                <span className="font-semibold">048878015</span>
               </div>
             </div>
 
@@ -151,7 +146,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">WhatsApp Number</span>
-                <span className="font-semibold">058 896 8000</span>
+                <span className="font-semibold">+971 50 120 4990</span>
               </div>
             </div>
 
@@ -161,9 +156,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className=" font-normal">Office</span>
-                <span className="font-semibold">
-                  Opal Tower - Business Bay - Dubai
-                </span>
+                <span className="font-semibold">SM1-02-713, Dubai, UAE</span>
               </div>
             </div>
           </div>

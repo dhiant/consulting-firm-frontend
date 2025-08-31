@@ -6,7 +6,6 @@ import {
   MapPin,
   MoveRight,
   Phone,
-  PhoneCall,
   Instagram,
   Facebook,
   Linkedin,
@@ -15,6 +14,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const router = useRouter();
@@ -147,19 +147,19 @@ export default function Footer() {
                   <Phone size={16} className="text-gray-300" />
                 </div>
                 <a
-                  href="tel:043522142"
+                  href="tel:048878015"
                   className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
                 >
-                  +971 4 352 2142
+                  048878015
                 </a>
               </li>
 
               <li className="flex items-center space-x-3 group">
                 <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-slate-700 transition-colors duration-300">
-                  <PhoneCall size={16} className="text-gray-300" />
+                  <FaWhatsapp size={16} className="text-gray-300" />
                 </div>
                 <span className="text-gray-300 font-medium">
-                  +971 58 896 8000
+                  +971 50 120 4990
                 </span>
               </li>
 
@@ -189,7 +189,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-start space-x-2">
                   <span className="text-gray-300 text-sm leading-relaxed max-w-48">
-                    Opal Tower, Business Bay, Dubai, UAE
+                    SM1-02-713, Dubai, UAE
                   </span>
                   <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink

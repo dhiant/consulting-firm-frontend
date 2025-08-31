@@ -1,6 +1,5 @@
 "use client";
 
-import { Mail, Phone } from "lucide-react";
 import React from "react";
 import { toast } from "sonner";
 import {
@@ -28,18 +27,9 @@ export default function ContactForm() {
     <div className=" border-black bg-opacity-50 flex items-center justify-center ">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-8 relative">
         {/* <button className="absolute top-4 right-4 text-gray-700 text-2xl">&times;</button> */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact us</h2>
-
-        <div className="flex items-center gap-4 text-gray-700 mb-6">
-          <span className="flex items-center gap-1">
-            <Phone />
-            Toll free 800 KPS
-          </span>
-          <span className="flex items-center gap-1">
-            <Mail />
-            <a href="mailto:Hello@kpsworld.com">Hello@kpsworld.com</a>
-          </span>
-        </div>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Send us a message
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -48,9 +38,40 @@ export default function ContactForm() {
                 <SelectValue placeholder="I am interested in" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="world1">World1</SelectItem>
-                <SelectItem value="world2">World2</SelectItem>
-                <SelectItem value="world3">World3</SelectItem>
+                <SelectItem value="dm-approvals">
+                  Dubai Municipality (DM) Approvals
+                </SelectItem>
+                <SelectItem value="dda-approvals">
+                  Dubai Development Authority (DDA) Approvals
+                </SelectItem>
+                <SelectItem value="trakhees-approvals">
+                  Trakhees Approvals
+                </SelectItem>
+                <SelectItem value="building-permits">
+                  Building Permits
+                </SelectItem>
+                <SelectItem value="food-safety">
+                  Food Safety Approval
+                </SelectItem>
+                <SelectItem value="swimming-pool">
+                  Swimming Pool Approval
+                </SelectItem>
+                <SelectItem value="shisha-permit">
+                  Shisha Permit Approval
+                </SelectItem>
+                <SelectItem value="warehouse-fitout">
+                  Warehouse Fit-Out & Mezzanine
+                </SelectItem>
+                <SelectItem value="landscaping">
+                  Landscaping & Outdoor Approval
+                </SelectItem>
+                <SelectItem value="completion-certificate">
+                  Completion Certificate
+                </SelectItem>
+                <SelectItem value="general-consultation">
+                  General Consultation
+                </SelectItem>
+                <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
           </div>
