@@ -50,7 +50,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               Ready to Transform
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Your Vision?
@@ -59,9 +59,7 @@ export default function ContactPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
               Your dream project starts with a conversation. Whether you&apos;re
-              planning a residential renovation, commercial fit-out, or need
-              authority approvals, AIMTERIOR is here to bring your vision to
-              life with expertise and precision.
+              planning a residential renovation.
             </p>
 
             {/* Quick Contact Options */}

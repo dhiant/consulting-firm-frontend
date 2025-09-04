@@ -994,7 +994,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               Comprehensive Solutions
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 For Every Project
@@ -1003,9 +1003,7 @@ export default function ServicesPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               From authority approvals to final construction, AIMTERIOR delivers
-              end-to-end services that streamline your project journey.
-              Experience the difference of working with Dubai&apos;s most
-              trusted architectural and design consultancy.
+              end-to-end services
             </p>
 
             {/* CTA Buttons */}

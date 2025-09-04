@@ -130,7 +130,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               Where Dreams Take
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Architectural Form
@@ -139,9 +139,7 @@ export default function PortfolioPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Explore our curated collection of transformative projects. Each
-              design tells a unique story of innovation, precision, and the
-              seamless fusion of form with function across Dubai&apos;s diverse
-              architectural landscape.
+              design tells a unique story of innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">

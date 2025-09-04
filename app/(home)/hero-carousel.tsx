@@ -110,7 +110,7 @@ const HeroCarousel = () => {
 
             {/* Main Heading */}
             <h1
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight transition-all duration-700 delay-100 ease-out ${
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-[1.1] tracking-tight transition-all duration-700 delay-100 ease-out ${
                 fade ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"
               }`}
             >
