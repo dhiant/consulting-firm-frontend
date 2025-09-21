@@ -973,7 +973,7 @@ export default function ServicesPage() {
         </div>
 
         <div className="relative container mx-auto px-6 h-full flex items-center max-w-screen-xl z-10">
-          <div className="text-center max-w-5xl mx-auto">
+          <div className="text-left max-w-5xl">
             {/* Service Badge */}
             <div className="mb-8 animate-fade-in">
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-50/20 to-brand-400/20 backdrop-blur-sm px-6 py-3 rounded-full border border-blue-400/30">
@@ -1001,13 +1001,13 @@ export default function ServicesPage() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
+            <p className="text-lg md:text-xl mb-12 max-w-3xl leading-relaxed text-gray-100 animate-slide-up-delay">
               From authority approvals to final construction, AIMTERIOR delivers
               end-to-end services
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
+            <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay justify-start">
               <Link href="/contact" className="group">
                 <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   <span className="flex items-center justify-center space-x-3">
