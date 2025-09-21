@@ -249,12 +249,10 @@ export default function PortfolioPage() {
           <div className="text-center mt-16">
             <p className="text-gray-600">
               Showing{" "}
-              <span className="font-bold text-emerald-600">
-                {filteredProjects.length}
-              </span>{" "}
-              of <span className="font-bold">{projects.length}</span> projects
+              <span className="font-bold">{filteredProjects.length}</span> of{" "}
+              <span className="font-bold">{projects.length}</span> projects
               {filter !== "All" && (
-                <span className="text-emerald-600"> in {filter} category</span>
+                <span className=""> in {filter} category</span>
               )}
             </p>
           </div>
@@ -273,7 +271,7 @@ export default function PortfolioPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               Project Excellence in Numbers
             </h2>
-            <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Every project tells a story of innovation and craftsmanship
             </p>
           </div>
@@ -291,9 +289,7 @@ export default function PortfolioPage() {
                   <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-emerald-100 font-medium">
-                    {stat.label}
-                  </div>
+                  <div className="text-white font-medium">{stat.label}</div>
                 </div>
               </div>
             ))}
