@@ -175,7 +175,7 @@ export default function BlogPage() {
             </h2>
             <p className="text-gray-700 mb-6">{featuredPost.excerpt}</p>
             <Link
-              href={`/blog/${featuredPost.slug}`}
+              href={`/blogs/${featuredPost.slug}`}
               className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
             >
               READ THE BLOG
@@ -208,7 +208,7 @@ export default function BlogPage() {
                   </h3>
                   <p className="text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/blogs/${post.slug}`}
                     className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
                   >
                     READ THE BLOG

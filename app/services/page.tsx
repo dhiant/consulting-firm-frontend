@@ -1001,7 +1001,7 @@ export default function ServicesPage() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
+            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
               From authority approvals to final construction, AIMTERIOR delivers
               end-to-end services
             </p>

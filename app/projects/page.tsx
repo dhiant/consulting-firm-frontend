@@ -237,6 +237,7 @@ export default function PortfolioPage() {
             {filteredProjects.map((card) => (
               <HoverCard
                 key={card.id}
+                id={card.id}
                 title={card.title}
                 subtitle={card.category}
                 image={card.image}
