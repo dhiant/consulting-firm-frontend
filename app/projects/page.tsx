@@ -130,7 +130,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               Where Dreams Take
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Architectural Form
@@ -139,9 +139,7 @@ export default function PortfolioPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Explore our curated collection of transformative projects. Each
-              design tells a unique story of innovation, precision, and the
-              seamless fusion of form with function across Dubai&apos;s diverse
-              architectural landscape.
+              design tells a unique story of innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
@@ -239,6 +237,7 @@ export default function PortfolioPage() {
             {filteredProjects.map((card) => (
               <HoverCard
                 key={card.id}
+                id={card.id}
                 title={card.title}
                 subtitle={card.category}
                 image={card.image}
@@ -251,12 +250,10 @@ export default function PortfolioPage() {
           <div className="text-center mt-16">
             <p className="text-gray-600">
               Showing{" "}
-              <span className="font-bold text-emerald-600">
-                {filteredProjects.length}
-              </span>{" "}
-              of <span className="font-bold">{projects.length}</span> projects
+              <span className="font-bold">{filteredProjects.length}</span> of{" "}
+              <span className="font-bold">{projects.length}</span> projects
               {filter !== "All" && (
-                <span className="text-emerald-600"> in {filter} category</span>
+                <span className=""> in {filter} category</span>
               )}
             </p>
           </div>
@@ -275,7 +272,7 @@ export default function PortfolioPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               Project Excellence in Numbers
             </h2>
-            <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Every project tells a story of innovation and craftsmanship
             </p>
           </div>
@@ -293,9 +290,7 @@ export default function PortfolioPage() {
                   <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-emerald-100 font-medium">
-                    {stat.label}
-                  </div>
+                  <div className="text-white font-medium">{stat.label}</div>
                 </div>
               </div>
             ))}

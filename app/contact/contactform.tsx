@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import {
   Select,
@@ -9,18 +9,89 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { INTERESTS } from "@/lib/constants";
 
 export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    company: "",
+    message: "",
+    interest: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      interest: value,
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const { fullName, email, phoneNumber, company, message, interest } =
+      formData;
+
+    if (!email) {
+      toast.error("Please fill in required fields.");
+      return;
+    }
+
     try {
-      // const reponse = await fetch()
-      // if(response){
-      //     toast.success("Contact Form submitted successfullyl")
-      // }
+      // Create mailto link with form data
+      const selectedInterest = INTERESTS.find((int) => int.value === interest);
+      const subject = encodeURIComponent(
+        `Quote Request - ${selectedInterest?.label || "General Consultation"}`
+      );
+
+      const emailBody = encodeURIComponent(`
+Hello,
+
+I am interested in: ${selectedInterest?.label || "General Consultation"}
+
+Contact Details:
+- Full Name: ${fullName || "Not provided"}
+- Email: ${email}
+- Phone: ${phoneNumber || "Not provided"}
+- Company: ${company || "Not provided"}
+
+Message:
+${message || "No additional message provided"}
+
+Please contact me to discuss my project requirements.
+
+Best regards,
+${fullName || "Customer"}
+      `);
+
+      const mailtoLink = `mailto:info@aimterior.com?subject=${subject}&body=${emailBody}`;
+
+      // Open default mail client
+      window.open(mailtoLink, "_self");
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        company: "",
+        message: "",
+        interest: "",
+      });
     } catch (error) {
       console.error("Error submitting contact ", error);
-      toast.error("Error submitting contactform");
+      toast.error("Error opening mail client");
     }
   };
   return (
@@ -33,45 +104,19 @@ export default function ContactForm() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <Select>
+            <Select
+              onValueChange={handleSelectChange}
+              value={formData.interest}
+            >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="I am interested in" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="dm-approvals">
-                  Dubai Municipality (DM) Approvals
-                </SelectItem>
-                <SelectItem value="dda-approvals">
-                  Dubai Development Authority (DDA) Approvals
-                </SelectItem>
-                <SelectItem value="trakhees-approvals">
-                  Trakhees Approvals
-                </SelectItem>
-                <SelectItem value="building-permits">
-                  Building Permits
-                </SelectItem>
-                <SelectItem value="food-safety">
-                  Food Safety Approval
-                </SelectItem>
-                <SelectItem value="swimming-pool">
-                  Swimming Pool Approval
-                </SelectItem>
-                <SelectItem value="shisha-permit">
-                  Shisha Permit Approval
-                </SelectItem>
-                <SelectItem value="warehouse-fitout">
-                  Warehouse Fit-Out & Mezzanine
-                </SelectItem>
-                <SelectItem value="landscaping">
-                  Landscaping & Outdoor Approval
-                </SelectItem>
-                <SelectItem value="completion-certificate">
-                  Completion Certificate
-                </SelectItem>
-                <SelectItem value="general-consultation">
-                  General Consultation
-                </SelectItem>
-                <SelectItem value="other">Other</SelectItem>
+                {INTERESTS.map((interest) => (
+                  <SelectItem key={interest.value} value={interest.value}>
+                    {interest.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -79,32 +124,48 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               type="text"
+              name="fullName"
               placeholder="Full name******"
               className="border-b border-gray-300 focus:outline-none p-2"
+              value={formData.fullName}
+              onChange={handleChange}
             />
             <input
               type="text"
+              name="phoneNumber"
               placeholder="Phone number******"
               className="border-b border-gray-300 focus:outline-none p-2"
+              value={formData.phoneNumber}
+              onChange={handleChange}
             />
             <input
               type="email"
+              name="email"
               placeholder="Email address******"
               className="border-b border-gray-300 focus:outline-none p-2"
+              value={formData.email}
+              onChange={handleChange}
+              required
             />
             <input
               type="text"
+              name="company"
               placeholder="Company******"
               className="border-b border-gray-300 focus:outline-none p-2"
+              value={formData.company}
+              onChange={handleChange}
             />
           </div>
 
           <div>
             <textarea
+              name="message"
               placeholder="Message / enquiry******"
               className="w-full border-b border-gray-300 focus:outline-none p-2"
               rows={2}
               maxLength={100}
+              value={formData.message}
+              onChange={handleChange}
             ></textarea>
           </div>
 

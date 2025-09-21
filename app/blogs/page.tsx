@@ -99,7 +99,7 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               Design Stories &
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Industry Insights
@@ -108,9 +108,7 @@ export default function BlogPage() {
 
             <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Discover the latest trends, design philosophies, and expert
-              insights from AIMTERIOR&apos;s team. Explore our thought
-              leadership on architecture, interior design, and the evolving
-              landscape of Dubai&apos;s construction industry.
+              insights from AIMTERIOR&apos;s team.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
@@ -177,7 +175,7 @@ export default function BlogPage() {
             </h2>
             <p className="text-gray-700 mb-6">{featuredPost.excerpt}</p>
             <Link
-              href={`/blog/${featuredPost.slug}`}
+              href={`/blogs/${featuredPost.slug}`}
               className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
             >
               READ THE BLOG
@@ -210,7 +208,7 @@ export default function BlogPage() {
                   </h3>
                   <p className="text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/blogs/${post.slug}`}
                     className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
                   >
                     READ THE BLOG

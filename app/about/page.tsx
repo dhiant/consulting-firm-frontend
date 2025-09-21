@@ -37,7 +37,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-slide-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-slide-up">
               {"Crafting Tomorrow's"}
               <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
                 Architectural Legacy
@@ -46,9 +46,7 @@ export default function AboutPage() {
 
             <p className="text-lg md:text-xl mb-10 max-w-2xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Where vision meets expertise. AIMTERIOR transforms architectural
-              dreams into stunning realities, delivering exceptional design
-              solutions with precision, innovation, and uncompromising quality
-              across Dubai&apos;s dynamic landscape.
+              dreams into stunning realities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay">

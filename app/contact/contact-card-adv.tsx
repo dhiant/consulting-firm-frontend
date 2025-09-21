@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { INTERESTS } from "@/lib/constants";
 
 const ContactCard = () => {
   const [formData, setFormData] = useState({
@@ -46,9 +47,8 @@ const ContactCard = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { fullName, email } = formData;
-
-    console.log(fullName);
+    const { fullName, email, phoneNumber, company, message, interest } =
+      formData;
 
     if (!email) {
       toast.error("Please fill in required fields.");
@@ -58,8 +58,36 @@ const ContactCard = () => {
     setLoading(true);
 
     try {
-      // Simulate an async request
-      await new Promise((res) => setTimeout(res, 1000));
+      // Create mailto link with form data
+      const selectedInterest = INTERESTS.find((int) => int.value === interest);
+      const subject = encodeURIComponent(
+        `Quote Request - ${selectedInterest?.label || "General Consultation"}`
+      );
+
+      const emailBody = encodeURIComponent(`
+Hello,
+
+I am interested in: ${selectedInterest?.label || "General Consultation"}
+
+Contact Details:
+- Full Name: ${fullName || "Not provided"}
+- Email: ${email}
+- Phone: ${phoneNumber || "Not provided"}
+- Company: ${company || "Not provided"}
+
+Message:
+${message || "No additional message provided"}
+
+Please contact me to discuss my project requirements.
+
+Best regards,
+${fullName || "Customer"}
+      `);
+
+      const mailtoLink = `mailto:info@aimterior.com?subject=${subject}&body=${emailBody}`;
+
+      // Open default mail client
+      window.open(mailtoLink, "_self");
 
       // Reset form
       setFormData({
@@ -70,10 +98,8 @@ const ContactCard = () => {
         message: "",
         interest: "",
       });
-
-      toast.success("Message sent successfully!");
     } catch (err) {
-      toast.error("Failed to send message.");
+      toast.error("Failed to open mail client.");
       console.log(err);
     } finally {
       setLoading(false);
@@ -139,9 +165,11 @@ const ContactCard = () => {
                   <SelectValue placeholder="Select your interest" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="world1">World1</SelectItem>
-                  <SelectItem value="world2">World2</SelectItem>
-                  <SelectItem value="world3">World3</SelectItem>
+                  {INTERESTS.map((interest) => (
+                    <SelectItem key={interest.value} value={interest.value}>
+                      {interest.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
