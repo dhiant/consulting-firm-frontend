@@ -380,7 +380,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             Project Not Found
           </h1>
           <p className="text-gray-600 mb-8">
-            The project you're looking for doesn't exist.
+            The project you&apos;re looking for doesn&apos;t exist.
           </p>
           <Link
             href="/projects"
@@ -397,7 +397,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-screen text-white overflow-hidden">
+      <section className="relative min-h-screen text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={project.image}
@@ -411,54 +411,56 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 h-full flex items-center max-w-screen-xl z-10">
-          <div className="max-w-4xl">
+        <div className="relative container mx-auto px-4 sm:px-6 h-full flex items-center max-w-screen-xl z-10 min-h-screen">
+          <div className="max-w-4xl w-full py-16 sm:py-20">
             {/* Back Button */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <Link
                 href="/projects"
-                className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/25 transition-all duration-300"
+                className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md px-3 sm:px-4 py-2 rounded-full border border-white/30 hover:bg-white/25 transition-all duration-300"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm font-medium">Back to Projects</span>
+                <span className="text-xs sm:text-sm font-medium">
+                  Back to Projects
+                </span>
               </Link>
             </div>
 
             {/* Category Badge */}
-            <div className="mb-6">
-              <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
+            <div className="mb-4 sm:mb-6">
+              <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md px-3 sm:px-4 py-2 rounded-full border border-white/30">
                 <Award className="w-4 h-4" />
-                <span className="text-sm font-semibold">
+                <span className="text-xs sm:text-sm font-semibold">
                   {project.category}
                 </span>
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-lg md:text-xl mb-8 max-w-3xl leading-relaxed text-gray-100">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl leading-relaxed text-gray-100">
               {project.description}
             </p>
 
             {/* Meta Information */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-200">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-200">
               <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4" />
-                <span>{project.location}</span>
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{project.location}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Calendar className="w-4 h-4" />
-                <span>{project.year}</span>
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{project.year}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4" />
-                <span>{project.teamSize}</span>
+                <Users className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">{project.teamSize}</span>
               </div>
               <button className="flex items-center space-x-2 hover:text-white transition-colors">
-                <Share2 className="w-4 h-4" />
-                <span>Share</span>
+                <Share2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm">Share</span>
               </button>
             </div>
           </div>
@@ -468,12 +470,12 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       {/* Project Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-6xl">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Project Overview
               </h2>
 
@@ -530,7 +532,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                   </div>
                   <div>
                     <blockquote className="text-lg italic mb-4">
-                      "{project.testimonial}"
+                      &ldquo;{project.testimonial}&rdquo;
                     </blockquote>
                     <cite className="text-sm font-medium">
                       — {project.client}
@@ -577,8 +579,8 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                   Interested in Similar Work?
                 </h3>
                 <p className="text-sm text-gray-300 mb-6">
-                  Let's discuss how we can bring your vision to life with our
-                  expertise.
+                  Let&apos;s discuss how we can bring your vision to life with
+                  our expertise.
                 </p>
                 <Link
                   href="/contact"
@@ -594,9 +596,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       {/* Project Gallery */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Project Gallery
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -619,11 +621,11 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       {/* Challenges & Solutions */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-6xl">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Challenges
               </h2>
               <ul className="space-y-4">
@@ -639,7 +641,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Our Solutions
               </h2>
               <ul className="space-y-4">
@@ -658,9 +660,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       {/* Related Projects */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Related Projects
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -699,14 +701,14 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-brand-50 to-brand-400">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-brand-50 to-brand-400">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-white mb-10 leading-relaxed">
-            Let's collaborate to bring your vision to life with our expertise in
-            architecture, design, and construction excellence.
+            Let&apos;s collaborate to bring your vision to life with our
+            expertise in architecture, design, and construction excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
