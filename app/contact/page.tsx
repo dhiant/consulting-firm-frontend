@@ -29,7 +29,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative container mx-auto px-6 h-full flex items-center max-w-screen-xl z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-left max-w-4xl">
             {/* Contact Badge */}
             <div className="mb-8 animate-fade-in">
               <div className="inline-flex items-center space-x-3 bg-white/15 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-2xl">
@@ -57,10 +57,23 @@ export default function ContactPage() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-100 animate-slide-up-delay">
+            <p className="text-lg md:text-xl mb-12 max-w-3xl leading-relaxed text-gray-100 animate-slide-up-delay">
               Your dream project starts with a conversation. Whether you&apos;re
               planning a residential renovation.
             </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-start animate-fade-in-delay">
+              <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <span className="flex items-center justify-center space-x-2">
+                  <span>Get Free Consultation</span>
+                  <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                </span>
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105">
+                Schedule Site Visit
+              </button>
+            </div>
 
             {/* Quick Contact Options */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-delay">
@@ -85,19 +98,6 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-lg mb-2">Visit Us</h3>
                 <p className="text-sm text-gray-300">Business Bay, Dubai</p>
               </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-delay">
-              <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <span className="flex items-center justify-center space-x-2">
-                  <span>Get Free Consultation</span>
-                  <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
-                </span>
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105">
-                Schedule Site Visit
-              </button>
             </div>
           </div>
         </div>
