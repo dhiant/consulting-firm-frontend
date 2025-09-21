@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from 'next/font/google';
+import { Montserrat } from "next/font/google";
 // import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
@@ -13,7 +13,7 @@ import { Toaster } from "sonner";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Best Consultancy",
+  title: "AIMTERIOR",
   description: "Transforming spaces into beautiful, functional environments",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
-      <Toaster/>
+        <Toaster />
         <StickyInfo className="fixed bottom-1/2 translate-y-1/2  right-0" />
         <Footer />
       </body>
