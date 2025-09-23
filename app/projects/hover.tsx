@@ -24,7 +24,7 @@ export default function HoverCard({
   const [liked, setLiked] = useState(false);
 
   return (
-    <Link href={`/project/${id}`}>
+    <Link href={`/projects/${id}`}>
       <div
         className="group relative w-80 mx-auto bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100"
         onMouseEnter={() => setHovered(true)}

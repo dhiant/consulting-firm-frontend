@@ -64,7 +64,7 @@ export default function AboutPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
+            <div className="hidden md:grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">500+</div>
                 <div className="text-sm text-gray-300 uppercase tracking-wider">

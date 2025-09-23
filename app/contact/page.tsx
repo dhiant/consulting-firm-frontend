@@ -63,7 +63,7 @@ export default function ContactPage() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-start animate-fade-in-delay">
+            <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-start animate-fade-in-delay">
               <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Get Free Consultation</span>
@@ -76,7 +76,7 @@ export default function ContactPage() {
             </div>
 
             {/* Quick Contact Options */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-delay">
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-delay">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <PhoneCallIcon className="h-8 w-8" />

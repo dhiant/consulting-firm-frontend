@@ -126,7 +126,7 @@ export default function BlogPage() {
             </div>
 
             {/* Blog Categories */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { name: "Design Trends", icon: "✨" },
                 { name: "Project Stories", icon: "🏗️" },

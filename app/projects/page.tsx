@@ -157,7 +157,7 @@ export default function PortfolioPage() {
             </div>
 
             {/* Project Categories */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4">
               {["Residential", "Commercial", "Hospitality", "Retail"].map(
                 (category, index) => (
                   <div key={category} className="group text-center">
