@@ -418,7 +418,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               href="/contact"
-              className="group bg-white text-brand-50 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="group bg-white text-brand-50 px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               <span className="flex items-center justify-center space-x-3">
                 <span>Get Started</span>
@@ -427,7 +427,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
             </Link>
             <Link
               href="/projects"
-              className="border-2 border-white text-white hover:bg-white hover:text-brand-50 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-brand-50 px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105"
             >
               View Our Projects
             </Link>

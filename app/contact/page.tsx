@@ -64,13 +64,13 @@ export default function ContactPage() {
 
             {/* CTA Buttons */}
             <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-start animate-fade-in-delay">
-              <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Get Free Consultation</span>
                   <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
                 </span>
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105">
                 Schedule Site Visit
               </button>
             </div>

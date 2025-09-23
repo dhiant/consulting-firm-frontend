@@ -112,7 +112,7 @@ export default function BlogPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center space-x-2">
                   <span>Latest Articles</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
@@ -120,7 +120,7 @@ export default function BlogPage() {
                   </div>
                 </span>
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105">
                 Subscribe to Updates
               </button>
             </div>
