@@ -50,7 +50,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <span className="flex items-center space-x-2">
                   <span>Our Story</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
@@ -58,13 +58,13 @@ export default function AboutPage() {
                   </div>
                 </span>
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105">
                 View Our Work
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
+            <div className="hidden md:grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">500+</div>
                 <div className="text-sm text-gray-300 uppercase tracking-wider">

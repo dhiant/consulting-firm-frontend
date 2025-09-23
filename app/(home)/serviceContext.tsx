@@ -129,7 +129,7 @@ export default function ServiceContext() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-6">
             <button
               onClick={() => router.push("/contact")}
-              className="group bg-gradient-to-r from-brand-100 to-brand-400 hover:from-brand-200 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
+              className="group bg-gradient-to-r from-brand-100 to-brand-400 hover:from-brand-200 hover:to-brand-400 text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
             >
               <span>Start Your Project</span>
               <MoveRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -137,7 +137,7 @@ export default function ServiceContext() {
 
             <button
               onClick={() => router.push("/services")}
-              className="group border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/5"
+              className="group border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/5"
             >
               View All Services
             </button>

@@ -1022,7 +1022,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Service Categories Preview */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <FaRegClipboard className="text-2xl" />
@@ -1259,7 +1259,7 @@ export default function ServicesPage() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/contact" className="group">
-                <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <button className="bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   <span className="flex items-center justify-center space-x-3">
                     <span>Get Free Consultation</span>
                     <MoveRight className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -1268,7 +1268,7 @@ export default function ServicesPage() {
               </Link>
 
               <Link href="/projects">
-                <button className="border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105">
+                <button className="border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105">
                   View Our Portfolio
                 </button>
               </Link>

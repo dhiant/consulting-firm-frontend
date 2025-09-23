@@ -137,7 +137,7 @@ const HeroCarousel = () => {
               <Button
                 asChild
                 size="lg"
-                className="group bg-white text-slate-900 hover:bg-gray-100 px-10 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl transform-gpu border-0"
+                className="group bg-white text-slate-900 hover:bg-gray-100 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl transform-gpu border-0"
               >
                 <Link href={buttonLink} className="flex items-center space-x-2">
                   <span>{buttonText}</span>
@@ -159,7 +159,7 @@ const HeroCarousel = () => {
               <Button
                 asChild
                 variant="outline"
-                className="group border-2 border-white/60 text-white hover:bg-white hover:text-slate-900 px-10 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10"
+                className="group border-2 border-white/60 text-white hover:bg-white hover:text-slate-900 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10"
               >
                 <Link href="/contact" className="flex items-center space-x-2">
                   <span>GET A QUOTE</span>

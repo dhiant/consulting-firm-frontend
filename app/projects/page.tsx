@@ -143,7 +143,7 @@ export default function PortfolioPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center space-x-2">
                   <span>Explore Projects</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
@@ -151,13 +151,13 @@ export default function PortfolioPage() {
                   </div>
                 </span>
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105">
                 Start Your Project
               </button>
             </div>
 
             {/* Project Categories */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4">
               {["Residential", "Commercial", "Hospitality", "Retail"].map(
                 (category, index) => (
                   <div key={category} className="group text-center">
@@ -372,7 +372,7 @@ export default function PortfolioPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <span className="flex items-center justify-center space-x-3">
                   <span>Start Your Project</span>
                   <svg
@@ -391,7 +391,7 @@ export default function PortfolioPage() {
                 </span>
               </button>
 
-              <button className="border-2 border-brand-50 text-brand-50 hover:bg-brand-50 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-brand-50 text-brand-50 hover:bg-brand-50 hover:text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105">
                 View All Services
               </button>
             </div>
