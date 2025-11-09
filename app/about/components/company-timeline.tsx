@@ -12,44 +12,47 @@ export function CompanyTimeline() {
             <div className="inline-flex items-center space-x-2 bg-purple-50 px-3 py-1 rounded-full border border-purple-100">
               <div className="w-2 h-2 bg-brand-50 rounded-full"></div>
               <span className="text-xs font-semibold text-brand-50 uppercase tracking-wider">
-                Growth Year
+                Current Year
               </span>
             </div>
           </div>
 
           <h3 className="text-xl font-bold text-gray-900 mb-4">
-            Smart Homes & Tech Integration
+            Architectural Excellence & Tailored Interior Solutions
           </h3>
           <p className="text-gray-600 text-sm md:text-base font-normal mb-8 leading-relaxed">
-            Expanded services to include smart home integrations and
-            eco-friendly designs. Completed 10 projects for tech startups and
-            modern family homes, establishing our expertise in cutting-edge
-            residential solutions.
+            Expanded portfolio to include luxury villa interiors, innovative
+            co-working spaces, efficient warehouse and mezzanine office designs,
+            stylish cafes, bespoke retail environments, dynamic office spaces,
+            and thoughtfully crafted outdoor living areas. Successfully
+            delivered over 30 projects across Dubai, blending modern aesthetics
+            with functional precision and sustainable materials, establishing
+            our reputation for versatile and refined architectural solutions.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/images/project5.jpg"
+              src="/images/a1.png"
               alt="Smart home integration"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project6.jpg"
+              src="/images/a2.png"
               alt="Eco-friendly design"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project1.jpg"
+              src="/images/a3.png"
               alt="Tech startup office"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project2.jpg"
+              src="/images/a4.png"
               alt="Modern family home"
               width={500}
               height={500}
@@ -68,45 +71,47 @@ export function CompanyTimeline() {
             <div className="inline-flex items-center space-x-2 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
               <div className="w-2 h-2 bg-brand-50 rounded-full"></div>
               <span className="text-xs font-semibold text-brand-50 uppercase tracking-wider">
-                Current Year
+                Growth Year
               </span>
             </div>
           </div>
 
           <h3 className="text-xl font-bold text-gray-900 mb-4">
-            Sustainable Innovation & Global Partnerships
+            Innovative Designs & Trusted Collaborations
           </h3>
           <p className="text-gray-600 text-sm md:text-base font-normal mb-8 leading-relaxed">
-            Successfully completed and delivered 12 high-profile residential and
-            commercial interior projects. Partnered with global brands for
-            sourcing sustainable materials, reinforcing our commitment to
-            environmental responsibility.
+            Completed and delivered over 30 diverse projects, including
+            residential villas, commercial offices, retail spaces, and
+            industrial facilities. Partnered with leading manufacturers and
+            local artisans to source premium materials and advanced
+            technologies, ensuring quality, sustainability, and lasting impact
+            in every design.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/images/project1.jpg"
+              src="/images/b1.png"
               alt="2024 residential project"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project2.jpg"
+              src="/images/b2.png"
               alt="2024 commercial project"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project3.jpg"
+              src="/images/b3.png"
               alt="2024 sustainable design"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             />
             <Image
-              src="/images/project4.jpg"
+              src="/images/b4.png"
               alt="2024 luxury interior"
               width={500}
               height={500}
@@ -134,10 +139,13 @@ export function CompanyTimeline() {
             The Beginning of Excellence
           </h3>
           <p className="text-gray-600 text-sm md:text-base font-normal mb-8 leading-relaxed">
-            Launched the company and completed 3 residential construction
-            projects, setting the foundation for a successful future. Our
-            founding vision was to transform Dubai&apost;s architectural
-            landscape with precision and innovation.
+            Founded with a vision to redefine Dubai’s architectural landscape,
+            the company undertook a series of complex projects involving
+            multi-phase residential developments, bespoke interior fit-outs, and
+            integrated infrastructure works. These foundational achievements
+            demonstrated our capability to manage diverse scopes with precision
+            and innovation, establishing a solid base for our continued growth
+            and reputation.
           </p>
 
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">

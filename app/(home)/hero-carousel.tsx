@@ -8,7 +8,15 @@ import { Button } from "@/components/ui/button";
 const slides = [
   {
     image: "/images/hero-home1.png",
-    heading: "Transforming Visions Into Reality",
+    heading: (
+      <p>
+        Transforming Visions
+        <br />
+        <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
+          Into Reality
+        </span>
+      </p>
+    ),
     subheading:
       "Where architectural excellence meets interior innovation. AIMTERIOR brings your dreams to life with precision, creativity, and uncompromising quality.",
     buttonLink: "/services",
@@ -16,7 +24,15 @@ const slides = [
   },
   {
     image: "/images/hero-home2.png",
-    heading: "Authority Approvals Made Simple",
+    heading: (
+      <p>
+        Authority Approvals
+        <br />
+        <span className="block bg-gradient-to-r from-brand-50 via-brand-200 to-brand-400 bg-clip-text text-transparent">
+          Made Simple
+        </span>
+      </p>
+    ),
     subheading:
       "Navigate Dubai's regulatory landscape with confidence. From permits to final approvals, we handle the complexities so you can focus on your vision.",
     buttonLink: "/services",
@@ -114,9 +130,10 @@ const HeroCarousel = () => {
                 fade ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"
               }`}
             >
-              <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+              {/* <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
                 {heading}
-              </span>
+              </span> */}
+              {heading}
             </h1>
 
             {/* Subheading */}

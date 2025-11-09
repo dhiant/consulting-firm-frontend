@@ -1,83 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
-import HoverCard from "./hover";
+import Link from "next/link";
+import { X } from "lucide-react";
 import ScrollIndicator from "@/components/scroll-indicator";
-
-const projects = [
-  {
-    id: 1,
-    title: "Minimalist Apartment",
-    category: "Residential",
-    description:
-      "A sleek, minimalist design for a city apartment that maximizes space and light.",
-    image: "/images/project1.jpg",
-    testimonial:
-      "The team transformed my small apartment into a spacious, functional haven. I love coming home now!",
-  },
-  {
-    id: 2,
-    title: "Rustic Mountain Retreat",
-    category: "Landscaping",
-    description:
-      "A cozy mountain home that combines rustic charm with modern comforts.",
-    image: "/images/project6.jpg",
-
-    testimonial:
-      "Our mountain home is the perfect getaway. It's warm, inviting, and beautifully integrated with the natural surroundings.",
-  },
-  {
-    id: 3,
-    title: "Eco-Friendly Office Space",
-    category: "Retail",
-    description:
-      "A sustainable office design that promotes productivity and employee well-being.",
-    image: "/images/project2.jpg",
-    testimonial:
-      "Our new office has boosted team morale and impressed our clients. It's both beautiful and environmentally responsible.",
-  },
-  {
-    id: 4,
-    title: "Luxury Beachfront Villa",
-    category: "Residential",
-    description:
-      "An opulent beachfront property that blends indoor and outdoor living seamlessly.",
-    image: "/images/project3.jpg",
-    testimonial:
-      "The attention to detail in our villa is extraordinary. It's the perfect vacation home we've always dreamed of.",
-  },
-  {
-    id: 5,
-    title: "Boutique Hotel Lobby",
-    category: "Hospital",
-    description:
-      "A chic and inviting lobby design for a boutique hotel, setting the tone for a luxurious stay.",
-    image: "/images/project4.jpg",
-
-    testimonial:
-      "The lobby design has significantly improved our guests' first impressions. It's elegant yet welcoming.",
-  },
-  {
-    id: 6,
-    title: "Urban Loft Renovation",
-    category: "Restaurant",
-    description:
-      "A complete overhaul of an industrial loft space into a modern, multi-functional home.",
-    image: "/images/project5.jpg",
-
-    testimonial:
-      "I never thought my old loft could look this amazing. It's like living in a design magazine!",
-  },
-];
+import { projectData, projectOrder, type ProjectSlug } from "./data";
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState<string>("All");
+  const [selectedSlug, setSelectedSlug] = useState<ProjectSlug | null>(null);
 
-  const filteredProjects =
+  const handleClose = () => setSelectedSlug(null);
+
+  const categories = useMemo(() => {
+    const unique = new Set(
+      projectOrder.map((slug) => projectData[slug].category)
+    );
+    return ["All", ...Array.from(unique)];
+  }, []);
+
+  const filteredSlugs =
     filter === "All"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+      ? projectOrder
+      : projectOrder.filter((slug) => projectData[slug].category === filter);
+
+  const featuredSlug = projectOrder[0];
+  const featuredProject = projectData[featuredSlug];
+  const selectedProject = selectedSlug ? projectData[selectedSlug] : null;
+  const renderParagraphs = (text: string) =>
+    text.split("\n\n").map((paragraph, index) => (
+      <p key={index} className="leading-relaxed">
+        {paragraph}
+      </p>
+    ));
 
   return (
     <div>
@@ -207,16 +163,7 @@ export default function PortfolioPage() {
 
             {/* Enhanced Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {[
-                "All",
-                "Office",
-                "Warehouse",
-                "Restaurant",
-                "Residential",
-                "Hospital",
-                "Retail",
-                "Landscaping",
-              ].map((category) => (
+              {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setFilter(category)}
@@ -232,26 +179,141 @@ export default function PortfolioPage() {
             </div>
           </div>
 
+          {/* Featured Project */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="overflow-hidden rounded-3xl shadow-xl border border-gray-100">
+              <div className="relative h-72 sm:h-96">
+                <Image
+                  src={featuredProject.image}
+                  alt={featuredProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 space-y-4 bg-white">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-50/10 text-brand-50 border border-brand-50/40">
+                  Featured · {featuredProject.category}
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  {featuredProject.title}
+                </h3>
+                <p className="text-sm font-semibold text-gray-500">
+                  {featuredProject.location}
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  {featuredProject.sections[0].body}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedSlug(featuredSlug)}
+                  className="inline-flex items-center text-brand-50 font-semibold group"
+                >
+                  View Project Details
+                  <svg
+                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl border border-gray-100 shadow-xl p-8 space-y-6">
+              <h4 className="text-2xl font-bold text-gray-900">
+                Project Snapshot
+              </h4>
+              <div className="space-y-4 text-gray-600">
+                {featuredProject.sections.map((section, index) => (
+                  <div key={index} className="space-y-2">
+                    <p className="font-semibold text-gray-900">
+                      {section.heading}
+                    </p>
+                    {renderParagraphs(section.body)}
+                  </div>
+                ))}
+                <p className="font-semibold text-gray-900">
+                  {featuredProject.cta.prompt}{" "}
+                  <Link
+                    href={featuredProject.cta.href}
+                    className="text-brand-50 hover:underline font-semibold"
+                  >
+                    [{featuredProject.cta.linkText}]
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-            {filteredProjects.map((card) => (
-              <HoverCard
-                key={card.id}
-                id={card.id}
-                title={card.title}
-                subtitle={card.category}
-                image={card.image}
-                desc={card.description}
-              />
-            ))}
+            {filteredSlugs.map((slug) => {
+              const project = projectData[slug];
+              return (
+                <button
+                  key={slug}
+                  type="button"
+                  onClick={() => setSelectedSlug(slug)}
+                  className="group relative w-80 mx-auto bg-white rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-200"
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-800 backdrop-blur-sm border border-white/50">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-50 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm font-semibold text-gray-500">
+                      {project.location}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed line-clamp-4">
+                      {project.sections[0].body}
+                    </p>
+                    <span className="inline-flex items-center text-sm font-semibold text-brand-50 group-hover:translate-x-1 transition-transform duration-300">
+                      View Project
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
           {/* Results Summary */}
           <div className="text-center mt-16">
             <p className="text-gray-600">
-              Showing{" "}
-              <span className="font-bold">{filteredProjects.length}</span> of{" "}
-              <span className="font-bold">{projects.length}</span> projects
+              Showing <span className="font-bold">{filteredSlugs.length}</span>{" "}
+              of <span className="font-bold">{projectOrder.length}</span>{" "}
+              projects
               {filter !== "All" && (
                 <span className=""> in {filter} category</span>
               )}
@@ -318,43 +380,44 @@ export default function PortfolioPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.slice(0, 3).map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-500 hover:scale-105"
-              >
-                <div className="mb-6">
-                  <div className="flex text-emerald-500 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-5 h-5 fill-current"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-6 italic">
-                    {project.testimonial}
-                  </p>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">
-                      {project.title.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">{project.title}</h4>
-                    <p className="text-brand-50 text-sm">
-                      {project.category} Project
+            {filteredSlugs.slice(0, 3).map((slug, index) => {
+              const project = projectData[slug];
+              const resultSection =
+                project.sections.find((section) =>
+                  section.heading.includes("✅")
+                ) ?? project.sections[project.sections.length - 1];
+              return (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-500 hover:scale-105"
+                >
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                      {resultSection.heading}
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {resultSection.body}
                     </p>
                   </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold">
+                        {project.title.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">
+                        {project.title}
+                      </h4>
+                      <p className="text-brand-50 text-sm">
+                        {project.category} Project
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -398,6 +461,80 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
+
+      {selectedProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6"
+          onClick={handleClose}
+        >
+          <div
+            className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white p-6 sm:p-12 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={handleClose}
+              className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-colors hover:text-gray-900"
+              aria-label="Close project details"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="space-y-8">
+              <div className="overflow-hidden rounded-2xl">
+                <div className="relative h-64 sm:h-96">
+                  <Image
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-500">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">
+                  {selectedProject.category}
+                </span>
+                <span className="font-semibold text-gray-600">
+                  {selectedProject.location}
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  {selectedProject.title}
+                </h2>
+              </div>
+
+              <div className="space-y-6 blog-content">
+                {selectedProject.sections.map((section, sectionIndex) => (
+                  <div key={sectionIndex} className="space-y-3">
+                    <h3>{section.heading}</h3>
+                    {section.body
+                      .split("\n\n")
+                      .map((paragraph, paragraphIndex) => (
+                        <p key={paragraphIndex}>{paragraph}</p>
+                      ))}
+                  </div>
+                ))}
+              </div>
+
+              <div className="border-t border-gray-200 pt-6">
+                <p className="text-gray-700">
+                  {selectedProject.cta.prompt}{" "}
+                  <Link
+                    href={selectedProject.cta.href}
+                    className="text-brand-50 font-semibold hover:underline"
+                  >
+                    [{selectedProject.cta.linkText}]
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

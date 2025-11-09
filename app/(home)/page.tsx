@@ -9,20 +9,20 @@ import ServiceContext from "./serviceContext";
 const projects = [
   {
     id: 1,
-    title: "Modern Minimalist Apartment",
+    title: "Authority Approvals",
     category: "Approval",
     description:
-      "A sleek, minimalist design for a city apartment that maximizes space and light.",
+      "Expert guidance and fast-tracked approvals for construction and engineering projects across the UAE.",
     image: "/images/project1.jpg",
     testimonial:
       "The team transformed my small apartment into a spacious, functional haven. I love coming home now!",
   },
   {
     id: 2,
-    title: "Rustic Mountain Retreat",
+    title: "2D & 3D Drawings",
     category: "Design",
     description:
-      "A cozy mountain home that combines rustic charm with modern comforts.",
+      "High-precision 2D and 3D drawings in architectural, structural, and MEP disciplines are designed to meet approval and execution standards.",
     image: "/images/project6.jpg",
 
     testimonial:
@@ -30,10 +30,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "Eco-Friendly Office Space",
+    title: "Project Execution",
     category: "Fit-out",
     description:
-      "A sustainable office design that promotes productivity and employee well-being.",
+      "Turnkey fit-out and execution solutions that ensure quality, compliance, and on-time delivery from start to finish.",
     image: "/images/project2.jpg",
     testimonial:
       "Our new office has boosted team morale and impressed our clients. It's both beautiful and environmentally responsible.",

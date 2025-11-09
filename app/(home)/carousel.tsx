@@ -16,8 +16,6 @@ const sectors = [
   { title: "Healthcare", image: "/images/project3.jpg" },
   { title: "Retail", image: "/images/project4.jpg" },
   { title: "Hospitality", image: "/images/project5.jpg" },
-  { title: "Hospitality", image: "/images/project5.jpg" },
-  { title: "Hospitality", image: "/images/project5.jpg" },
 ];
 
 /**
@@ -198,11 +196,11 @@ const CarouselSection = () => {
             setApi={setApi}
             className="w-full"
           >
-            <CarouselContent className="space-x-6">
+            <CarouselContent className="-ml-2 sm:-ml-4">
               {sectors.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-1/2 md:basis-1/3 lg:basis-1/3"
+                  className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 sm:pl-4"
                 >
                   <div className="group relative h-full">
                     <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105">
