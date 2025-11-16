@@ -87,7 +87,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
     },
     {
       Icon: FaWhatsapp,
-      href: "https://wa.me/1234567890",
+      href: "https://wa.me/+971553856863",
       label: "WhatsApp",
       tooltip: "Chat with us instantly",
       external: true,
@@ -98,7 +98,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
     },
     {
       Icon: HiOutlinePhone,
-      href: "tel:+1234567890",
+      href: "tel:+971 55 385 6863",
       label: "Phone",
       tooltip: "Call us directly",
       external: true,
