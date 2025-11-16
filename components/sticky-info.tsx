@@ -54,7 +54,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
   const socialLinks: SocialLink[] = [
     {
       Icon: CiLinkedin,
-      href: "https://www.linkedin.com/company/constructionsiteco",
+      href: "https://www.linkedin.com/company/aimterior-design",
       label: "LinkedIn",
       tooltip: "Connect with us on LinkedIn",
       external: true,

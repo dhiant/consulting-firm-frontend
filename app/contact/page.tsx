@@ -134,7 +134,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">Phone Number</span>
-                <span className="font-semibold">048878015</span>
+                <span className="font-semibold">+971 55 385 6863 </span>
               </div>
             </div>
 
@@ -144,7 +144,7 @@ export default function ContactPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-normal">WhatsApp Number</span>
-                <span className="font-semibold">+971 50 120 4990</span>
+                <span className="font-semibold">+971 55 385 6863</span>
               </div>
             </div>
 
