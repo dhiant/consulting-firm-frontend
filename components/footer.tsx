@@ -51,7 +51,11 @@ export default function Footer() {
               {[
                 { icon: Instagram, href: "#", label: "Instagram" },
                 { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/aimterior-design/",
+                  label: "LinkedIn",
+                },
                 { icon: Twitter, href: "#", label: "Twitter" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
@@ -147,10 +151,10 @@ export default function Footer() {
                   <Phone size={16} className="text-gray-300" />
                 </div>
                 <a
-                  href="tel:048878015"
+                  href="tel:+971 55 385 6863"
                   className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
                 >
-                  048878015
+                  +971 55 385 6863
                 </a>
               </li>
 
@@ -159,7 +163,7 @@ export default function Footer() {
                   <FaWhatsapp size={16} className="text-gray-300" />
                 </div>
                 <span className="text-gray-300 font-medium">
-                  +971 50 120 4990
+                  +971 55 385 6863
                 </span>
               </li>
 

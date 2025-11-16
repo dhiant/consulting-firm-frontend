@@ -1,48 +1,41 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  X,
+  Calendar,
+  Clock,
+  User,
+  Share2,
+  BookOpen,
+} from "lucide-react";
 import ScrollIndicator from "@/components/scroll-indicator";
+import { blogData, type BlogSlug } from "./data";
 
-const featuredPost = {
-  date: "May 10, 2023",
-  title:
-    "The Benefits of Working with Engineering Consultants for Home Renovations",
-  excerpt:
-    "Home renovations can be a significant investment for homeowners, and it's crucial to get them right the first time. When considering a home renovation project, many homeowners may wonder whether they need to hire engineering consultants. In this article, we will discuss the benefits of working with engineering consultants for home renovations.",
-  image: "/images/project1.jpg",
-  slug: "benefits-of-working-with-engineering-consultants",
-};
-
-const blogPosts = [
-  {
-    date: "December 16, 2021",
-    title: "How To Reduce Villa Renovation Costs",
-    excerpt:
-      "With the amelioration of material and service costs, searching for ways for cost-effective solutions for home renovation projects will be a huge relief to clients. It may be challenging to properly...",
-    image: "/images/project2.jpg",
-    slug: "reduce-villa-renovation-costs",
-  },
-  {
-    date: "October 18, 2021",
-    title: "Japanese Style Interior Design Offers Modesty to Villas in Dubai",
-    excerpt:
-      "When talking about minimalist living, Japanese-style interior designs first come into mind. Minimalist modern interior designs often highlight a lot of open spaces promoting natural lighting, basic...",
-    image: "/images/project3.jpg",
-
-    slug: "japanese-style-interior-design",
-  },
-  {
-    date: "August 28, 2021",
-    title: "How To Glam Up Your Interior Design",
-    excerpt:
-      "Do you love sophistication and a luxurious lifestyle? Hence, a glam interior design in Dubai is perfect for your home. Glam desig...",
-    image: "/images/project4.jpg",
-
-    slug: "glam-up-your-interior-design",
-  },
+const FEATURED_SLUG: BlogSlug =
+  "importance-of-obtaining-construction-approvals-in-dubai";
+const SECONDARY_SLUGS: BlogSlug[] = [
+  "importance-of-3d-visualization-in-construction-projects",
+  "navigating-dubais-approval-process-step-by-step-guide",
+  "essential-considerations-for-a-successful-construction-project-in-dubai",
 ];
 
+const featuredPost = blogData[FEATURED_SLUG];
+
 export default function BlogPage() {
+  const [selectedSlug, setSelectedSlug] = useState<BlogSlug | null>(null);
+  const selectedPost = selectedSlug ? blogData[selectedSlug] : null;
+
+  const handleOpen = (slug: BlogSlug) => {
+    setSelectedSlug(slug);
+  };
+
+  const handleClose = () => {
+    setSelectedSlug(null);
+  };
+
   return (
     <div>
       {/* Enhanced Blogs Hero Section */}
@@ -174,52 +167,181 @@ export default function BlogPage() {
               {featuredPost.title}
             </h2>
             <p className="text-gray-700 mb-6">{featuredPost.excerpt}</p>
-            <Link
-              href={`/blogs/${featuredPost.slug}`}
+            <button
+              type="button"
+              onClick={() => handleOpen(FEATURED_SLUG)}
               className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
             >
               READ THE BLOG
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            </button>
           </div>
         </div>
 
         {/* Blog Listing Section */}
         <section className="mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <div
-                key={index}
-                className="blog-card group flex flex-col bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
-              >
-                <div className="overflow-hidden">
-                  <Image
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-gray-500 text-sm mb-2">{post.date}</p>
-                  <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-gray-700">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
-                  <Link
-                    href={`/blogs/${post.slug}`}
-                    className="group inline-flex items-center font-semibold text-black hover:text-gray-700 transition-colors duration-300"
-                  >
-                    READ THE BLOG
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            ))}
+            {SECONDARY_SLUGS.map((slug) => {
+              const post = blogData[slug];
+              return (
+                <button
+                  key={slug}
+                  type="button"
+                  onClick={() => handleOpen(slug)}
+                  className="blog-card group flex flex-col bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-200"
+                >
+                  <div className="overflow-hidden relative">
+                    <Image
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      width={500}
+                      height={300}
+                      className="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <p className="text-gray-500 text-sm mb-2">{post.date}</p>
+                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-gray-700">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 flex-grow">
+                      {post.excerpt}
+                    </p>
+                    <span className="inline-flex items-center font-semibold text-black group-hover:text-gray-700 transition-colors duration-300">
+                      READ THE BLOG
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </section>
       </div>
+
+      {selectedPost && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6"
+          onClick={handleClose}
+        >
+          <div
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white p-6 sm:p-10 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={handleClose}
+              className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-colors hover:text-gray-900"
+              aria-label="Close blog details"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="space-y-6">
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src={selectedPost.image || "/placeholder.svg"}
+                  alt={selectedPost.title}
+                  width={960}
+                  height={540}
+                  className="w-full h-64 sm:h-80 object-cover"
+                />
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-500">
+                <div className="inline-flex items-center space-x-2 rounded-full bg-gray-100 px-3 py-1 font-semibold text-gray-700">
+                  <BookOpen className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span>{selectedPost.category}</span>
+                </div>
+                {selectedPost.author && selectedPost.author.length > 0 && (
+                  <div className="flex items-center space-x-2">
+                    <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span>{selectedPost.author}</span>
+                  </div>
+                )}
+                <div className="flex items-center space-x-2">
+                  <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span>{selectedPost.date}</span>
+                </div>
+                {selectedPost.readTime && selectedPost.readTime.length > 0 && (
+                  <div className="flex items-center space-x-2">
+                    <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span>{selectedPost.readTime}</span>
+                  </div>
+                )}
+                <button className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 transition-colors">
+                  <Share2 className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span>Share</span>
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  {selectedPost.title}
+                </h2>
+                <p className="text-gray-600 text-base sm:text-lg">
+                  {selectedPost.excerpt}
+                </p>
+              </div>
+
+              <div className="prose prose-lg max-w-none text-gray-700 blog-content">
+                <div
+                  dangerouslySetInnerHTML={{ __html: selectedPost.content }}
+                />
+              </div>
+
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Tags
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedPost.tags.map((tag, index) => (
+                    <span
+                      key={`${selectedPost.slug}-tag-${index}`}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-brand-50 hover:text-brand-400 transition-colors"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Related Articles
+                </h3>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {selectedPost.relatedPosts.map((post, index) => (
+                    <button
+                      key={`${selectedPost.slug}-related-${index}`}
+                      type="button"
+                      onClick={() => handleOpen(post.slug as BlogSlug)}
+                      className="group flex items-center space-y-4 rounded-2xl border border-gray-200 bg-white p-4 text-left transition-all hover:border-brand-200 hover:shadow-lg sm:space-y-0 sm:space-x-4 sm:flex-row flex-col"
+                    >
+                      <div className="relative h-20 w-full overflow-hidden rounded-xl sm:w-28">
+                        <Image
+                          src={post.image || "/placeholder.svg"}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="w-full sm:w-auto">
+                        <p className="text-xs text-gray-500 mb-1">
+                          {post.date}
+                        </p>
+                        <p className="text-sm font-semibold text-gray-900 group-hover:text-brand-400">
+                          {post.title}
+                        </p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
