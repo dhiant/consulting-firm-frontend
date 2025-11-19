@@ -133,7 +133,7 @@ ${fullName || "Customer"}
             <div className="flex items-center gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>048878015</span>
+                <span>+971 55 385 6863</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />

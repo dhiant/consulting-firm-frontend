@@ -82,7 +82,7 @@ export default function ContactPage() {
                   <PhoneCallIcon className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Call Us</h3>
-                <p className="text-sm text-gray-300">+971 4 352 2142</p>
+                <p className="text-sm text-gray-300">+971 55 385 6863</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 bg-gradient-to-br from-brand-50 to-brand-400 rounded-xl flex items-center justify-center mb-4 mx-auto">
