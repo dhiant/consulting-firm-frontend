@@ -123,7 +123,7 @@ export function CompanyTimeline() {
     },
 
     {
-      title: "2023",
+      title: "2020",
       content: (
         <div>
           <div className="mb-6">
