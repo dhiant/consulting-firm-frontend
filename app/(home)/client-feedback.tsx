@@ -76,6 +76,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 export default function ClientFeedback() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  console.log(current);
 
   const onSelect = useCallback((api: CarouselApi) => {
     if (!api) return;
