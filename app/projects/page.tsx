@@ -99,14 +99,17 @@ export default function PortfolioPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <Link
+                href="#featured-project"
+                className="group bg-gradient-to-r from-brand-50 to-brand-400 hover:from-brand-100 hover:to-brand-400 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              >
                 <span className="flex items-center space-x-2">
                   <span>Explore Projects</span>
                   <div className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
                     <div className="w-2 h-2 bg-white rotate-45 transform"></div>
                   </div>
                 </span>
-              </button>
+              </Link>
               <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105">
                 Start Your Project
               </button>
@@ -180,7 +183,10 @@ export default function PortfolioPage() {
           </div>
 
           {/* Featured Project */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div
+            className="grid md:grid-cols-2 gap-8 mb-16"
+            id="featured-project"
+          >
             <div className="overflow-hidden rounded-3xl shadow-xl border border-gray-100">
               <div className="relative h-72 sm:h-96">
                 <Image
