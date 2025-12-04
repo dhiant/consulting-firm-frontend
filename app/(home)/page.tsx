@@ -5,6 +5,7 @@ import HeroCarousel from "./hero-carousel";
 import SectorsSection from "./carousel";
 import ServicePreview from "./servicespreview";
 import ServiceContext from "./serviceContext";
+import ClientFeedback from "./client-feedback";
 
 const projects = [
   {
@@ -502,6 +503,8 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      <ClientFeedback />
 
       <ServiceContext />
 

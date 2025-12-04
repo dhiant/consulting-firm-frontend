@@ -170,7 +170,7 @@ const ServiceList: React.FC<ServiceListProps> = ({
                   <div className="flex justify-center gap-4">
                     <Badge
                       onClick={() => {
-                        window.open("https://wa.me/1234567890", "_blank");
+                        window.open("https://wa.me/+971553856863", "_blank");
                       }}
                       className="bg-primary text-white px-4 py-2 cursor-pointer hover:bg-primary/90 transition-colors"
                     >
