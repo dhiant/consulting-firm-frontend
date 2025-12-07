@@ -25,15 +25,15 @@ export default function PortfolioPage() {
       ? projectOrder
       : projectOrder.filter((slug) => projectData[slug].category === filter);
 
-  const featuredSlug = projectOrder[0];
-  const featuredProject = projectData[featuredSlug];
+  // const featuredSlug = projectOrder[0];
+  // const featuredProject = projectData[featuredSlug];
   const selectedProject = selectedSlug ? projectData[selectedSlug] : null;
-  const renderParagraphs = (text: string) =>
-    text.split("\n\n").map((paragraph, index) => (
-      <p key={index} className="leading-relaxed">
-        {paragraph}
-      </p>
-    ));
+  // const renderParagraphs = (text: string) =>
+  //   text.split("\n\n").map((paragraph, index) => (
+  //     <p key={index} className="leading-relaxed">
+  //       {paragraph}
+  //     </p>
+  //   ));
 
   return (
     <div>
