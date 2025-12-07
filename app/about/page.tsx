@@ -239,7 +239,7 @@ export default function AboutPage() {
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/about.png"
+                  src="/images/about2.png"
                   alt="AIMTERIOR Office"
                   width={600}
                   height={700}

@@ -1229,7 +1229,7 @@ export default function ServicesPage() {
               { number: "22+", label: "Authority Types", icon: "📋" },
               { number: "500+", label: "Approvals Secured", icon: "✅" },
               { number: "100+", label: "Design Projects", icon: "📐" },
-              { number: "24/7", label: "Support Available", icon: "🕒" },
+              { number: "99%", label: "Support Available", icon: "🕒" },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 transition-all duration-500 hover:bg-white/20 hover:scale-105">
