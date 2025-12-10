@@ -111,9 +111,9 @@ ${fullName || "Customer"}
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-50/5 via-transparent to-brand-400/5 rounded-3xl"></div>
 
-      <Card className="relative border-0 shadow-2xl bg-white/95 backdrop-blur-sm overflow-hidden">
+      <Card className="relative border-0 shadow-2xl bg-white/95 backdrop-blur-sm overflow-hidden h-[85vh] sm:h-[90vh] flex flex-col">
         {/* Header Section */}
-        <div className="bg-gradient-to-r from-brand-50 to-brand-400 p-8 text-white relative overflow-hidden">
+        <div className="bg-gradient-to-r from-brand-50 to-brand-400 p-6 sm:p-8 text-white relative overflow-hidden flex-shrink-0">
           {/* Background Elements */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
@@ -148,7 +148,7 @@ ${fullName || "Customer"}
           </div>
         </div>
 
-        <CardContent className="p-8">
+        <CardContent className="p-6 sm:p-8 overflow-y-auto flex-1">
           <form onSubmit={handleSubmit} className="space-y-6 relative">
             {/* Interest Selection */}
             <div className="relative">

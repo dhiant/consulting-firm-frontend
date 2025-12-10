@@ -123,7 +123,7 @@ export function CompanyTimeline() {
     },
 
     {
-      title: "2020",
+      title: "2023",
       content: (
         <div>
           <div className="mb-6">
@@ -151,7 +151,7 @@ export function CompanyTimeline() {
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-brand-50 mb-1">3</div>
+                <div className="text-2xl font-bold text-brand-50 mb-1">20</div>
                 <div className="text-sm text-gray-600">Initial Projects</div>
               </div>
               <div>
