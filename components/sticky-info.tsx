@@ -76,7 +76,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
     },
     {
       Icon: CiMail,
-      href: "mailto:info@constructionsite.com",
+      href: "mailto:info@aimterior.com",
       label: "Email",
       tooltip: "Send us an email",
       external: true,
@@ -126,7 +126,7 @@ const StickyInfo = ({ className }: { className?: string }) => {
   return (
     <TooltipProvider>
       <div
-        className={`fixed right-6 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ease-in-out ${
+        className={`hidden md:block fixed right-6 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ease-in-out ${
           isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
         } ${className}`}
       >
