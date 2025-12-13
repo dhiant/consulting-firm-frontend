@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 // import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import {
+  ConditionalHeader,
+  ConditionalFooter,
+  ConditionalStickyInfo,
+} from "@/components/conditional-layout-components";
 // import { Lexend } from "@next/font/google";
-import StickyInfo from "@/components/sticky-info";
 import { Toaster } from "sonner";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -25,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Header />
+        <ConditionalHeader />
         <main className="min-h-screen">{children}</main>
         <Toaster />
-        <StickyInfo className="fixed bottom-1/2 translate-y-1/2  right-0" />
-        <Footer />
+        <ConditionalStickyInfo />
+        <ConditionalFooter />
       </body>
     </html>
   );
