@@ -2,8 +2,8 @@ import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import db from "./db";
 
-const DEFAULT_EMAIL = "admin@aimterior.com";
-const DEFAULT_PASSWORD = "admin123";
+const DEFAULT_EMAIL = "info@aimterior.com";
+const DEFAULT_PASSWORD = "#StrongPassword@123";
 
 // Session configuration
 const SESSION_DURATION_HOURS = 24; // 24 hours
